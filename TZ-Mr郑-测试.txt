@@ -1,1 +1,2 @@
-sdf asdfdsf sdfgdsgfgfsdfd
+D:\Program Files\TortoiseGit\bin\TortoiseGitPlink.exe
+D:\Program Files (x86)\Git\bin\ssh.exe
