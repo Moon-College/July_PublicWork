@@ -1,4 +1,0 @@
-INDEX VERSION 1.126+C:\tz\July_PublicWork\TZ-holylight\.metadata\.plugins\org.eclipse.jdt.core
-2417873037.index
-1548717557.index
-3342262927.index
