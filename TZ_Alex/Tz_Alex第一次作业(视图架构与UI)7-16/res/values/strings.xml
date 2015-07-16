@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TzClass3_HomeWork</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title">动态</string>
+    <string name="more">更多</string>
+    <string name="selfShot">自拍</string>
+    <string name="friendsEmotion">好友动态</string>
+    <string name="near">附近</string>
+    <string name="interest">兴趣部落</string>
+    <string name="game">游戏</string>
+    <string name="shopping">购物</string>
+    <string name="appBaby">应用宝</string>
+    <string name="unitNear">附近的群</string>
+    <string name="functional">吃喝玩乐</string>
+    <string name="cityService">同城服务</string>
+    <string name="information">消息</string>
+    <string name="connect">联系人</string>
+    <string name="title_activity_tz_code_layout">TzCodeLayoutActivity</string>
+
+</resources>
