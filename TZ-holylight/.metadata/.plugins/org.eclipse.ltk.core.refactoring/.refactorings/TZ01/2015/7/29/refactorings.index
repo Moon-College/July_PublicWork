@@ -1,0 +1,5 @@
+1437060368914	Extracts string '采集日志' into R.string.getlog
+1437060525863	Extracts string '打电话' into R.string.call
+1437060548659	Extracts string '发短信' into R.string.sendsms
+1437062181334	Extract method 'getLogFromProcess'
+1437062273394	Extract method 'writeLogtoSDCard'
