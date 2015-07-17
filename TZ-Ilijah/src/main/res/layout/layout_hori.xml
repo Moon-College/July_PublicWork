@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="100dp"
+              android:background="@drawable/white"
+              android:orientation="horizontal"
+              android:layout_marginTop="5dp"
+    >
+
+
+
+    <TextView
+        android:layout_weight="1"
+        android:gravity="center"
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="好友动态"
+        android:textColor="#000000"
+        android:textSize="9sp"
+        android:drawableTop="@drawable/igs"/>
+
+    <TextView
+        android:layout_weight="1"
+        android:gravity="center"
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="附近"
+        android:textColor="#000000"
+        android:textSize="9sp"
+        android:drawableTop="@drawable/eqc"/>
+    <TextView
+        android:layout_weight="1"
+        android:gravity="center"
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="兴趣部落"
+        android:textColor="#000000"
+        android:textSize="9sp"
+        android:drawableTop="@drawable/iei"/>
+
+</LinearLayout>
