@@ -101,7 +101,7 @@ public class MainActivity extends Activity {
 		
 		// 注掉的方法initSearchLayout，是作业1、java代码实现搜索布局
 		// initSearchLayout();
-		// 注掉的initQQLayout方法，初步实现了QQ布局，由于时间问题，只能写到这了，最外层相对布局：里面包括头部、内容、底部，内容的最外层用一个滚动布局
+		// 注掉的initQQLayout方法，初步实现了QQ布局，最外层相对布局：里面包括头部、内容、底部，内容的最外层用一个滚动布局
 		initQQLayout();
 	}
 
