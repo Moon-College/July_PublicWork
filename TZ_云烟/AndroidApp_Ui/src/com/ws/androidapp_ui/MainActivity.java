@@ -29,6 +29,7 @@ public class MainActivity extends Activity {
 //		setContentView(ll);
 		setContentView(R.layout.main);
 	}
+
  
 	
 }
