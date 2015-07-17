@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">tt</string>
+    <string name="tt_main_simple">Simple</string>
+    <string name="tt_main_qq">QQ</string>
+    <string name="tt_main_msg">消息</string>
+    <string name="tt_main_linksper">联系人</string>
+    <string name="tt_main_action">动态</string>
+    <string name="tt_main_more">更多</string>
+    
+    <string name="tt_simple_et_h">请输入...</string>
+    <string name="tt_simple_btn">你点我啊</string>
+    
+    
+    <string name="tt_qq_search">搜索</string>
+    
+    <string name="tt_qq_friends">好友动态</string>
+    <string name="tt_qq_near">附近</string>
+    <string name="tt_qq_interest">兴趣部落</string>
+    
+    <string name="tt_qq_game">游戏</string>
+    <string name="tt_qq_shop">购物</string>
+    <string name="tt_qq_app">应用宝</string>
+    <string name="tt_qq_neargroup">附近的群</string>
+    <string name="tt_qq_funning">吃喝玩乐</string>
+    <string name="tt_qq_samecity">同城服务</string>
+
+    
+</resources>
