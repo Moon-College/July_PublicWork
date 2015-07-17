@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="titleBlue">#18B4ED</color>
+    <color name="allGray">#F8F9FA</color>
+    <color name="topGray">#EBECED</color>
+    <color name="textGray">#C6C6C6</color>
+    <color name="lineGray">#E1E1E1</color>
+</resources>
