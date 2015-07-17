@@ -1,0 +1,253 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.tz.com.second.QQActivity">
+
+   <TextView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_weight="0"
+        android:background="#18B4ED"
+        android:gravity="center"
+        android:text="QQ" />
+
+    <ScrollView
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#EBECED"
+            android:orientation="vertical"
+            android:weightSum="1" >
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="49dp"
+                android:drawableLeft="@drawable/search"
+                android:hint="热门搜索优衣库事件"
+                android:paddingBottom="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:paddingTop="10dp" />
+
+            <RadioGroup
+                android:id="@+id/rg_group"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#FFFFFF"
+                android:orientation="horizontal" >
+
+                <RadioButton
+                    android:id="@+id/rb_haoyou"
+                    style="@style/main_tab_style"
+                    android:drawableTop="@drawable/iei"
+                    android:text="好友动态" />
+
+                <RadioButton
+                    android:id="@+id/rb_fujin"
+                    style="@style/main_tab_style"
+                    android:drawableTop="@drawable/eqc"
+                    android:text="附近" />
+
+                <RadioButton
+                    android:id="@+id/rb_xingqu"
+                    style="@style/main_tab_style"
+                    android:drawableTop="@drawable/iei"
+                    android:text="兴趣" />
+            </RadioGroup>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="30dp"
+                android:background="#FFFFFF" >
+
+                <ImageView
+                    android:id="@+id/iv_fnj"
+                    android:layout_width="50dip"
+                    android:layout_height="50dip"
+                    android:layout_marginBottom="5dip"
+                    android:layout_marginLeft="5dip"
+                    android:layout_marginTop="5dip"
+                    android:src="@drawable/fnj" />
+
+                <TextView
+                    android:id="@+id/tv_app_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="3dip"
+                    android:layout_marginTop="3dip"
+                    android:layout_toRightOf="@id/iv_fnj"
+                    android:gravity="center_vertical"
+                    android:text="游戏"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/skin_icon_arrow_right_normal" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="0.2dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#000000" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#FFFFFF" >
+
+                <ImageView
+                    android:id="@+id/iv_fnj2"
+                    android:layout_width="50dip"
+                    android:layout_height="50dip"
+                    android:layout_marginBottom="5dip"
+                    android:layout_marginLeft="5dip"
+                    android:layout_marginTop="5dip"
+                    android:src="@drawable/fnj" />
+
+                <TextView
+                    android:id="@+id/tv_"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="3dip"
+                    android:layout_marginTop="3dip"
+                    android:layout_toRightOf="@id/iv_fnj2"
+                    android:gravity="center_vertical"
+                    android:text="QQ群聊"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/skin_icon_arrow_right_normal" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="0.2dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#000000" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="30dp"
+                android:background="#FFFFFF" >
+
+                <ImageView
+                    android:id="@+id/iv_fnj3"
+                    android:layout_width="50dip"
+                    android:layout_height="50dip"
+                    android:layout_marginBottom="5dip"
+                    android:layout_marginLeft="5dip"
+                    android:layout_marginTop="5dip"
+                    android:src="@drawable/fnj" />
+
+                <TextView
+                    android:id="@+id/tv_app_name2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="3dip"
+                    android:layout_marginTop="3dip"
+                    android:layout_toRightOf="@id/iv_fnj3"
+                    android:gravity="center_vertical"
+                    android:text="游戏"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/skin_icon_arrow_right_normal" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="0.2dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#000000" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="#FFFFFF" >
+
+                <ImageView
+                    android:id="@+id/iv_fnj4"
+                    android:layout_width="50dip"
+                    android:layout_height="50dip"
+                    android:layout_marginBottom="5dip"
+                    android:layout_marginLeft="5dip"
+                    android:layout_marginTop="5dip"
+                    android:src="@drawable/fnj" />
+
+                <TextView
+                    android:id="@+id/tv_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="3dip"
+                    android:layout_marginTop="3dip"
+                    android:layout_toRightOf="@id/iv_fnj4"
+                    android:gravity="center_vertical"
+                    android:text="QQ群聊"
+                    android:textColor="#000000"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/skin_icon_arrow_right_normal" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="0.2dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="#000000" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_weight="0" >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/skin_tab_icon_conversation_normal" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/skin_tab_icon_contact_normal" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/skin_tab_icon_plugin_selected" />
+    </LinearLayout>
+
+</LinearLayout>
