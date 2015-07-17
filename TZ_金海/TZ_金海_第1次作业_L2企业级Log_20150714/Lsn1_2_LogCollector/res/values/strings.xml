@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">LogCollector</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="btn_log_collector">收集系统日志</string>
+    <string name="btn_call">拨打电话</string>
+    <string name="action_settings">Settings</string>
+
+</resources>

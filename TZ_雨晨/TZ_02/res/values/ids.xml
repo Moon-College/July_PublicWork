@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item type="id" name="btn_main_simple"/>
+    <item type="id" name="btn_main_qq"/>
+    
+    
+    <item type="id" name="qq_body_item_logo"/>
+    <item type="id" name="qq_body_item_content"/>
+    <item type="id" name="qq_body_item_arrow"/>
+</resources>
