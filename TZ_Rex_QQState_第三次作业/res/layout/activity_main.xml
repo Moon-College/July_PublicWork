@@ -1,0 +1,209 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E9ECEB"
+    android:paddingEnd="10dp"
+    android:paddingStart="10dp" >
+
+    <EditText
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="7dp"
+        android:layout_marginRight="7dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/searchshape"
+        android:gravity="center_horizontal"
+        android:hint="@string/hello_world" />
+
+    <RelativeLayout
+        android:id="@+id/bigClass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/search"
+        android:layout_marginTop="40dp"
+        android:background="#FFFFFF" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:drawableTop="@drawable/hli"
+            android:text="@string/hello_world" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:drawableTop="@drawable/hli"
+            android:text="@string/hello_world" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:drawableTop="@drawable/hli"
+            android:text="@string/hello_world" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/gameClass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bigClass"
+        android:layout_marginTop="40dp"
+        android:background="#FFFFFF" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:drawablePadding="0dp"
+            android:drawableStart="@drawable/hli"
+            android:gravity="center_vertical"
+            android:text="@string/hello_world" />
+
+        <ImageView
+            android:id="@+id/gameDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:contentDescription="@string/hello_world"
+            android:src="@drawable/hlu" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/musicClass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gameClass"
+        android:layout_marginTop="2dp"
+        android:background="#FFFFFF" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:drawableStart="@drawable/hli"
+            android:gravity="center_vertical"
+            android:text="@string/hello_world" />
+
+        <ImageView
+            android:id="@+id/musicDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:contentDescription="@string/hello_world"
+            android:src="@drawable/hlu" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/groupClass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/musicClass"
+        android:layout_marginTop="40dp"
+        android:background="#FFFFFF" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:drawableStart="@drawable/hli"
+            android:gravity="center_vertical"
+            android:text="@string/hello_world" />
+
+        <ImageView
+            android:id="@+id/groupDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:contentDescription="@string/hello_world"
+            android:src="@drawable/hlu" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/cityClass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/groupClass"
+        android:layout_marginTop="2dp"
+        android:background="#FFFFFF" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:drawableStart="@drawable/hli"
+            android:gravity="center_vertical"
+            android:text="@string/hello_world" />
+
+        <ImageView
+            android:id="@+id/serviceDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:contentDescription="@string/hello_world"
+            android:src="@drawable/hlu" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/liveClass"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cityClass"
+        android:layout_marginTop="2dp"
+        android:background="#FFFFFF" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:drawableStart="@drawable/hli"
+            android:gravity="center_vertical"
+            android:text="@string/hello_world" />
+
+        <ImageView
+            android:id="@+id/liveDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:contentDescription="@string/hello_world"
+            android:src="@drawable/hlu" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/menuBottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="5dp"
+        android:layout_marginStart="10dp"
+        android:background="#FFFFFF"
+        android:orientation="horizontal" >
+
+        <RadioButton
+            android:id="@+id/message"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:button="@drawable/msg_selector"
+            android:checked="true" />
+
+        <RadioButton
+            android:id="@+id/contact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:button="@drawable/contact_selector" />
+
+        <RadioButton
+            android:id="@+id/state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:button="@drawable/state_selector" />
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="fill_parent"
+              android:layout_height="120dp"
+              android:background="@drawable/white"
+              android:orientation="vertical"
+    android:layout_marginTop="10dp">
+
+    <TextView
+        android:gravity="center"
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:drawableLeft="@drawable/jyx"
+        android:drawablePadding="100dp"
+        android:drawableRight="@drawable/qz_icon_list_arrow"
+        android:text="游戏"
+        android:textColor="#000000"
+        android:textSize="30sp"/>
+    <TextView
+        android:layout_marginTop="2dp"
+        android:gravity="center"
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:drawableLeft="@drawable/jyy"
+        android:drawablePadding="100dp"
+        android:drawableRight="@drawable/qz_icon_list_arrow"
+        android:text="闹钟"
+        android:textColor="#000000"
+        android:textSize="30sp"/>
+    <TextView
+        android:layout_marginTop="2dp"
+        android:gravity="center"
+        android:id="@+id/tv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:drawableLeft="@drawable/jyz"
+        android:drawablePadding="100dp"
+        android:drawableRight="@drawable/qz_icon_list_arrow"
+        android:text="文件"
+        android:textColor="#000000"
+        android:textSize="30sp"/>
+
+</LinearLayout>

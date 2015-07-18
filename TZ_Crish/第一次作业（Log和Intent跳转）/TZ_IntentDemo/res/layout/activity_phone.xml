@@ -1,0 +1,45 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <Button
+        android:id="@+id/btn_call"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ee0000"
+        android:textColor="#ffffff"
+        android:textSize="16sp"
+        android:layout_alignParentBottom="true"
+        android:text="拨号" />
+	
+	<GridView 
+	    android:id="@+id/gv_keyboard"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btn_call"
+        android:numColumns="3" />
+    
+	<RelativeLayout 
+	    android:id="@+id/rl_show_phonenum"
+	    android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+	    android:layout_above="@id/gv_keyboard"
+	    android:visibility="gone" >
+	 	<Button
+	        android:id="@+id/btn_cancel"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:background="#ee0000"
+	        android:textColor="#ffffff"
+	        android:textSize="12sp"
+	        android:layout_alignParentRight="true"
+	        android:text="清空号码" />
+	 	 <TextView
+	        android:id="@+id/tv_show_phonenum"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:textSize="18sp"
+	        android:layout_centerInParent="true" />
+ 	</RelativeLayout>
+</RelativeLayout>
