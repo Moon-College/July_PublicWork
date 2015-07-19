@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f9f9f9" >
+
+    <Button
+        android:id="@+id/bt_work1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:onClick="work1"
+        android:text="ZoneLayout" />
+
+    <Button
+        android:id="@+id/bt_work2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bt_work1"
+        android:layout_centerHorizontal="true"
+        android:onClick="work2"
+        android:text="LayoutByCode" />
+    
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/bt_work2"
+        android:layout_centerHorizontal="true"
+        android:onClick="work3"
+        android:text="TableLayout" />
+
+</RelativeLayout>
