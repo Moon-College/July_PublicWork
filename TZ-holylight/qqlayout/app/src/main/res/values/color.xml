@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="lightbule">#18b4ed</color>
+    <color name="whitle">#ffffff</color>
+    <color name="backgroudbgcolor">#f8f9fa</color>
+    <color name="bodercolor">#dddddd</color>
+    <color name="tabbarbg">#f9f9f9</color>
+    <color name="textnormal">#a6a6a6</color>
+</resources>
