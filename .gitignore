@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #################
 ## Eclipse
 #################
@@ -214,3 +215,7 @@ pip-log.txt
 
 #Mr Developer
 .mr.developer.cfg
+=======
+/TZ_OOM/Lesson4/gen
+/TZ_OOM/Lesson4/bin
+>>>>>>> origin/master

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="qq_search_background">#ebeced</color>
+    <color name="qq_search_border">#dadada</color>
+    <color name="qq_search_text">#a6a6a6</color>
+    <color name="qq_title_tbackground">#18b5ed</color>
+</resources>

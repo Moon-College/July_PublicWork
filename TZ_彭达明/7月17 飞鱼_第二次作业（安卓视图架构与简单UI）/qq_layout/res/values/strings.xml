@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, MainActivity!</string>
+    <string name="app_name">Fragment_tz_replace</string>
+	<string name="Selfie">自拍</string>
+	<string name="frients">好友动态</string>
+	<string name="payling">游戏</string>
+	<string name="buy">购物</string>
+	<string name="txappcenter">应用宝</string>
+	<string name="grp">附近的群</string>
+	<string name="eat">吃喝玩乐</string>
+	<string name="city">同城服务</string>
+	<string name="state">动态</string>
+	<string name="more">更多</string>
+	<string name="qq">QQ</string>
+</resources>
