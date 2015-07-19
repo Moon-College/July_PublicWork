@@ -1,0 +1,22 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:background="@drawable/gray1"
+                tools:context=".MainActivity"
+              android:orientation="vertical">
+
+    <include layout="@layout/top_title" android:id="@+id/top"/>
+    <include layout="@layout/tv1" android:id="@+id/tv1"/>
+    <include layout="@layout/layout_hori" android:id="@+id/ho"/>
+    <include layout="@layout/tv2" android:id="@+id/tv2"/>
+    <include layout="@layout/Tvs3" android:id="@+id/Tvs3"/>
+    <include layout="@layout/buttom" android:id="@+id/btm" />
+
+
+
+
+
+
+
+</LinearLayout>
