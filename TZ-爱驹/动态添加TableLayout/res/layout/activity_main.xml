@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center" >
+
+        <TextView
+            style="@style/textview_style"
+            android:background="#aa0000"
+            android:text="111" />
+
+        <TextView
+            style="@style/textview_style"
+            android:background="#00aa00"
+            android:text="222" />
+
+        <TextView
+            style="@style/textview_style"
+            android:background="#0000aa"
+            android:text="333" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center" >
+
+        <TextView
+            style="@style/textview_style"
+            android:background="#aa0000"
+            android:text="444" />
+
+        <TextView
+            style="@style/textview_style"
+            android:background="#00aa00"
+            android:text="555" />
+
+        <TextView
+            style="@style/textview_style"
+            android:background="#0000aa"
+            android:text="666" />
+    </TableRow>
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center" >
+
+        <TextView
+            style="@style/textview_style"
+            android:text="777"
+            android:background="#aa0000" />
+
+        <TextView
+            style="@style/textview_style"
+            android:text="888"
+            android:background="#00aa00" />
+
+        <TextView
+            style="@style/textview_style"
+            android:text="999"
+            android:background="#0000aa" />
+    </TableRow>
+
+</TableLayout>
