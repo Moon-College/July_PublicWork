@@ -1,0 +1,239 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}"
+    android:orientation="vertical"
+    android:background="#FFFFFF"
+      >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="#ffffff"
+        android:drawablePadding="4dip"
+        android:drawableTop="@drawable/eqc"
+        android:gravity="center"
+        android:text="附近"
+        android:textColor="#000000"
+        android:textSize="15sp" />
+
+ <ScrollView 
+     android:layout_width="fill_parent"
+     android:layout_height="wrap_content"
+     >
+ <LinearLayout 
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+     >
+   <RelativeLayout 
+         android:layout_width="match_parent"
+         android:layout_height="35dp"
+         android:background="#0099FF"
+          
+        >
+       <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_top_one"
+        android:layout_centerInParent="true"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:textSize="@dimen/tv_top_size"
+          />
+       
+         <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_top_twee"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:textColor="#ffffff"
+        android:gravity="center"
+        android:layout_marginRight="5dip"
+        android:textSize="@dimen/tv_top_size"
+          />
+       
+   </RelativeLayout>
+   <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="50.0dip"
+        android:orientation="vertical"
+        android:background="#B7B3A4"
+        android:gravity="center"
+       >
+    <EditText 
+        android:id="@+id/et_regist_username"
+        android:layout_width="273dp"
+        android:layout_height="45dip"
+        android:background="@drawable/shape_white"
+        android:text="自拍"
+        android:inputType="number"
+        android:drawableLeft="@drawable/ksq"
+        android:maxLength="11"
+        android:padding="10.0dip"
+        android:textColor="#ff333333"
+        android:gravity="center"
+        android:textColorHint="#ff989898"
+        android:textSize="18.0sp" />
+       
+   </LinearLayout>
+   <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+       
+      <TextView 
+          android:layout_width="0dip"
+          android:layout_height="wrap_content"
+          android:background="#ffffff"
+          android:text="兴趣部落"
+          android:textSize="15sp"
+          android:drawableTop="@drawable/iei"
+          android:layout_weight="1"
+          android:drawablePadding="4dip"
+          android:gravity="center"
+          android:textColor="#000000"
+         />
+
+      <TextView
+          android:layout_width="0dip"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:background="#ffffff"
+          android:drawablePadding="4dip"
+          android:drawableTop="@drawable/igs"
+          android:gravity="center"
+          android:text="好友动态"
+          android:textColor="#000000"
+          android:textSize="15sp" />
+        <TextView
+          android:layout_width="0dip"
+          android:layout_height="wrap_content"
+          android:layout_weight="1"
+          android:background="#ffffff"
+          android:drawablePadding="4dip"
+          android:drawableTop="@drawable/kty"
+          android:gravity="center"
+          android:text="好友动态"
+          android:textColor="#000000"
+          android:textSize="15sp" />
+
+   </LinearLayout>
+   <TableLayout 
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="#ffffff" 
+          android:layout_marginTop="15dip"
+          >
+       <TableRow 
+            android:layout_width="match_parent"
+            android:layout_height="15dip"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+           >
+         <ImageView 
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:src="@drawable/jyx"
+             />
+         <TextView 
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="游戏"
+              android:textColor="#000000"
+              android:textSize="25sp"
+             />
+         
+       </TableRow>
+       <View 
+           android:layout_width="fill_parent"
+           android:layout_height="1dp"
+           android:background="#6E6E6E"
+           />
+       <TableRow 
+            android:layout_width="match_parent"
+            android:layout_height="15dip"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="10dp"
+           >
+         <ImageView 
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:src="@drawable/jzb"
+             />
+         <TextView 
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="购物"
+              android:textColor="#000000"
+              android:textSize="25sp"
+             />
+          
+       </TableRow>
+        <View 
+           android:layout_width="fill_parent"
+           android:layout_height="1dp"
+           android:background="#6E6E6E"
+           />
+       <TableRow 
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+           >
+         <ImageView 
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:src="@drawable/kge"
+             />
+         <TextView 
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="应用宝"
+              android:textColor="#000000"
+              android:textSize="25sp"/>
+       </TableRow>
+
+          
+       
+       
+    </TableLayout>
+    
+     <LinearLayout 
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:gravity="center_vertical|left"
+          android:background="#ffffff"
+        >
+      <ImageView 
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:src="@drawable/message"
+          android:id="@+id/img1"
+          android:layout_marginLeft="5dp"
+          android:layout_weight="1"
+          /> 
+       <ImageView 
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:src="@drawable/people"
+          android:id="@+id/img2"
+         android:layout_marginLeft="2dp"
+          android:layout_weight="1"
+          />        
+        <ImageView 
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:src="@drawable/skin_tab_icon_plugin_selected"
+           android:layout_weight="1"
+          />               
+    </LinearLayout>
+ </LinearLayout>
+ </ScrollView>
+   <!--最下层的布局 -->
+   
+</LinearLayout>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">qqlayout</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="xqbl">兴趣部落</string>
+    <string name="fjtext">附近的群</string>
+    <string name="qqzone_text">好友动态</string>
+    <string name="game">游戏</string>
+    <string name="shoping">购物</string>
+    <string name="readtext">阅读</string>
+    <string name="musictext">音乐</string>
+    <string name="rmhd">热门活动</string>
+    <string name="chihetext">吃喝玩乐</string>
+    <string name="zbjtext">直播间</string>
+    <string name="tcfw">同城服务</string>
+    <string name="fj">附近</string>
+
+</resources>
