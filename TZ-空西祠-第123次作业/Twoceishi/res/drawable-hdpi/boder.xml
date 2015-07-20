@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="rectangle" >
-    <solid android:color="#ffffff"/><!-- 背景颜色 -->
-    <stroke android:width="0.5dp" android:color="#dedede"/><!-- 设置边框 -->
-    
-</shape>
