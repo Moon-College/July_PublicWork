@@ -1,0 +1,8 @@
+<resources>
+
+    <string name="app_name">TZ_01</string>
+    <string name="main_msg">短信</string>
+    <string name="main_call">电话</string>
+    <string name="main_log">打印log</string>
+
+</resources>
