@@ -2,6 +2,7 @@
 <!-- 第四节课 第二个作业需要用到的listView的每一行的布局格式 -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
+    android:background="@color/aquamarine"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content" >
   

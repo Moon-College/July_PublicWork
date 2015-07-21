@@ -1,4 +1,4 @@
-﻿package com.tz.main;
+package com.tz.main;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -16,9 +16,9 @@ import com.tz.second.second.IntentSample;
 import com.tz.third.first.QQLineraLayoutActivity;
 
 /**
+ * 第二次作业,用来显示一个类似于安卓版qq的"空间"Tab页对应的界面.
  * 
- * 
- * @author JDY
+ * @author JDY 20150717
  */
 public class MainActivity extends Activity {
 
@@ -39,7 +39,7 @@ public class MainActivity extends Activity {
 	 */
 	private Button fourthFirst_bt = null;
 	/**
-	 * 第四节课第二次作业,半成品
+	 * 第四节课第二次作业
 	 */
 	private Button fourthSecond_bt = null;
 

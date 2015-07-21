@@ -1,12 +1,13 @@
 <!-- 第四节课第二个作业的布局文件，
 	模拟一个tableLayout，并给其每列不同的背景颜色 -->
-<com.tz.fourth.second.MyLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+ <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/qianlan"
     android:orientation="vertical"
+    android:background="@color/aquamarine"
     tools:context="com.tz.fourth.second.SimulateTableActivity" >
+   
 	<include 
         layout="@layout/list_items_ll"
         android:id="@+id/table_title"/>
@@ -22,4 +23,4 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" >
     </ListView>
-</com.tz.fourth.second.MyLinearLayout>
+</LinearLayout>

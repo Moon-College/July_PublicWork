@@ -5,7 +5,6 @@ import java.util.List;
 
 import android.app.Activity;
 import android.content.Context;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.AttributeSet;
 import android.view.View;
@@ -25,7 +24,7 @@ public class SimulateTableActivity extends Activity{
 		setContentView(R.layout.activity_simulate_table);
 		//设置表格标题的背景颜色
 				ViewGroup tableTitle = (ViewGroup) findViewById(R.id.table_title);
-				tableTitle.setBackgroundColor(getResources().getColor(R.color.cornflowerblue));
+				tableTitle.setBackgroundColor(getResources().getColor(R.color.wheat));
 				
 				List<ItemInfo> list = new ArrayList<ItemInfo>();
 				list.add(new ItemInfo("第一列", "第二列", "第三列"));
@@ -34,7 +33,7 @@ public class SimulateTableActivity extends Activity{
 				list.add(new ItemInfo("第一列", "第二列", "第三列"));
 				
 				ListView tableListView = (ListView) findViewById(R.id.list);
-			
+				
 				TableAdapter adapter = new TableAdapter(this, list);
 				tableListView.setAdapter(adapter);
 	}
