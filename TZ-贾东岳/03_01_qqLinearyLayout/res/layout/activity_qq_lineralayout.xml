@@ -10,7 +10,7 @@
     android:layout_height="wrap_content"
     android:background="@color/qianlan"
     android:orientation="vertical"
-    tools:context="com.tz.third.first.QQLinearLayoutActivity" >
+    tools:context="com.tz.third.first.QQLineraLayoutActivity" >
 
     <!-- title. -->
 

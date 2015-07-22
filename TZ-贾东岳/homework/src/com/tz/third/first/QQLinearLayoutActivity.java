@@ -14,7 +14,7 @@ import com.tz.first.R;
  * @author JDY
  * 
  */
-public class QQLineraLayoutActivity extends Activity {
+public class QQLinearLayoutActivity extends Activity {
 	/**
 	 * 点击后返回上级界面
 	 */

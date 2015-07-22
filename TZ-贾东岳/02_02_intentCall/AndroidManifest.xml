@@ -24,12 +24,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.tz.third.first.QQLinearLayoutActivity" >
-        </activity>
-        <activity android:name="com.tz.fourth.first.QQLayoutActivity" >
-        </activity>
-        <activity android:name="com.tz.fourth.second.SimulateTableActivity" >
-        </activity>
     </application>
 
 </manifest>

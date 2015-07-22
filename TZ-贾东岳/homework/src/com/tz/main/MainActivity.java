@@ -3,8 +3,6 @@ package com.tz.main;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -13,10 +11,10 @@ import com.tz.fourth.first.QQLayoutActivity;
 import com.tz.fourth.second.SimulateTableActivity;
 import com.tz.second.first.MyLog;
 import com.tz.second.second.IntentSample;
-import com.tz.third.first.QQLineraLayoutActivity;
+import com.tz.third.first.QQLinearLayoutActivity;
 
 /**
- * 第二次作业,用来显示一个类似于安卓版qq的"空间"Tab页对应的界面.
+ * 第二三四节课的5个作业都在这个界面的button的点击事件里，一点就能看到
  * 
  * @author JDY 20150717
  */
@@ -86,7 +84,7 @@ public class MainActivity extends Activity {
 		thrirdFirst_bt.setOnClickListener(new Button.OnClickListener() {// 创建监听
 					public void onClick(View v) {
 						Intent intent = new Intent(MainActivity.this,
-								QQLineraLayoutActivity.class);
+								QQLinearLayoutActivity.class);
 						startActivity(intent);
 					}
 				});
@@ -110,21 +108,7 @@ public class MainActivity extends Activity {
 						startActivity(intent);
 					}
 				});
-//		fourthSecond_bt.setClickable(false);
+
 	}
 
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.main, menu);
-		return true;
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
-	}
 }
