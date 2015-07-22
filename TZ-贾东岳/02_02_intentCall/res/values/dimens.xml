@@ -1,0 +1,25 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <!-- 文字尺寸 -->
+    <dimen name="com_text_24sp">24sp</dimen>
+    <!-- 标题栏文字大小 -->
+    <dimen name="com_head_text_title">@dimen/com_text_24sp</dimen>
+    <!-- 标题栏高度 -->
+    <dimen name="com_head_height">@dimen/com_size_0048dp</dimen>
+    <!-- 一般尺寸 -->
+    <dimen name="com_size_0001dp">1dp</dimen>
+    <dimen name="com_size_0004dp">4dp</dimen>
+    <dimen name="com_size_0008dp">8dp</dimen>
+    <dimen name="com_size_0012dp">12dp</dimen>
+    <dimen name="com_size_0030dp">30dp</dimen>
+    <dimen name="com_size_0048dp">48dp</dimen>
+    <dimen name="com_size_0060dp">60dp</dimen>
+    <dimen name="com_size_0072dp">72dp</dimen>
+    <dimen name="com_size_0080dp">80dp</dimen>
+    <!-- 标题栏图标大小 -->
+    <dimen name="com_head_item_size">@dimen/com_size_0072dp</dimen>
+
+</resources>
