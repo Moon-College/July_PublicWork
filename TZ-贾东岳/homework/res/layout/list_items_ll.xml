@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 第四节课 第二个作业需要用到的listView的每一行的布局格式 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:background="@color/aquamarine"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+  
+    <TextView
+        android:id="@+id/field_1_tv"
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.5"
+        android:gravity="center"
+        android:paddingBottom="10dip"
+        android:paddingTop="10dip"
+        android:text="@string/lil_1_tv_t" />
+<!--     垂直方向的一个view，起到竖线的作用用来隔开每列 -->
+    <View 
+        android:layout_width="1.5dip"
+        android:layout_height="fill_parent"
+        android:background="@color/brown"/>
+
+    <TextView
+        android:id="@+id/field_2_tv"
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingBottom="10dip"
+        android:paddingTop="10dip"
+        android:gravity="center"
+        android:text="@string/lil_2_tv_t" />
+    
+     <View 
+        android:layout_width="1.5dip"
+        android:layout_height="fill_parent"
+        android:background="@color/brown"/>
+
+    <TextView
+        android:id="@+id/field_3_tv"
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingBottom="10dip"
+        android:paddingTop="10dip"
+        android:gravity="center"
+        android:text="@string/lil_3_tv_t" />
+
+</LinearLayout>
