@@ -1,0 +1,366 @@
+<!-- 此布局为第三节课第一个作业. -->
+<!--
+在布局文件中使用 LinearLayout布局实现手机版qq中的"动态"页面的界面布局. 
+除了最外面使用了RelativeLayout外，这里只使用了 LinearLayout布局.
+
+-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/qianlan"
+    android:orientation="vertical"
+    tools:context="com.tz.third.first.QQLinearLayoutActivity" >
+
+    <!-- title. -->
+
+    <LinearLayout
+        android:id="@+id/aqqll_title_ll"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="#457FE1"
+        android:gravity="top"
+        android:orientation="horizontal" >
+
+        <!-- 返回上级界面的按钮 -->
+
+        <Button
+            android:id="@+id/aqqll_return_bt"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="4"
+            android:background="#457FE1"
+            android:text="@string/back"
+            android:textColor="#ffffff"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/aqqll_title_m_tv"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="@string/dynamic"
+            android:textColor="#ffffff"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/aqqll_title_r_tv"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="4"
+            android:contentDescription="@string/more"
+            android:gravity="center"
+            android:text="@string/more"
+            android:textColor="#ffffff"
+            android:textSize="15sp" />
+    </LinearLayout>
+    <!-- 滚动条 . -->
+<!-- android:fadeScrollbars="true" 设置滚动条的自动隐藏于显示-->
+    <HorizontalScrollView
+        android:id="@+id/aqqll_scoller_sl"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/aqqll_title_ll"
+        android:fadingEdge="vertical"
+        android:fillViewport="true"
+        android:fadeScrollbars="true" 
+        android:scrollbars="vertical" >
+
+        <LinearLayout
+            android:id="@+id/aqqll_scoller_ll"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:orientation="vertical"
+            android:scrollbars="vertical" >
+
+            <!-- 搜索框 ,设置了背景为圆角的布局所以是圆角的输入框 . -->
+
+            <EditText
+                android:id="@+id/aqqll_search_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_weight="0.1"
+                android:background="@drawable/edittext_bg"
+                android:gravity="center"
+                android:hint="@string/search"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:id="@+id/aqqll_top_ll"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:background="#ffffff"
+                android:baselineAligned="false"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:id="@+id/aqqll_hydt_ll"
+                    android:layout_width="fill_parent"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:id="@+id/aqqll_hydt_iv"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="top"
+                        android:layout_marginBottom="2dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/text"
+                        android:padding="-5dp"
+                        android:src="@drawable/ezn" />
+
+                    <TextView
+                        android:id="@+id/aqqll_hydt_tv"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:text="@string/hydt"
+                        android:textColor="#000000"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/aqqll_fj_ll"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:id="@+id/aqqll_fj_iv"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="top"
+                        android:layout_marginBottom="2dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/fj"
+                        android:src="@drawable/eqc" />
+
+                    <TextView
+                        android:id="@+id/aqqll_fj_tv"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:text="@string/fj"
+                        android:textColor="#000000"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/aqqll_xqbl_ll"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:id="@+id/aqqll_xqbl_iv"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="top"
+                        android:layout_marginBottom="2dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/text"
+                        android:src="@drawable/iei" />
+
+                    <TextView
+                        android:id="@+id/aqqll_xqbl_tv"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:text="@string/xqbl"
+                        android:textColor="#000000"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+            <!-- 列表1. -->
+
+            <LinearLayout
+                android:id="@+id/aqqll_first_ll"
+                android:layout_width="fill_parent"
+                android:layout_height="120dp"
+                android:background="@android:color/transparent"
+                android:orientation="vertical"
+                android:paddingBottom="5dp"
+                android:paddingTop="10dp" >
+
+                <!-- 看起来像横线的view. -->
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#bfbfbf" />
+
+                <TextView
+                    android:id="@+id/aqqll_yx_tv"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.5"
+                    android:background="#ffffff"
+                    android:drawableLeft="@drawable/yx"
+                    android:drawableRight="@drawable/jt"
+                    android:gravity="center|left"
+                    android:text="@string/yx"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#bfbfbf" />
+
+                <TextView
+                    android:id="@+id/aqqll_gw_tv"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#ffffff"
+                    android:drawableLeft="@drawable/gw"
+                    android:drawableRight="@drawable/jt"
+                    android:gravity="center|left"
+                    android:text="@string/gw"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#bfbfbf" />
+
+                <TextView
+                    android:id="@+id/aqqll_yyb_tv"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#ffffff"
+                    android:drawableLeft="@drawable/yyb"
+                    android:drawableRight="@drawable/jt"
+                    android:gravity="center|left"
+                    android:text="@string/yyb"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+            </LinearLayout>
+            <!-- 列表2. -->
+
+            <LinearLayout
+                android:id="@+id/aqqll_second_ll"
+                android:layout_width="fill_parent"
+                android:layout_height="120dp"
+                android:background="@android:color/transparent"
+                android:orientation="vertical"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp" >
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#bfbfbf" />
+
+                <TextView
+                    android:id="@+id/aqqll_fjdq_tv"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#ffffff"
+                    android:drawableLeft="@drawable/fjdq"
+                    android:drawableRight="@drawable/jt"
+                    android:gravity="center|left"
+                    android:text="@string/yx"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#bfbfbf" />
+
+                <TextView
+                    android:id="@+id/aqqll_chwl_tv"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#ffffff"
+                    android:drawableLeft="@drawable/chwl"
+                    android:drawableRight="@drawable/jt"
+                    android:gravity="center|left"
+                    android:text="@string/gw"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+
+                <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#bfbfbf" />
+
+                <TextView
+                    android:id="@+id/aqqll_tcfw_tv"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="#ffffff"
+                    android:drawableLeft="@drawable/tcfw"
+                    android:drawableRight="@drawable/jt"
+                    android:gravity="center|left"
+                    android:text="@string/tcfw"
+                    android:textColor="#000000"
+                    android:textSize="18sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </HorizontalScrollView>
+    <!-- 父容器LinearLayout是horizontal排列的布局,所以bottom属性能正常使用. -->
+    <!-- 最下面的3个切换用的按钮 . -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="horizontal" >
+
+        <ImageView
+            android:id="@+id/aqqll_xx_iv"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:contentDescription="@string/text"
+            android:src="@drawable/xxw" />
+
+        <ImageView
+            android:id="@+id/aqqll_lxr_iv"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:contentDescription="@string/text"
+            android:src="@drawable/lxrw" />
+
+        <ImageView
+            android:id="@+id/aqqll_dt_iv"
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:contentDescription="@string/text"
+            android:src="@drawable/dtb" />
+    </LinearLayout>
+
+</RelativeLayout>

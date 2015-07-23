@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">home_layout_qq</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="tv_top_one">动态</string>
+    <string name="tv_top_twee">更多</string>
+ </resources>
