@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#efff"
+    android:orientation="vertical" >
+
+ <!-- 第一个布局   LinearLayout+RelativeLayout-->
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="25sp"
+     	android:layout_marginTop="8sp"         
+        android:orientation="horizontal" >       
+		        <RelativeLayout
+		            android:id="@+id/relativeLayout1"
+		            android:layout_width="match_parent"
+		            android:layout_height="match_parent" >		            
+		                <EditText
+				        android:id="@+id/editText1"
+				        android:layout_width="match_parent"
+				        android:layout_height="25sp" 
+				        android:layout_marginLeft="15sp"
+				        android:layout_marginRight ="15sp"	    			        
+     					 android:background="#FFF"        
+				        />
+	<!--   android:layout_above=" " -->
+
+		                <ImageView
+		                    android:id="@+id/imageView1"
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="17sp"
+		                    android:layout_centerHorizontal="true"
+		                    android:layout_centerVertical="true"
+		                    android:src="@drawable/qzp" />
+		                
+		        </RelativeLayout>        
+    </LinearLayout>
+    
+<!-- 第二个布局  RelativeLayout+LinearLayout -->
+    <RelativeLayout
+         android:id="@+id/linearLayout2" 
+        android:layout_width="match_parent"
+         android:layout_height="78sp" 
+         android:orientation="horizontal"
+      android:background="#FFF"      
+      android:layout_marginTop="8sp" 
+         >
+        <LinearLayout 
+            android:id="@+id/linearLayout3" 
+            android:layout_width="wrap_content" 
+            android:layout_height="match_parent"
+              android:orientation="vertical"    
+              android:layout_marginLeft="32sp"    
+                >
+            <ImageView android:id="@+id/imageView2"
+                 android:layout_width="50sp" 
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="8sp"
+                  android:src="@drawable/qdt"/>            
+            <TextView android:id="@+id/textView1" 
+                android:layout_width="match_parent"
+                 android:layout_height="wrap_content"                  
+                 android:text="好友动态"
+                 android:textSize="12sp"
+                 android:textColor="#000"
+                 /> 
+            
+            
+        </LinearLayout>
+          <LinearLayout android:id="@+id/linearLayout3" android:layout_width="wrap_content"
+               android:layout_height="match_parent" android:orientation="vertical" 
+               android:layout_alignParentTop="true" android:layout_centerHorizontal="true">
+            
+              <ImageView android:id="@+id/imageView2" android:layout_width="50sp" 
+                  android:layout_height="wrap_content" android:layout_marginTop="8sp" 
+                  android:src="@drawable/qfj"/>
+              <TextView android:id="@+id/textView1" 
+                  android:layout_width="match_parent" android:layout_height="wrap_content" 
+                  android:text="    附近" android:textColor="#000" android:textSize="12sp"/>
+          </LinearLayout>
+          <LinearLayout android:id="@+id/linearLayout3" android:layout_width="wrap_content" 
+              android:layout_height="match_parent" android:layout_marginRight="20dp" 
+              android:orientation="vertical" android:layout_alignParentRight="true" android:layout_alignParentTop="true">
+              <ImageView android:id="@+id/imageView2" android:layout_width="50sp" 
+                  android:layout_height="wrap_content" android:layout_marginTop="8sp" 
+                  android:src="@drawable/qbl"/>
+              <TextView android:id="@+id/textView1" android:layout_width="match_parent" 
+                  android:layout_height="wrap_content" android:text="兴趣部落" 
+                  android:layout_marginTop="4sp" 
+                  android:textColor="#000" android:textSize="12sp"/>
+          </LinearLayout>
+        
+    </RelativeLayout>
+
+<!-- 第三个布局  LinearLayout+RelativeLayout -->
+    <LinearLayout 
+        android:id="@+id/linearLayout4" 
+        android:layout_width="match_parent" 
+        android:layout_height="110sp"
+            android:orientation="vertical"
+      android:background="#FFF"      
+      android:layout_marginTop="12sp" 
+        > 
+        <RelativeLayout
+            android:id="@+id/relativeLayout2"
+            android:layout_width="fill_parent"
+            android:layout_height="45sp"
+            android:layout_weight="1" >
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginLeft="15dp"
+                 android:layout_centerVertical="true"
+                android:src="@drawable/qyx" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/imageView3"
+                android:text="游戏"
+                android:textColor="#000"
+                android:textSize="15sp" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="23dp"
+                android:src="@drawable/q3" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout2"
+            android:layout_width="fill_parent"
+            android:layout_height="43sp"
+            android:layout_weight="1" >
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginLeft="15dp"
+                android:src="@drawable/qgw" />
+
+            <ImageView android:id="@+id/imageView4" 
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content" 
+                android:src="@drawable/q3" 
+                android:layout_alignParentRight="true" 
+                android:layout_centerVertical="true" 
+                android:layout_marginRight="23dp"/>
+            <TextView android:id="@+id/textView2" android:layout_width="wrap_content" 
+                android:layout_height="wrap_content" android:layout_centerVertical="true" 
+                android:layout_marginLeft="22dp" android:layout_toRightOf="@+id/imageView3" 
+                android:text="购物" android:textColor="#000"   android:textSize="15sp"/>
+        </RelativeLayout>
+        
+        <RelativeLayout 
+            android:id="@+id/relativeLayout2"
+             android:layout_width="fill_parent" 
+             android:layout_height="45sp"
+                android:layout_weight="1"
+             >
+             <ImageView android:id="@+id/imageView3"
+                  android:layout_width="32dp"
+                android:layout_height="32dp"
+                 android:src="@drawable/qyy" 
+                  android:layout_marginLeft="15dp"/>
+            <TextView android:id="@+id/textView2" 
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content" 
+                android:text="应用宝"
+             android:textSize="15sp"
+                android:textColor="#000"
+                android:layout_centerVertical="true" 
+                android:layout_marginLeft="20dp" 
+                android:layout_toRightOf="@+id/imageView3"/>
+            <ImageView android:id="@+id/imageView4" 
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content" 
+                android:src="@drawable/q3" 
+                android:layout_alignParentRight="true" 
+                android:layout_centerVertical="true" 
+                android:layout_marginRight="23dp"/>
+            
+        </RelativeLayout>
+        
+    </LinearLayout>
+
+<!-- 第四个布局   LinearLayout+RelativeLayout-->
+    <LinearLayout 
+        android:id="@+id/linearLayout4" 
+        android:layout_width="match_parent" 
+        android:layout_height="110sp"
+            android:orientation="vertical"
+      android:background="#FFF"      
+      android:layout_marginTop="12sp" 
+        >
+        <RelativeLayout 
+            android:id="@+id/relativeLayout2"
+             android:layout_width="fill_parent" 
+             android:layout_height="45sp"
+             android:layout_weight="1"
+             >
+            <ImageView android:id="@+id/imageView4" 
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content" 
+                android:src="@drawable/q3" 
+                android:layout_alignParentRight="true" 
+                android:layout_centerVertical="true" 
+                android:layout_marginRight="23dp"/>
+            <ImageView android:id="@+id/imageView3" android:layout_width="32dp" android:layout_height="32dp" android:layout_alignParentLeft="true" android:layout_centerVertical="true" android:layout_marginLeft="14dp" android:src="@drawable/qqy"/>
+            <TextView android:id="@+id/textView2" android:layout_width="wrap_content" 
+                android:layout_height="wrap_content" android:layout_alignBottom="@+id/imageView4" 
+                android:layout_marginLeft="19dp" android:layout_toRightOf="@+id/imageView3" android:text="附近的群" android:textColor="#000" android:textSize="15sp"/>
+        </RelativeLayout>
+        
+        <RelativeLayout 
+            android:id="@+id/relativeLayout2"
+             android:layout_width="fill_parent" 
+             android:layout_height="45sp"
+                android:layout_weight="1"
+             >
+            <ImageView android:id="@+id/imageView4" 
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content" 
+                android:src="@drawable/q3" 
+                android:layout_alignParentRight="true" 
+                android:layout_centerVertical="true" 
+                android:layout_marginRight="23dp"/>
+            <ImageView android:id="@+id/imageView3" android:layout_width="32dp" android:layout_height="32dp" android:layout_alignParentLeft="true" android:layout_centerVertical="true" android:layout_marginLeft="14dp" android:src="@drawable/qwl"/>
+            <TextView android:id="@+id/textView2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_alignBottom="@+id/imageView4" android:layout_marginLeft="19dp" android:layout_toRightOf="@+id/imageView3" android:text="吃喝玩乐" android:textColor="#000" android:textSize="15sp"/>
+        </RelativeLayout>
+        
+        <RelativeLayout 
+            android:id="@+id/relativeLayout2"
+             android:layout_width="fill_parent" 
+             android:layout_height="45sp"
+                android:layout_weight="1"
+             >
+            <ImageView android:id="@+id/imageView4" 
+                android:layout_width="wrap_content" 
+                android:layout_height="wrap_content" 
+                android:src="@drawable/q3" 
+                android:layout_alignParentRight="true" 
+                android:layout_centerVertical="true" 
+                android:layout_marginRight="23dp"/>
+            <ImageView android:id="@+id/imageView3" android:layout_width="32dp" 
+                android:layout_height="32dp" android:layout_alignParentLeft="true" 
+                android:layout_centerVertical="true" android:layout_marginLeft="16dp" 
+                android:src="@drawable/qyy"/>
+            <TextView android:id="@+id/textView2" 
+                android:layout_width="wrap_content" android:layout_height="wrap_content" 
+                android:layout_alignTop="@+id/imageView4" android:layout_marginLeft="20dp"
+                 android:layout_toRightOf="@+id/imageView3" 
+                 android:text="同城服务" android:textColor="#000" android:textSize="15sp"/>
+            
+        </RelativeLayout>
+        
+    </LinearLayout>
+    
+<!-- 第五个布局 RelativeLayout+LinearLayout-->
+    <RelativeLayout
+        android:id="@+id/linearLayout5"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10sp"
+        android:background="#FFF"
+        android:orientation="horizontal" >
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginRight="30dp"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1sp"
+                android:src="@drawable/qzdt" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1sp"
+                android:text="动态"
+                android:textColor="#000"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="32dp"
+                android:layout_height="31dp"
+                android:layout_marginTop="1sp"                 
+                android:layout_marginLeft="2sp" 
+                android:src="@drawable/qlx" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2sp"
+                android:text="联系人"
+                android:textColor="#000"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="30dp"
+            android:orientation="vertical" >
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="2sp"
+                android:src="@drawable/qxx" />
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_centerVertical="true"
+                android:text=" 信息"
+                android:textColor="#000"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>
