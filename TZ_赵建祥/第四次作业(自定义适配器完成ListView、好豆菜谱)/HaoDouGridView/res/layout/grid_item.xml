@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_margin="10dp"
+        android:background="@drawable/bg"
+        android:paddingTop="0dp"
+        android:paddingBottom="20dp"
+        android:paddingLeft="0dp"
+        android:paddingRight="10dp"
+         >
+
+        <!-- 上面菜谱图片 -->
+
+        <ImageView
+            android:id="@+id/iv_img"
+            android:layout_width="150dp"
+            android:layout_height="175dp"
+            android:src="@drawable/food0"
+            android:layout_marginLeft="0dp" />
+
+        <!-- 菜谱图片左下角上悬浮的文字 -->
+
+        <TextView
+            android:id="@+id/tv_imgState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/iv_img"
+            android:layout_alignLeft="@id/iv_img"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="10dp"
+            android:background="#00BB00"
+            android:text="22道菜"
+            android:textColor="#FFFFFF" />
+
+        <!-- 菜谱下方是介绍 -->
+
+        <TextView
+            android:id="@+id/tv_presentation"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/iv_img"
+            android:layout_below="@id/iv_img"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:background="#FFFFFF"
+            android:singleLine="true"
+            android:text="牛肉要这样做才好吃"
+            android:textColor="#000000"
+            android:textSize="15sp" />
+
+        <!-- 作者头像 -->
+
+        <ImageView
+            android:id="@+id/iv_face"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignLeft="@id/tv_presentation"
+            android:layout_below="@id/tv_presentation"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/ic_launcher" />
+
+        <TextView
+            android:id="@+id/tv_author"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/iv_face"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/iv_face"
+            android:text="执念兮" />
+    </RelativeLayout>
+
+</RelativeLayout>
