@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ListViewStudy</string>
+    <string name="action_settings">Settings</string>
+    <string-array name="hero">
+        <item >曹操</item>
+        <item >孙权</item>
+        <item >刘备</item>
+        <item >关羽</item>
+        <item >张飞</item>
+    </string-array>
+
+</resources>
