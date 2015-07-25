@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, MainActivity!</string>
+    <string name="app_name">Home_listview</string>
+  <string-array name="names">
+      <item >"Danny"</item>
+      <item >"Ricky"</item>
+      <item >"Sunday"</item>
+      <item >"Jason"</item>
+      <item >"David"</item>
+      <item >"Grace"</item>
+      <item >"Elenis"</item>
+      <item >"Crystals"</item>
+      <item >"Nancy"</item>
+      <item >"Niky"</item>
+      <item >"Moon"</item>
+  </string-array>
+  
+  <string-array  name="genders">
+      <item >"男"</item>
+      <item >"男"</item>
+      <item >"男"</item>
+      <item >"男"</item>
+      <item >"女"</item>
+      <item >"女"</item>
+      <item >"女"</item>
+      <item >"女"</item>
+      <item >"女"</item>
+      <item >"女"</item>
+      <item >"男"</item>
+      
+  </string-array>
+   
+     
+   <integer-array name="faces">
+       <item >98</item>
+       <item >98</item>
+       <item >98</item>
+       <item >98</item>
+       <item >98</item>
+       <item >98</item>
+       <item >98</item>
+       <item >98</item>
+       <item >98</item>
+       <item >98</item>
+       <item >98</item>
+       
+   </integer-array>
+     <string-array  name="likes">
+      <item >"篮球"</item>
+      <item >"足球"</item>
+      <item >"游泳"</item>
+      <item >"网球"</item>
+      <item >"打豆豆"</item>
+      <item >"睡觉"</item>
+      <item >"吃货"</item>
+      <item >"打游戏"</item>
+      <item >"瑜伽"</item>
+      <item >"高尔夫"</item>
+      <item >"篮球"</item>
+      
+  </string-array>  
+</resources>

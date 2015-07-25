@@ -1,0 +1,31 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/qianlan"
+    android:orientation="vertical"
+    tools:context="com.tz.main.MainActivity" >
+
+    <TableLayout 
+        android:id="@+id/am_mytable_tb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal ="true"
+        android:background="#F8F8FF"
+        android:orientation="vertical"
+        tools:context="com.tz.main.MainActivity" >
+        
+        <!-- 第二节课两个作业 -->
+        <TableRow android:id="@+id/am_first_tr"
+            android:background="@drawable/bj">
+            <TextView android:text="@string/am_second_tv_t"/>
+            
+            <Button android:id="@+id/am_second_second_bt"
+          		android:textSize="15sp"
+          		android:text="@string/am_second_t"
+          		/>
+        </TableRow>
+       
+    </TableLayout>
+
+</RelativeLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" >
+    
+    <ImageView 
+        android:id="@+id/img_food"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:background="#F0F0F0"
+        />
+    <TextView 
+        android:id="@+id/tv_food"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#6F6F6F"
+        />
+    <LinearLayout 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <ImageView 
+            android:id="@+id/img_review"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            />
+        <TextView 
+            android:id="@+id/tv_review"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#A4A4A4"
+            />
+        
+    </LinearLayout>
+
+    
+
+</LinearLayout>

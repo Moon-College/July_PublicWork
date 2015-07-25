@@ -1,0 +1,18 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#aaaaaa">
+
+    <AutoCompleteTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:layout_margin="20dp"
+        android:padding="5dp"
+        android:gravity="center"
+        android:id="@+id/autoTip"
+        android:hint="输入用户名或电话号码,可提示" />
+
+</LinearLayout>
