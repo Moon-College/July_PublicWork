@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="global_text_color_with_half_alpha_4">#7f347ff1</color>
+    <color name="global_text_color_4">#ff347ff1</color>
+</resources>
