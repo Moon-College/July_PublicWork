@@ -14,7 +14,11 @@ public class ImageLoader {
 
     private ImageLoader() {
         cacheSize = Runtime.getRuntime().maxMemory() / 8;
-        lruCache = new LruCache<String, Bitmap>((int)cacheSize);
+        lruCache = new LruCache<String, Bitmap>((int)cacheSize){ 
+        	protected int sizeOf(String key, Bitmap value) { 
+        		return value.getByteCount(); 
+        	}
+        }; 
     }
 
     //单例模式获得ImageLoader对象
