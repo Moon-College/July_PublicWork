@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:background="#ffffff">
+
+    <RelativeLayout
+        android:id="@+id/rl_img"
+        android:layout_width="150dp"
+        android:layout_height="180dp"
+        android:background="@drawable/img_beef"
+        >
+
+        <TextView
+            android:id="@+id/tv_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="#629700"
+            android:textColor="#ffffff"
+            android:text="tv_number"
+            android:padding="10dp"
+            android:textSize="15sp"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:padding="5dp"
+        android:textSize="20sp"
+        android:layout_below="@id/rl_img"
+        android:text="tv_name"/>
+
+    <ImageView
+        android:id="@+id/img_photo"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/tv_name"
+        android:layout_alignLeft="@id/rl_img"
+        android:src="@drawable/img_photo"/>
+
+    <TextView
+        android:id="@+id/tv_author"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/img_photo"
+        android:layout_alignBottom="@id/img_photo"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="5dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:text="tv_author"/>
+
+</RelativeLayout>

@@ -1,0 +1,366 @@
+<!-- 此布局为第四节课第一个作业 -->
+<!-- 在布局文件中使用相对布局等布局实现手机版qq中的"动态"页面的界面布局. -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#BBFFFF"
+    tools:context="com.tz.fourth.first.QQLayoutActivity" >
+
+    <!-- title. -->
+
+    <LinearLayout
+        android:id="@+id/aqql_title_ll"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="#457FE1"
+        android:gravity="top"
+        android:orientation="horizontal" >
+
+        <!-- 返回上级界面的按钮 -->
+
+        <Button
+            android:id="@+id/aqql_return_bt"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="4"
+            android:background="#457FE1"
+            android:text="@string/back"
+            android:textColor="#ffffff"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/aqql_title_m_tv"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="@string/dynamic"
+            android:textColor="#ffffff"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/aqql_title_r_tv"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="4"
+            android:contentDescription="@string/more"
+            android:gravity="center"
+            android:text="@string/more"
+            android:textColor="#ffffff"
+            android:textSize="15sp" />
+    </LinearLayout>
+    <!-- 滚动条 . -->
+
+    <ScrollView
+        android:id="@+id/aqql_scoller_sl"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/aqql_title_ll"
+        android:fadingEdge="vertical"
+        android:scrollbars="vertical" >
+
+        <RelativeLayout
+            android:id="@+id/aqql_scoller_ll"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="0dp"
+            android:layout_marginTop="0dp"
+            android:scrollbars="vertical" >
+
+            <!-- 搜索框 ,设置了背景为圆角的布局所以是圆角的输入框 . -->
+
+            <EditText
+                android:id="@+id/aqql_search_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/edittext_bg"
+                android:gravity="center"
+                android:hint="@string/search"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                android:textSize="12sp" />
+
+            <LinearLayout
+                android:id="@+id/aqql_top_ll"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@+id/aqql_search_et"
+                android:background="#ffffff"
+                android:baselineAligned="false"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <LinearLayout
+                    android:id="@+id/aqql_hydt_ll"
+                    android:layout_width="fill_parent"
+                    android:layout_height="60dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:id="@+id/aqql_hydt_iv"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="top"
+                        android:layout_marginBottom="2dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/text"
+                        android:padding="-5dp"
+                        android:src="@drawable/ezn" />
+
+                    <TextView
+                        android:id="@+id/aqql_hydt_tv"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:text="@string/hydt"
+                        android:textColor="#000000"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/aqql_fj_ll"
+                    android:layout_width="fill_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:id="@+id/aqql_fj_iv"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="top"
+                        android:layout_marginBottom="2dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/fj"
+                        android:src="@drawable/eqc" />
+
+                    <TextView
+                        android:id="@+id/aqql_fj_tv"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:text="@string/fj"
+                        android:textColor="#000000"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/aqql_xqbl_ll"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical" >
+
+                    <ImageView
+                        android:id="@+id/aqql_xqbl_iv"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="top"
+                        android:layout_marginBottom="2dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_weight="1"
+                        android:contentDescription="@string/text"
+                        android:src="@drawable/iei" />
+
+                    <TextView
+                        android:id="@+id/aqql_xqbl_tv"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_gravity="bottom"
+                        android:layout_weight="2"
+                        android:gravity="center"
+                        android:paddingBottom="5dp"
+                        android:text="@string/xqbl"
+                        android:textColor="#000000"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/aqql_1_v"
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:layout_below="@+id/aqql_top_ll"
+                android:layout_marginTop="10dp"
+                android:background="#bfbfbf" />
+
+            <TextView
+                android:id="@+id/aqql_yx_tv"
+                android:layout_width="fill_parent"
+                android:layout_height="35dp"
+                android:layout_below="@+id/aqql_1_v"
+                android:background="#ffffff"
+                android:drawableLeft="@drawable/yx"
+                android:drawableRight="@drawable/jt"
+                android:gravity="center|left"
+                android:text="@string/yx"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <View
+                android:id="@+id/aqql_2_v"
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:layout_below="@+id/aqql_yx_tv"
+                android:background="#bfbfbf" />
+
+            <TextView
+                android:id="@+id/aqql_gw_tv"
+                android:layout_width="fill_parent"
+                android:layout_height="35dp"
+                android:layout_below="@+id/aqql_2_v"
+                android:background="#ffffff"
+                android:drawableLeft="@drawable/gw"
+                android:drawableRight="@drawable/jt"
+                android:gravity="center|left"
+                android:text="@string/gw"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <View
+                android:id="@+id/aqql_3_v"
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:layout_below="@+id/aqql_gw_tv"
+                android:background="#bfbfbf" />
+
+            <TextView
+                android:id="@+id/aqql_yyb_tv"
+                android:layout_width="fill_parent"
+                android:layout_height="35dp"
+                android:layout_below="@+id/aqql_3_v"
+                android:background="#ffffff"
+                android:drawableLeft="@drawable/yyb"
+                android:drawableRight="@drawable/jt"
+                android:gravity="center|left"
+                android:text="@string/yyb"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <View
+                android:id="@+id/aqql_4_v"
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:layout_below="@+id/aqql_yyb_tv"
+                android:layout_marginTop="10dp"
+                android:background="#bfbfbf" />
+
+            <TextView
+                android:id="@+id/aqql_fjdq_tv"
+                android:layout_width="fill_parent"
+                android:layout_height="35dp"
+                android:layout_below="@+id/aqql_4_v"
+                android:background="#ffffff"
+                android:drawableLeft="@drawable/fjdq"
+                android:drawableRight="@drawable/jt"
+                android:gravity="center|left"
+                android:text="@string/yx"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <View
+                android:id="@+id/aqql_5_v"
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:layout_below="@+id/aqql_fjdq_tv"
+                android:background="#bfbfbf" />
+
+            <TextView
+                android:id="@+id/aqql_chwl_tv"
+                android:layout_width="fill_parent"
+                android:layout_height="35dp"
+                android:layout_below="@+id/aqql_5_v"
+                android:background="#ffffff"
+                android:drawableLeft="@drawable/chwl"
+                android:drawableRight="@drawable/jt"
+                android:gravity="center|left"
+                android:text="@string/gw"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+
+            <View
+                android:id="@+id/aqql_6_v"
+                android:layout_width="fill_parent"
+                android:layout_height="0.5dp"
+                android:layout_below="@+id/aqql_chwl_tv"
+                android:background="#bfbfbf" />
+
+            <TextView
+                android:id="@+id/aqql_tcfw_tv"
+                android:layout_width="fill_parent"
+                android:layout_height="35dp"
+                android:layout_below="@+id/aqql_6_v"
+                android:background="#ffffff"
+                android:drawableLeft="@drawable/tcfw"
+                android:drawableRight="@drawable/jt"
+                android:gravity="center|left"
+                android:text="@string/tcfw"
+                android:textColor="#000000"
+                android:textSize="18sp" />
+        </RelativeLayout>
+    </ScrollView>
+
+    <TableLayout
+        android:id="@+id/aqql_bottom_tl"
+        android:layout_width="fill_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentBottom="true"
+        android:background="#ffffff">
+
+        <TableRow
+            android:id="@+id/aqql_bottom_tr"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+
+            <ImageView
+                android:id="@+id/aqql_xx_iv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="bottom"
+                android:layout_weight="1"
+                android:contentDescription="@string/text"
+                android:src="@drawable/xxw" />
+
+            <ImageView
+                android:id="@+id/aqql_lxr_iv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="top"
+                android:layout_weight="1"
+                android:contentDescription="@string/text"
+                android:src="@drawable/lxrw" />
+
+            <ImageView
+                android:id="@+id/aqql_dt_iv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="top"
+                android:layout_weight="1"
+                android:contentDescription="@string/text"
+                android:src="@drawable/dtb" />
+        </TableRow>
+    </TableLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dp"
+        android:layout_above="@+id/aqql_bottom_ll"
+        android:layout_marginTop="45dp"
+        android:background="#bfbfbf" />
+    <!-- 最下面的3个切换用的按钮 . -->
+
+</RelativeLayout>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#eeeeee" >
+    
+      <!-- 搜索 -->
+    <EditText 
+        android:id="@+id/edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="自拍"
+        android:textSize="10dp"
+        android:gravity="center"
+        android:background="@drawable/round_edittext"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp" />
+    
+    <!-- 水平线性布局 -->
+    <LinearLayout 
+        android:id="@+id/linear_horizotal_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="#ffffff"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/edit"        
+        >
+        <!-- 三个水平Button -->
+        <Button 
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        
+        android:background="#ffffff"
+        android:drawableTop="@drawable/eqc"
+        android:text="好友动态"
+        android:textSize="10dp"
+        />
+      <Button 
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        
+        android:background="#ffffff"
+        android:drawableTop="@drawable/eqc"
+        android:text="附近"
+        android:textSize="10dp"
+        />
+      <Button 
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="#ffffff"
+        android:drawableTop="@drawable/iei"
+        android:text="兴趣部落"
+        android:textSize="8dp"
+        />      
+    </LinearLayout>
+    
+    <!--三个按钮，垂直布局  -->
+    <LinearLayout 
+        android:id="@+id/linear_vertical_1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/linear_horizotal_1"  >
+        
+    <Button 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/yx"
+        android:background="#ffffff"
+        android:text="游戏"    
+        android:textSize="10dp"   
+        android:drawablePadding="-250dp"
+                
+        />
+    <Button 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/yx"
+        android:background="#ffffff"
+        android:text="购物"    
+        android:textSize="10dp"   
+        android:drawablePadding="-250dp"
+        android:layout_marginTop="1dp"
+        />
+    <Button 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/yx"
+        android:background="#ffffff"
+        android:text="应用宝"    
+        android:textSize="10dp"   
+        android:drawablePadding="-250dp"
+        android:layout_marginTop="1dp"
+        />
+    </LinearLayout>
+    
+
+ <!--三个按钮，垂直布局  -->
+    <LinearLayout 
+        android:id="@+id/linear_vertical_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="15dp"
+        android:layout_below="@id/linear_vertical_1"
+         >
+        
+    <Button 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/tcfw"
+        android:background="#ffffff"
+        android:text="附近的群"    
+        android:textSize="10dp"   
+        android:drawablePadding="-250dp"
+        
+        />
+    <Button 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/tcfw"
+        android:background="#ffffff"
+        android:text="吃喝玩乐"    
+        android:textSize="10dp"   
+        android:drawablePadding="-250dp"
+        android:layout_marginTop="1dp"
+        /> 
+    </LinearLayout>
+
+    <!-- 水平线性布局 -->
+    <LinearLayout 
+        android:id="@+id/linear_horizotal_2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        >  
+    <Button 
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:drawableTop="@drawable/yyb"
+        android:background="#ffffff"
+        android:text="消息"    
+        android:textSize="10dp"   
+        />
+      
+    <Button 
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:drawableTop="@drawable/yyb"
+        android:background="#ffffff"
+        android:text="联系人"    
+        android:textSize="10dp"   
+        />
+            
+    <Button 
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:drawableTop="@drawable/yyb"
+        android:background="#ffffff"
+        android:text="动态"    
+        android:textSize="10dp"   
+        />
+    </LinearLayout>  
+
+</RelativeLayout>

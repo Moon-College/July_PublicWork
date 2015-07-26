@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 第五节课第一个作业的主界面里显示的listview的每个item的布局格式 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_ll"
+    android:layout_width="fill_parent"
+    android:layout_height="80dp"
+    android:orientation="horizontal" >
+
+    <!-- android:scaleType值的意义区别：FIT_CENTER / fitCenter  把图片按比例扩大/缩小到View的宽度，居中显示 -->
+
+    <ImageView
+        android:id="@+id/touxiang_iv"
+        android:contentDescription="@string/touxiang"
+        android:layout_height="80dp"
+        android:scaleType="fitCenter"
+        android:layout_width="80dp" >
+    </ImageView>
+
+    <LinearLayout
+        android:id="@+id/stuinfo_ll"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="left"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/xingming_tv"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:gravity="bottom"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:id="@+id/xinxi_ll"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/xingbie_tv"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/yanzhi_tv"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/aihao_tv"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_weight="1"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
