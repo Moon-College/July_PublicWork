@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"         
+        > 
+        <TextView
+            android:id="@+id/textView1" 
+            android:layout_height="wrap_content"
+            android:background="#f00"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:text="第一行" />
+        
+        <TextView
+            android:id="@+id/textView1" 
+            android:layout_height="wrap_content"
+            android:background="#0f0"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:text="第一行" />
+        
+        <TextView
+            android:id="@+id/textView1" 
+            android:layout_height="wrap_content"
+            android:background="#ff0"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:text="第一行" />
+        
+    </TableRow>
+<TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"         
+        > 
+        <TextView
+            android:id="@+id/textView1" 
+            android:layout_height="wrap_content"
+            android:background="#f00"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:text="第2行" />
+        
+        <TextView
+            android:id="@+id/textView1" 
+            android:layout_height="wrap_content"
+            android:background="#0f0"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:text="第2行" />
+        
+        <TextView
+            android:id="@+id/textView1" 
+            android:layout_height="wrap_content"
+            android:background="#ff0"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:text="第2行" />
+        
+    </TableRow>
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"         
+        > 
+        <TextView
+            android:id="@+id/textView1" 
+            android:layout_height="wrap_content"
+            android:background="#f00"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:text="第3行" />
+        
+        <TextView
+            android:id="@+id/textView1" 
+            android:layout_height="wrap_content"
+            android:background="#0f0"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:text="第3行" />
+        
+        <TextView
+            android:id="@+id/textView1" 
+            android:layout_height="wrap_content"
+            android:background="#ff0"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:text="第3行" />
+        
+    </TableRow>
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="GetTable"
+        android:text="Tablelayout代码实现" />
+
+</TableLayout>
