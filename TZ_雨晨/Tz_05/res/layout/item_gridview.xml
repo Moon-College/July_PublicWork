@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#f9f9f9"
+    android:padding="10dp" >
+
+    <ImageView
+        android:id="@+id/iv_img"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/cai" />
+
+    <TextView
+        android:id="@+id/tv_introduction"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_below="@id/iv_img"
+        android:singleLine="true"
+        android:text="这个菜真的很不错"
+        android:textSize="16sp" />
+
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_below="@id/tv_introduction"
+        android:src="@drawable/face1" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/iv_icon"
+        android:layout_below="@id/tv_introduction"
+        android:layout_toRightOf="@id/iv_icon"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"
+        android:text="张三丰"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/tv_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/tv_introduction"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        android:background="#629700"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="@android:color/white"
+        android:text="@string/dish_num"
+        android:textSize="14sp" />
+
+</RelativeLayout>
