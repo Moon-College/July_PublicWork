@@ -69,9 +69,9 @@ public class MainActivity extends AppCompatActivity {
         explorerItemList.clear();
         File file=new File(path);
         File[] files = file.listFiles();
-        if (backitem!=null){
+        if (backitem!=null &&!path.equals(SDroot)){
             backitem.parentpath=file.getParentFile().getAbsolutePath();
-           explorerItemList.add(backitem);
+            explorerItemList.add(backitem);
         }
         for (File fileitem :files) {
 
