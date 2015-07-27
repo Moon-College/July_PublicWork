@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TzClass8_HomeWork</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="enterUsername">请输入用户名</string>
+    <string name="enterPassword">请输入密码</string>
+    <string name="pwdForSure">请输入确认密码</string>
+    <string name="reg">注册</string>
+    <string name="cancel">取消</string>
+    <string name="title_activity_dialog">DialogActivity</string>
+
+</resources>
