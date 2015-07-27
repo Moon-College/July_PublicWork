@@ -62,8 +62,6 @@ public class MainActivity extends Activity {
      * @param isFirst 是否是第一次加载，第一次加载需要new adapter，不是的话调用notifydatasetchanged
      */
     private void showFiles(String path, boolean isFirst) {
-        //清空列表，防止重复添加
-
         File file = new File(path);
         Item item;
 
@@ -73,6 +71,7 @@ public class MainActivity extends Activity {
 
             if(files != null) {
                 Log.i("MainActivity", "files not null");
+				//清空列表，防止重复添加
                 itemList.clear();
                 if(file.getParentFile() != null) {
                     Item back = new Item(file.getParentFile().getAbsolutePath(), true, false, "返回");
