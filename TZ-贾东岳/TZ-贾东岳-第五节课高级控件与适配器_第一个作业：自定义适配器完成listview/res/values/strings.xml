@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">05_01_listView同学信息</string>
+    <string name="action_settings">setting</string>
+    <string name="touxiang">头像</string>
+    <string name="lil_2_tv_t">第2列</string>
+    <string name="lil_3_tv_t">第3列</string>
+    </resources>
