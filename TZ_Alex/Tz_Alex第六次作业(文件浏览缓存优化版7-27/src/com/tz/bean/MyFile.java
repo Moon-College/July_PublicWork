@@ -3,34 +3,32 @@ package com.tz.bean;
 import android.graphics.Bitmap;
 
 public class MyFile {
-	private String info;
-	private Bitmap icon;
+	private String name;
+	private Bitmap bitmap;
 	private String path;
 	private boolean isPhoto;
 	
 	public MyFile() {
 		super();
 	}
-	
-	public MyFile(String info, Bitmap icon, String path, boolean isPhoto) {
+	public MyFile(String name, Bitmap bitmap, String path, boolean isPhoto) {
 		super();
-		this.info = info;
-		this.icon = icon;
+		this.name = name;
+		this.bitmap = bitmap;
 		this.path = path;
 		this.isPhoto = isPhoto;
 	}
-	public String getInfo() {
-		return info;
+	public String getName() {
+		return name;
 	}
-	public void setInfo(String info) {
-		this.info = info;
+	public void setName(String name) {
+		this.name = name;
 	}
-
-	public Bitmap getIcon() {
-		return icon;
+	public Bitmap getBitmap() {
+		return bitmap;
 	}
-	public void setIcon(Bitmap icon) {
-		this.icon = icon;
+	public void setBitmap(Bitmap bitmap) {
+		this.bitmap = bitmap;
 	}
 	public String getPath() {
 		return path;
@@ -44,5 +42,4 @@ public class MyFile {
 	public void setPhoto(boolean isPhoto) {
 		this.isPhoto = isPhoto;
 	}
-	
 }

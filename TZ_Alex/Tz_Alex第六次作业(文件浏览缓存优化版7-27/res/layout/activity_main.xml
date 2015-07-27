@@ -4,7 +4,9 @@
     android:layout_height="match_parent"
     tools:context="com.tz.MainActivity" >
 	<ListView 
-	    android:id="@+id/lv_List"
+	    android:id="@+id/lv_show"
 	    android:layout_width="match_parent"
 	    android:layout_height="match_parent"/>
+	    
+
 </RelativeLayout>
