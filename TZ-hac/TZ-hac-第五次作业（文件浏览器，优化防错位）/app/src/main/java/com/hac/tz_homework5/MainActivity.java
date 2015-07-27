@@ -3,6 +3,7 @@ package com.hac.tz_homework5;
 import android.app.Activity;
 import android.os.Environment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -62,7 +63,7 @@ public class MainActivity extends Activity {
      */
     private void showFiles(String path, boolean isFirst) {
         //清空列表，防止重复添加
-        itemList.clear();
+
         File file = new File(path);
         Item item;
 
@@ -70,48 +71,53 @@ public class MainActivity extends Activity {
         if(file != null) {
             File []files = file.listFiles();
 
-            if(file.getParentFile() != null) {
-                Item back = new Item(file.getParentFile().getAbsolutePath(), true, false, "返回");
-                back.setIsDir(true);
-                itemList.add(back);
-            }
-
-            //遍历该路径下的所有内容（文件、文件夹、图片）
-            for(int i=0; i<files.length; i++) {
-                item = new Item();
-                item.setName(files[i].getName());
-                item.setDir(files[i].getAbsolutePath());
-
-                //如果为文件夹
-                if(files[i].isDirectory()) {
-                    item.setIsDir(true);
-                    item.setIsFile(false);
-                    item.setIsPic(false);
+            if(files != null) {
+                Log.i("MainActivity", "files not null");
+                itemList.clear();
+                if(file.getParentFile() != null) {
+                    Item back = new Item(file.getParentFile().getAbsolutePath(), true, false, "返回");
+                    back.setIsDir(true);
+                    itemList.add(back);
                 }
-                else {
-                    item.setIsDir(false);
-                    //如果为图片
-                    if(files[i].getName().toLowerCase().endsWith("jpg") || (files[i].getName().toLowerCase().endsWith("png"))) {
+
+                //遍历该路径下的所有内容（文件、文件夹、图片）
+                for(int i=0; i<files.length; i++) {
+                    item = new Item();
+                    item.setName(files[i].getName());
+                    item.setDir(files[i].getAbsolutePath());
+
+                    //如果为文件夹
+                    if(files[i].isDirectory()) {
+                        item.setIsDir(true);
                         item.setIsFile(false);
-                        item.setIsPic(true);
+                        item.setIsPic(false);
                     }
-                    //如果为文件
-                    else
-                        item.setIsFile(true);
+                    else {
+                        item.setIsDir(false);
+                        //如果为图片
+                        if(files[i].getName().toLowerCase().endsWith("jpg") || (files[i].getName().toLowerCase().endsWith("png"))) {
+                            item.setIsFile(false);
+                            item.setIsPic(true);
+                        }
+                        //如果为文件
+                        else {
+                            item.setIsFile(true);
+                            item.setIsPic(false);
+                        }
+                    }
+                    //添加到list中
+                    itemList.add(item);
                 }
-                //添加到list中
-                itemList.add(item);
-            }
 
-            //设置适配器
-            if(isFirst) {
-                adapter = new MyAdapter(this, itemList);
-                lv_file.setAdapter(adapter);
+                //设置适配器
+                if(isFirst) {
+                    adapter = new MyAdapter(this, itemList);
+                    lv_file.setAdapter(adapter);
+                }
+                else
+                    adapter.notifyDataSetChanged();
             }
-            else
-                adapter.notifyDataSetChanged();
         }
-
     }
 
     /**
