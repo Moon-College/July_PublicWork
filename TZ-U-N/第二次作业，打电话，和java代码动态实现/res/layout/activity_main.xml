@@ -1,0 +1,57 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   android:orientation="horizontal"
+    >
+<!--    android:orientation="vertical" 水平设置
+	    android:layout_width="wrap_content" 宽度设置。可设置父容器，（和包裹内容 自适应，里面内容有多大，自适应就多大，）
+        android:layout_height="wrap_content"长度设置，可设置父容器，（和包裹内容 自适应，里面内容有多大，自适应就多大，）
+         android:layout_width="fill_parent"宽度设置。例如，这个一个按钮，宽度是父容器，如果控件是垂直的，将覆盖整个屏幕，是水平的将覆盖屏幕的宽度
+        android:layout_weight="1" 比重 ，就是 比例的意思，如果有三个控件，都在水平上，三个比重都是1，表示各占三分之一的比例，
+        	使用比重要要领，如果你是宽比重，就把宽设为0dp，高比重就把高设为0dp或者dip都一样的意思
+      
+        android:text="@string/hello_world"  文本设置 
+        <EditText/> 编辑框控件，
+        <Button/> 按钮 控件 
+       android:paddingLeft="150dp" 外边距设置 在文本框设置里面的左边距，里面的文字就会向左边靠拢，靠拢的程度取决于你给的多dp值
+         android:layout_marginLeft="150dp"内边距设置
+       Alt+/ 提示键，
+       Alt+Ctrl+方向键上下左右，复制一份
+       
+               长宽都面积  	 dip缩写(dp)绝对得单位，跟像素无关
+              	 px 用于 像素
+               	 sp用于字体的大小
+       
+    -->
+ 
+ 
+    <EditText
+        android:id="@+id/et_son"
+        android:layout_width="100dip"
+        android:layout_weight="1"
+        android:layout_height="wrap_content"
+      
+        />
+	<Button 
+	    android:id="@+id/bt_call"
+	    android:layout_width="wrap_content"
+	    android:layout_weight="1"
+	    android:layout_height="wrap_content"
+	    android:onClick="callphone"
+	    android:text="打电话"
+	    />
+	
+	    
+	    <Button 
+	    android:id="@+id/bt_sms"
+	    android:layout_width="wrap_content"
+	  
+	    android:layout_height="wrap_content"
+	    android:onClick="etSms"
+	    android:text="发短信"
+	    />
+	
+	
+
+</LinearLayout>
