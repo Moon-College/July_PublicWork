@@ -1,13 +1,21 @@
 package com.hacket.filemanager;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.PopupWindow;
+import android.widget.Toast;
 
 import com.hacket.filemanager.adapter.FileManagerAdapter;
 import com.hacket.filemanager.bean.FileInfo;
@@ -16,7 +24,7 @@ import com.hacket.filemanager.utils.FileManagerUtil;
 import java.util.List;
 
 
-public class FileManagerActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+public class FileManagerActivity extends AppCompatActivity implements AdapterView.OnItemClickListener, AdapterView.OnItemLongClickListener {
 
     private ListView mLvFileManager;
     private FileManagerAdapter mFileManagerAdapter;
@@ -39,6 +47,7 @@ public class FileManagerActivity extends AppCompatActivity implements AdapterVie
 
     private void setListeners() {
         mLvFileManager.setOnItemClickListener(this);
+        mLvFileManager.setOnItemLongClickListener(this);
     }
 
     private void initData(String path) {
@@ -94,16 +103,66 @@ public class FileManagerActivity extends AppCompatActivity implements AdapterVie
     }
 
     @Override
-    public void onBackPressed() {
-        if (mFileManagerAdapter != null) {
-            if (isRootDir) {
-                super.onBackPressed();
-            } else {
-                initData(mFileManagerAdapter.getDatas().get(0).getFileurl());
-            }
-        } else {
-            super.onBackPressed();
-        }
+    public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
 
+        removeItem(parent, view, position);
+        return true;
     }
+
+    private void removeItem(AdapterView<?> parent, View view, final int position) {
+
+        PopupWindow popupWindow = new PopupWindow(getApplicationContext());
+        popupWindow.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        View contentView = View.inflate(getApplicationContext(), R.layout.popupwindow_view, null);
+        Button open = (Button) contentView.findViewById(R.id.open);
+        Button delete = (Button) contentView.findViewById(R.id.delete);
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FileInfo isRemove = mFileManagerAdapter.getDatas().remove(position);
+                if (isRemove != null) {
+                    Toast.makeText(getApplicationContext(), "remove:" + mFileManagerAdapter.getDatas().get(position).getFilename(), Toast.LENGTH_SHORT).show();
+                    mFileManagerAdapter.notifyDataSetChanged();
+                }
+            }
+        });
+        open.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "open detail...", Toast.LENGTH_SHORT).show();
+            }
+        });
+        popupWindow.setContentView(contentView);
+        int gravity = Gravity.TOP + Gravity.LEFT;
+        int[] location = new int[2];// location[0]:x,location[1]:y
+        view.getLocationInWindow(location);
+        popupWindow.showAtLocation(parent, gravity, 0, location[1]);
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (mFileManagerAdapter != null && !isRootDir) {
+            initData(mFileManagerAdapter.getDatas().get(0).getFileurl());
+        } else {
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setMessage("are you sure exit!");
+            builder.setIcon(android.R.drawable.arrow_down_float);
+            builder.setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    dialog.dismiss();
+                }
+            });
+            builder.setPositiveButton("ok", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    FileManagerActivity.super.onBackPressed();
+                    dialog.dismiss();
+                }
+            });
+            builder.show();
+        }
+    }
+
+
 }
