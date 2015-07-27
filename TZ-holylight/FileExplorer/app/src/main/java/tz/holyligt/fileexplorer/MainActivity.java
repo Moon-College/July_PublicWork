@@ -133,8 +133,10 @@ public class MainActivity extends AppCompatActivity {
            }
             ExplorerItem item=explorerItemList.get(position);
             if (item.iocnid!=0){
+                viewHolder.fileicon.setTag(0);
                 viewHolder.fileicon.setImageResource(item.iocnid);
                 viewHolder.fileicon.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
+
             }else {
                 ImageLoader.getInstance().placeholder(R.drawable.thumbnail);
                 ImageLoader.getInstance().loadImage(viewHolder.fileicon, item.uri);
