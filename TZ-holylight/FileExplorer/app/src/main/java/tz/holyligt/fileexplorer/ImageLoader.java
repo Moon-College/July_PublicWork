@@ -71,17 +71,22 @@ public class ImageLoader {
         return imageLoader;
     }
 
-    public void loadImage(ImageView imageView,String imgurl){
-         ImageLoadTask task=new ImageLoadTask(imageView);
+    public void loadImage(ImageView imageView,String path ){
 
-        task.execute(imgurl);
+
+             ImageLoadTask task=new ImageLoadTask(imageView,path);
+             task.execute(path);
+
     }
     class ImageLoadTask extends AsyncTask<String,Void,Bitmap>{
 
 
-       private ImageView imageView;
-       public ImageLoadTask(ImageView imageView){
+        private  String path;
+        private ImageView imageView;
+       public ImageLoadTask(ImageView imageView,String path){
            this.imageView=imageView;
+           this.path=path;
+           imageView.setTag(path);
            if (id!=0){
                imageView.setImageResource(id);
            }
@@ -117,10 +122,14 @@ public class ImageLoader {
         @Override
         protected void onPostExecute(Bitmap bitmap) {
             super.onPostExecute(bitmap);
-            if (bitmap!=null) {
+            if (bitmap!=null&&imageView.getTag()!=null&&imageView.getTag().equals(path)) {
+
                 imageView.setImageBitmap(bitmap);
                 imageView.setScaleType(ImageView.ScaleType.CENTER);
             }
         }
     }
+
+
+
 }
