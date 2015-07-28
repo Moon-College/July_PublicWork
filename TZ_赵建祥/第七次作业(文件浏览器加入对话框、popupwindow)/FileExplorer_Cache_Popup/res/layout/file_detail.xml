@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 文件详情自定义弹出窗布局 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical" 
+    >
+
+     <!-- 标题 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" 
+        android:gravity="left">
+
+        <TextView
+            android:id="@+id/tv_detail_title" 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:text="自定义标题"
+            />
+    </LinearLayout>
+    
+    
+    <!-- 左边相对布局，放打开图标、文字说明 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" 
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="文件名：" />
+
+        <TextView
+            android:id="@+id/tv_detail_filename"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FF0000"
+            android:text="" />
+    </LinearLayout>
+    <!-- 文件大小 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="文件大小：" />
+
+        <TextView
+            android:id="@+id/tv_detail_filesize"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FF0000"
+            android:text="" />
+    </LinearLayout>
+    <!-- 当前时间 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="当前时间：" />
+
+        <TextView
+            android:id="@+id/tv_detail_nowtime"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#FF0000"
+            android:text="" />
+    </LinearLayout>
+    
+    <!-- 确定按钮，用于关闭窗口 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" 
+        android:gravity="center"
+        android:layout_marginTop="5dp">
+
+        <Button
+            android:id="@+id/bt_detail_confirm" 
+            android:layout_width="60dp"
+            android:layout_height="40dp"
+            android:text="确定"
+            />
+    </LinearLayout>
+
+</LinearLayout>
