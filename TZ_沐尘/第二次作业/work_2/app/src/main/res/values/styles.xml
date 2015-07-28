@@ -1,0 +1,17 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="android:Theme.Light.NoTitleBar">
+        <!-- Customize your theme here. -->
+    </style>
+    <style name="lineView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1px</item>
+        <item name="android:background">@color/lineGray</item>
+    </style>
+    <style name="relView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:background">#fff</item>
+    </style>
+</resources>
