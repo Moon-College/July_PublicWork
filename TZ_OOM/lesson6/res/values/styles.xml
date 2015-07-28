@@ -1,0 +1,35 @@
+<resources>
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Light">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+    <style name="AppTheme" parent="AppBaseTheme">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+
+     <style name="branch_info_dialog" parent="android:Theme.Dialog">
+         <item name="android:windowFrame">@null</item><!--Dialog的windowFrame框为无 --> 
+        <item name="android:windowIsFloating">true</item><!-- 是否漂现在activity上-->
+        <item name="android:windowIsTranslucent">true</item> <!-- 是否半透明 -->
+        <item name="android:windowNoTitle">true</item><!--除去title-->
+        <item name="android:backgroundDimEnabled">true</item><!-- dim:模糊的 阴影效果 -->
+        <item name="android:windowBackground">@drawable/message_box_bg</item><!--除去背景色-->
+    </style> 
+    <!-- loading dialog  -->
+    <style name="loading_dialog" parent="branch_info_dialog">
+        <item name="android:windowBackground">@android:color/transparent</item><!--除去背景色-->
+        <item name="android:windowIsTranslucent">false</item> <!-- 是否半透明 -->
+        <item name="android:backgroundDimEnabled">false</item><!--模糊-->
+    </style>
+    
+</resources>

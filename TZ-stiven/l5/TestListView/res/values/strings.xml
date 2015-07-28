@@ -1,0 +1,19 @@
+<resources>
+
+    <string name="app_name">TestListView</string>
+	
+    <string name="h1">电影</string>
+    <string name="h2">音乐</string>
+    <string name="h3">电视剧</string>
+    <string name="h4">弹琴</string>
+    <string name="h5">篮球</string>
+    <string name="h6">汽车</string>
+    <string name="h7">骑车</string>
+    <string name="h8">看书</string>
+    <string name="h9">游戏</string>
+    <string name="h10">旅行</string>
+    <string name="h11">打牌</string>
+    <string name="h12">睡觉</string>
+    <string name="h13">乒乓球</string>
+    
+</resources>
