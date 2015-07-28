@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <!-- 左边相对布局，放打开图标、文字说明 -->
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp" >
+
+        <ImageView
+            android:id="@+id/iv_open"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@drawable/open" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_open"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:text="打开"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp" />
+    </RelativeLayout>
+
+    <!-- 中间相对布局，放删除图标、文字说明 -->
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" >
+
+        <ImageView
+            android:id="@+id/iv_delete"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@drawable/delete" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_delete"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:text="删除"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp" />
+    </RelativeLayout>
+
+    <!-- 右边相对布局，放详情图标、文字说明 -->
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="15dp" >
+
+        <ImageView
+            android:id="@+id/iv_detail"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:background="@drawable/detail" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_detail"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="5dp"
+            android:text="详情"
+            android:textColor="#FFFFFF"
+            android:textSize="10sp" />
+    </RelativeLayout>
+
+</RelativeLayout>
