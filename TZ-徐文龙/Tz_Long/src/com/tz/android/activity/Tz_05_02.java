@@ -47,7 +47,6 @@ public class Tz_05_02 extends Activity {
 		gridView.setNumColumns(2);
 		gridView.setHorizontalSpacing(10);
 		gridView.setVerticalSpacing(10);
-
 		MyAdapter adapter=new MyAdapter(lists, context,itemWidth);
 		gridView.setAdapter(adapter);
 		initList();
