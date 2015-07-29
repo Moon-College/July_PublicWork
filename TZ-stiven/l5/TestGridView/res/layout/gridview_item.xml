@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content" 
+    android:gravity="center"
+    android:layout_gravity="center"
+    android:background="#F9F9F9">
+
+    <ImageView
+        android:id="@+id/iv_foodimage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/weibaobei_8" />
+    
+    <TextView 
+        android:id="@+id/tv_numstring"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#629700"
+        android:text="道菜"
+        android:textColor="#fff"
+        android:layout_alignBottom="@id/iv_foodimage"
+        android:layout_margin="10dip"
+        android:padding="3dip"
+        android:gravity="center"
+        />
+    
+    <TextView 
+        android:id="@+id/tv_describe"
+        android:layout_margin="10dip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="描述"
+        android:textColor="#000"
+        android:layout_below="@id/iv_foodimage"
+        android:gravity="center"
+        />
+    
+    <ImageView 
+        android:id="@+id/iv_icon"
+        android:layout_width="40dip"
+        android:layout_height="40dip"
+        android:src="@drawable/weibaobei_1"
+        android:layout_below="@id/tv_describe"
+        android:padding="5dip"
+        />
+    
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="fill_parent"
+        android:layout_height="40dip"
+        android:layout_alignBottom="@id/iv_icon"
+        android:layout_alignRight="@+id/iv_foodimage"
+        android:layout_toRightOf="@id/iv_icon"
+        android:gravity="center_vertical"
+        android:text="名字"
+        android:textColor="#A4A4A4" />
+
+</RelativeLayout>

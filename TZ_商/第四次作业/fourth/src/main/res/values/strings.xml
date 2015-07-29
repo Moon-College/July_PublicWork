@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">fourth</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_grid_view">GridViewActivity</string>
+    <string name="title_activity_grid">GridActivity</string>
+    <string name="title_activity_list_view">ListViewActivity</string>
+    <string name="title_activity_caipu">CaipuActivity</string>
+</resources>
