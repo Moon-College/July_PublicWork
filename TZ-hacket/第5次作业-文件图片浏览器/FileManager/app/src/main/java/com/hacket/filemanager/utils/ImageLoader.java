@@ -3,7 +3,6 @@ package com.hacket.filemanager.utils;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.text.TextUtils;
-import android.util.Log;
 import android.util.LruCache;
 import android.widget.ImageView;
 
@@ -33,10 +32,10 @@ public class ImageLoader {
 
     private void init() {
         long maxMemory = Runtime.getRuntime().maxMemory() / 4;
-        mLruCache = new LruCache<String, Bitmap>((int) maxMemory) { // 取单个应用内存最大值的1/4
+        mLruCache = new LruCache<String, Bitmap>((int) maxMemory) {
             @Override
             protected int sizeOf(String key, Bitmap value) {
-                return value.getRowBytes() * value.getHeight(); // 图片的大小
+                return value.getRowBytes() * value.getHeight();
             }
         };
 
@@ -51,7 +50,7 @@ public class ImageLoader {
             return null;
         }
 
-        Bitmap bm = FileManagerUtil.sacleBitmap(path, mWidthPixels, mHeightPixels);
+        Bitmap bm = FileManagerUtil.sacleBitmap(path, FileManagerUtil.dip2px(mContext, 60), FileManagerUtil.dip2px(mContext, 60));
         mLruCache.put(path, bm);
 
         return bm;
@@ -66,7 +65,6 @@ public class ImageLoader {
     }
 
     public Bitmap getBitmapFromMemory(String path) {
-        Log.e("tag", "从cache中取：" + path);
         return mLruCache.get(path);
     }
 
