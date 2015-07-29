@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="140dp"
+    android:layout_height="160dp"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/btn_delete"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+         android:layout_gravity="center_horizontal"
+        android:text="delete"
+        android:textSize="15sp"        
+        android:background="#00ffffff" 
+         />
+    
+     <Button 
+       android:id="@+id/btn_detail"
+       android:layout_width="match_parent"
+       android:layout_height="70dp"
+       android:layout_gravity="center_horizontal|bottom"
+       android:text="detail"
+       android:textSize="15sp"
+       android:background="#00ffffff" 
+       
+        
+        />
+   
+
+</LinearLayout>
