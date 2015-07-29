@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">LogcatDemo</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="btn_logcat_collect">logcat信息收集</string>
+    <string name="author">作者：潭州-小D-台州</string>
+
+</resources>
