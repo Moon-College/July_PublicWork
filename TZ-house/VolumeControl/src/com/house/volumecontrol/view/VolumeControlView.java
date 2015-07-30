@@ -8,6 +8,7 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.media.AudioManager;
 import android.util.AttributeSet;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -74,6 +75,8 @@ public class VolumeControlView extends View {
 
 		grayNum = maxVolume - currentVolume;
 		allHeight = maxVolume * (greenBm.getHeight() + BLOCK);
+		// ±‹√‚Ωπµ„≥ÂÕª
+		setFocusableInTouchMode(true);
 		// Ã·–—÷ÿªÊ
 		invalidate();
 	}
@@ -137,5 +140,15 @@ public class VolumeControlView extends View {
 
 		}
 		return super.onTouchEvent(event);
+	}
+	
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		if (keyCode == KeyEvent.KEYCODE_VOLUME_DOWN) {
+			changeVolume(false);
+		} else if (keyCode == KeyEvent.KEYCODE_VOLUME_UP) {
+			changeVolume(true);
+		}
+		return super.onKeyDown(keyCode, event);
 	}
 }
