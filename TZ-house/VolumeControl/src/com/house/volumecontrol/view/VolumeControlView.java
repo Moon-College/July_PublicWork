@@ -1,6 +1,9 @@
 package com.house.volumecontrol.view;
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -8,6 +11,7 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.media.AudioManager;
 import android.util.AttributeSet;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -39,6 +43,8 @@ public class VolumeControlView extends View {
 	/** 图片的高度 **/
 	private int bitmapHeight;
 	private int allHeight;
+
+	private VolumeBroadcastReceiver receiver;
 
 	public VolumeControlView(Context context) {
 		super(context);
@@ -74,6 +80,8 @@ public class VolumeControlView extends View {
 
 		grayNum = maxVolume - currentVolume;
 		allHeight = maxVolume * (greenBm.getHeight() + BLOCK);
+		// 避免焦点冲突
+		setFocusableInTouchMode(true);
 		// 提醒重绘
 		invalidate();
 	}
@@ -97,8 +105,21 @@ public class VolumeControlView extends View {
 		}
 	}
 
+	@Override
+	protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+		int widthMode = MeasureSpec.getMode(widthMeasureSpec);
+		int heightMode = MeasureSpec.getMode(heightMeasureSpec);
+
+		int widthSize = bitmapWidth;
+		int heightSize = maxVolume * (bitmapHeight + BLOCK) - BLOCK;
+
+		int width = MeasureSpec.makeMeasureSpec(widthSize, widthMode);
+		int height = MeasureSpec.makeMeasureSpec(heightSize, heightMode);
+		super.onMeasure(width, height);
+	}
+
 	/**
-	 * 修改音量，刷新控件 后期使用Service监听，这样如果不点击音量键修改音量时也能同步刷新
+	 * 修改音量，刷新控件
 	 * 
 	 * @param isAdd
 	 *            true:音量加 false:音量减
@@ -129,13 +150,73 @@ public class VolumeControlView extends View {
 			// 如果点击到了图片上而不是点击到了间隔处，则修改音量，刷新界面
 			if (y < (grayNum + 1) * (bitmapHeight + BLOCK) - BLOCK) {
 				invalidate();
+				currentVolume = maxVolume - grayNum;
 				// 调系统音量
-				manager.setStreamVolume(AudioManager.STREAM_RING, maxVolume
-						- grayNum, AudioManager.FLAG_PLAY_SOUND
-						| AudioManager.FLAG_SHOW_UI);
+				manager.setStreamVolume(AudioManager.STREAM_RING,
+						currentVolume, AudioManager.FLAG_PLAY_SOUND
+								| AudioManager.FLAG_SHOW_UI);
 			}
 
 		}
 		return super.onTouchEvent(event);
+	}
+
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) {
+		if (keyCode == KeyEvent.KEYCODE_VOLUME_DOWN) {
+			changeVolume(false);
+		} else if (keyCode == KeyEvent.KEYCODE_VOLUME_UP) {
+			changeVolume(true);
+		}
+		return super.onKeyDown(keyCode, event);
+	}
+
+	/**
+	 * 音量改变时刷新控件
+	 */
+	private class VolumeBroadcastReceiver extends BroadcastReceiver {
+
+		@Override
+		public void onReceive(Context context, Intent intent) {
+			if (intent.getAction()
+					.equals("android.media.VOLUME_CHANGED_ACTION")) {
+				int currentVolume = manager
+						.getStreamVolume(AudioManager.STREAM_RING); // 当前的媒体音量
+				grayNum = maxVolume - currentVolume;
+				invalidate();
+			}
+		}
+	}
+
+	/**
+	 * 注册广播
+	 */
+	private void registerReceiver() {
+		receiver = new VolumeBroadcastReceiver();
+		IntentFilter filter = new IntentFilter();
+		filter.addAction("android:media.VOLUME_CHANGED_ACTION");
+		context.registerReceiver(receiver, filter);
+	}
+
+	/**
+	 * 注销广播
+	 */
+	private void unRegisterReceiver() {
+		if (receiver != null) {
+			context.unregisterReceiver(receiver);
+			receiver = null;
+		}
+	}
+
+	@Override
+	protected void onDetachedFromWindow() {
+		super.onDetachedFromWindow();
+		unRegisterReceiver();
+	}
+
+	@Override
+	protected void onAttachedToWindow() {
+		super.onAttachedToWindow();
+		registerReceiver();
 	}
 }
