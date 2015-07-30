@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="VolumeView">
+        <attr name="x" format="dimension" />
+        <attr name="y" format="dimension" />
+    </declare-styleable>
+
+</resources>
