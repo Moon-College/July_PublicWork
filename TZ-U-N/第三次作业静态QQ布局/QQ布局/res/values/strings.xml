@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">QQ布局</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="eds1">自拍</string>
+    <string name="dongtai">好友动态</string>
+    <string name="fujin">附近</string>
+    <string name="xingqu">兴趣部落</string>
+    <string name="yingyongbao">应用宝</string>
+    <string name="gouwu">购物</string>
+    <string name="qun">附近的群</string>
+    <string name="tongcheng">同城服务</string>
+    <string name="wanle">吃喝玩乐</string>
+
+</resources>

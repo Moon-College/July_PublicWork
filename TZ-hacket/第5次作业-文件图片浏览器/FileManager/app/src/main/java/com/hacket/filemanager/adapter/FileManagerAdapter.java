@@ -27,7 +27,7 @@ public class FileManagerAdapter extends DefaultAdapter<FileInfo> {
             holder = new FileManagerViewHolder(mContext);
         } else {
             if (holder instanceof BaseViewHolder) {
-                holder = (BaseViewHolder<FileInfo>) convertView.getTagwrap_content();
+                holder = (BaseViewHolder<FileInfo>) convertView.getTag();
             } else {
                 holder = new FileManagerViewHolder(mContext);
             }
