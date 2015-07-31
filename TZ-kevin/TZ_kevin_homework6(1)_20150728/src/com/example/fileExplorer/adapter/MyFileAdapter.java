@@ -3,6 +3,7 @@ package com.example.fileExplorer.adapter;
 import java.util.List;
 
 import android.R.integer;
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -19,24 +20,34 @@ import android.widget.TextView;
 
 import com.example.fileExplorer.R;
 import com.example.fileExplorer.bean.MyFile;
+import com.example.fileExplorer.utils.ImageLoaderUtils;
+import com.example.fileExplorer.utils.ScreenUtils;
 
 /**
  * @author kevin.li
  * @version 1.0.0
  * @create 20150727
  * @function SD卡文件浏览適配器
+ * 
+ * 
+ * @author kevin.li
+ * @version 1.0.1
+ * @create 20150728
+ * @function 增加了图片的压缩 和 Lru缓存处理
  */
 public class MyFileAdapter extends BaseAdapter {
 
 	private List<MyFile> mData;
 	private LayoutInflater mInflater;
 	private ImageAsyncTask mTask;
+	private Activity act;
 
-	public MyFileAdapter(Context mContext, List<MyFile> mData) {
+	public MyFileAdapter(Activity act, List<MyFile> mData) {
 
 		// TODO Auto-generated constructor stub
+		this.act = act;
 		this.mData = mData;
-		mInflater = LayoutInflater.from(mContext);
+		mInflater = LayoutInflater.from(act);
 		// (LayoutInflater)
 		// context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);//和上面那个一会事
 
@@ -85,6 +96,7 @@ public class MyFileAdapter extends BaseAdapter {
 		} else {
 			holder.fileIcon.setImageBitmap(myFile.getFileIcon());
 		}
+
 		holder.fileName.setText(myFile.getFileName());
 		return convertView;
 
@@ -109,8 +121,19 @@ public class MyFileAdapter extends BaseAdapter {
 			int position = Integer.parseInt(params[1]);
 
 			try {
-				Bitmap bitmap = BitmapFactory.decodeFile(path);
-				mData.get(position).setFileIcon(bitmap);
+				// Bitmap bitmap = BitmapFactory.decodeFile(path);
+				// 得到屏幕宽度的1/4
+				int screenWidh = ScreenUtils.getSrennSize(act).get(
+						ScreenUtils.WIDTH);
+				Bitmap bitmap = ImageLoaderUtils.decodeBitmapFromResoure(path,
+						screenWidh / 6);
+				// 使用Lru 算法 将其缓存
+//				ImageLoaderUtils.getInstance().addBitmapToMemoryCache(path,
+//						bitmap);
+//				Bitmap mBitmap = ImageLoaderUtils.getInstance()
+//						.getBitmapFromMemoryCache(path);
+//				mData.get(position).setFileIcon(mBitmap);
+				 mData.get(position).setFileIcon(bitmap);
 			} catch (Exception e) {
 				// TODO: handle exception
 			}
