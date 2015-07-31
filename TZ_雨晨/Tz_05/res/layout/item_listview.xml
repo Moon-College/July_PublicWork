@@ -1,0 +1,44 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    tools:context="com.tz.ListViewActivity" >
+
+    <ImageView
+        android:id="@+id/it_iv_icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginRight="15dp"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@+id/it_tv_nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/it_iv_icon"/>
+
+    <TextView
+        android:id="@+id/it_tv_gender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/it_iv_icon"/>
+
+    <TextView
+        android:id="@+id/it_tv_interest"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/it_tv_gender"
+        android:layout_toRightOf="@+id/it_iv_icon" />
+
+    <TextView
+        android:id="@+id/it_tv_yan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/it_tv_interest"
+        android:layout_marginLeft="30dp"
+        android:layout_toRightOf="@+id/it_tv_gender"/>
+
+</RelativeLayout>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="DefaultLocale">
+        <ignore path="src/com/house/fileexplorer/ui/MainActivity.java" />
+    </issue>
+    <issue id="InflateParams" severity="ignore" />
+    <issue id="NewApi" severity="ignore" />
+    <issue id="RtlHardcoded">
+        <ignore path="src/com/house/fileexplorer/view/FilePopupWindow.java" />
+    </issue>
+    <issue id="ShowToast" severity="ignore" />
+</lint>

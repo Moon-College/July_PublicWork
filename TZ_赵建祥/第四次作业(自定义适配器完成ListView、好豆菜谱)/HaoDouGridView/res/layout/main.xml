@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#FFFFFF" >
+
+    <!-- 上面标题 -->
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/tv_title"
+        android:textColor="#000000"
+        android:textSize="30sp" />
+
+    <!-- 菜谱内容,在标题下方，在返回菜单上方 -->
+
+    <GridView
+        android:id="@+id/gv_menucontent"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/rl_back"
+        android:layout_below="@id/tv_title"
+        android:background="#F0F0F0"
+        android:numColumns="2" >
+    </GridView>
+
+    <!-- 下面返回菜单 -->
+
+    <RelativeLayout
+        android:id="@+id/rl_back"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" >
+
+        <!-- 左边一个返回 -->
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/back" />
+        <!-- 右边一个首页 -->
+
+        <ImageView
+            android:id="@+id/iv_home"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/home" />
+    </RelativeLayout>
+
+</RelativeLayout>

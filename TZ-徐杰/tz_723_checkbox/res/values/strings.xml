@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">tz_723_checkbox</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="tv_name">姓名：</string>
+    <string name="tv_passward">输入密码：</string>
+    <string name="tv_repassward">重复密码：</string>
+    <string name="tv_emails">邮箱：</string>
+    <string name="tv_sex">性别：</string>
+    <string name="tv_agree">我同意以上协议。</string>
+    <string name="btn_agree">提交</string>
+
+</resources>

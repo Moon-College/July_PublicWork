@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Tz_04</string>
+    <string name="dish_num">%1$d道菜</string>
+	
+</resources>
