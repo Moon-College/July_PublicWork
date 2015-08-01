@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
@@ -111,9 +112,12 @@ public class FileManagerActivity extends AppCompatActivity implements AdapterVie
 
     private void removeItem(AdapterView<?> parent, View view, final int position) {
 
-        PopupWindow popupWindow = new PopupWindow(getApplicationContext());
-        popupWindow.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         View contentView = View.inflate(getApplicationContext(), R.layout.popupwindow_view, null);
+        int width = ViewGroup.LayoutParams.WRAP_CONTENT;
+        int height = ViewGroup.LayoutParams.WRAP_CONTENT;
+        final PopupWindow popupWindow = new PopupWindow(contentView, width, height, true);
+        popupWindow.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+
         Button open = (Button) contentView.findViewById(R.id.open);
         Button delete = (Button) contentView.findViewById(R.id.delete);
         delete.setOnClickListener(new View.OnClickListener() {
@@ -124,19 +128,21 @@ public class FileManagerActivity extends AppCompatActivity implements AdapterVie
                     Toast.makeText(getApplicationContext(), "remove:" + mFileManagerAdapter.getDatas().get(position).getFilename(), Toast.LENGTH_SHORT).show();
                     mFileManagerAdapter.notifyDataSetChanged();
                 }
+                popupWindow.dismiss();
             }
         });
         open.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(getApplicationContext(), "open detail...", Toast.LENGTH_SHORT).show();
+                popupWindow.dismiss();
             }
         });
         popupWindow.setContentView(contentView);
         int gravity = Gravity.TOP + Gravity.LEFT;
         int[] location = new int[2];// location[0]:x,location[1]:y
         view.getLocationInWindow(location);
-        popupWindow.showAtLocation(parent, gravity, 0, location[1]);
+        popupWindow.showAtLocation(parent, gravity, (int)FileManagerUtil.dip2px(getApplicationContext(),100), location[1]);
     }
 
     @Override

@@ -1,0 +1,62 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center_vertical"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/btn_log"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="15dp"
+        android:text="点击收集Info日志" />
+
+    <EditText
+        android:id="@+id/et_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="号码"
+        android:layout_marginTop="100dp"
+        android:inputType="numberSigned" />
+
+    <EditText
+        android:id="@+id/et_smscontent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="短信内容"
+        android:ems="10" />
+
+    <Button
+        android:id="@+id/btn_dail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="15dp"
+        android:text="直接拨打电话" />
+    
+    <Button
+        android:id="@+id/btn_dail2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginTop="15dp"
+        android:text="编辑号码再拨打电话" />
+
+    <Button
+        android:id="@+id/btn_sendmsg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="直接发送短信" />
+    
+    <Button
+        android:id="@+id/btn_sendmsg2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="先编辑发送短信" />
+
+</LinearLayout>
