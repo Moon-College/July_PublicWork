@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="DGTextView123">
+        <attr name="money"  format="integer" />
+        
+        <attr name="text_size">
+            <enum name="small" value="12" />
+            <enum name="middle" value="30" />
+            <enum name="large" value="50" />
+        </attr>
+        
+    </declare-styleable>
+
+</resources>
