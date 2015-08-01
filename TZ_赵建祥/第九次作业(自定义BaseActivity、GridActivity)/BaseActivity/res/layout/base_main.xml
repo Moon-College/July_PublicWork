@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_base"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <!-- 自带标题的activity -->
+    <!-- 标题为水平线性布局，左边返回上一级，右边退边，中间标题 -->
+
+    <LinearLayout
+        android:id="@+id/ll_title"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/top_bg"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/bt_back"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:background="@drawable/back_f" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="标题"
+            android:textColor="#FFFFFF" />
+
+        <!-- 给个weight = 0 让button先放 -->
+
+        <Button
+            android:id="@+id/bt_more"
+            android:layout_width="wrap_content"
+            android:layout_height="45dp"
+            android:background="@drawable/more_f" />
+    </LinearLayout>
+
+</LinearLayout>
