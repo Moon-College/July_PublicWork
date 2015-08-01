@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="200dip"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dip"
+    android:background="@drawable/dialpg_shape">
+    
+    <TextView 
+        android:padding="10dip"
+        android:gravity="center_vertical"
+        android:layout_width="wrap_content"
+    	android:layout_height="wrap_content"
+    	android:text="确定删除？"
+    	android:textColor="#f00"
+    	android:textSize="24sp"
+        />
+    
+    <View 
+        android:layout_width="fill_parent"
+    	android:layout_height="1dip"
+    	android:background="#000"
+        />
+    
+    <TextView 
+        android:id="@+id/tv_dialog_name"
+        android:padding="10dip"
+        android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:textSize="20sp"
+    	android:gravity="center"
+        />
+    
+    <View 
+        android:layout_width="fill_parent"
+    	android:layout_height="1dip"
+    	android:background="#000"
+        />
+    
+    <LinearLayout 
+        android:layout_width="fill_parent"
+    	android:layout_height="wrap_content"
+    	android:orientation="horizontal"
+        >
+        
+        <TextView 
+            android:padding="10dip"
+            android:id="@+id/tv_dialog_ok"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="确  定"
+            android:textColor="#000"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:clickable="true"
+            />
+        
+        <View 
+        android:layout_height="fill_parent"
+    	android:layout_width="1dip"
+    	android:background="#000"
+        />
+        
+        <TextView 
+            android:padding="10dip"
+            android:id="@+id/tv_dialog_cancel"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="取  消"
+            android:textColor="#000"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:clickable="true"
+            />
+        
+    </LinearLayout>
+
+</LinearLayout>

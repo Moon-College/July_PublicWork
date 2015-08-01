@@ -1,0 +1,339 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EEE"
+    tools:context=".MainActivity" >
+
+    <RelativeLayout 
+         android:id="@+id/rt"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="#0099ff"
+        >
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:layout_centerVertical="true"
+            android:paddingBottom="5sp"
+            android:paddingTop="5sp"
+            android:text="@string/dongtai"
+            android:textSize="20sp"
+            />
+        <TextView 
+       
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+         	android:layout_alignParentRight="true"
+            android:paddingBottom="5sp"
+            android:paddingTop="5sp"
+            android:text="更多"
+            android:textSize="20sp"
+            
+            />
+        
+        
+    </RelativeLayout>
+    
+    <LinearLayout 
+        android:id="@+id/lt_one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rt"    
+      
+        >
+          <EditText            
+            android:layout_width="match_parent"  
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#FFF"
+            android:gravity="center"
+            android:hint="@string/eds1"                            
+            />
+        
+    </LinearLayout>
+      <!-- 好友动态    附近   兴趣部落 -->
+    <LinearLayout 
+        android:id="@+id/lt_tow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+      	android:layout_below="@id/lt_one"
+             
+        >
+          <!-- 好友动态 -->
+       <LinearLayout 
+           android:layout_width="0dp"
+           android:layout_height="match_parent"
+           android:layout_weight="1"
+           android:orientation="vertical"
+           android:gravity="center_horizontal"         
+           >
+           <ImageView 
+               android:layout_width="38dp"
+               android:layout_height="38dp" 
+               android:src="@drawable/fes"
+               />
+           <TextView 
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="@string/dongtai"
+               />
+       </LinearLayout>
+       <!-- 附近 -->
+       <LinearLayout 
+           android:layout_width="0dp"
+           android:layout_height="match_parent"
+           android:layout_weight="1"
+           android:orientation="vertical"
+           android:gravity="center_horizontal"         
+           >
+           <ImageView 
+               android:layout_width="38dp"
+               android:layout_height="38dp" 
+               android:src="@drawable/eqc"
+               />
+           <TextView 
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="@string/fujin"
+               />
+       </LinearLayout>
+       <!-- 兴趣部落 -->
+       <LinearLayout 
+           
+           android:layout_width="0dp"
+           android:layout_height="match_parent"
+           android:layout_weight="1"
+           android:orientation="vertical"
+           android:gravity="center_horizontal"         
+           >
+           <ImageView 
+               android:layout_width="38dp"
+               android:layout_height="38dp" 
+               android:src="@drawable/iei"
+               />
+           <TextView 
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="@string/xingqu"
+               />
+       </LinearLayout>
+        
+    </LinearLayout>
+    <!-- 游戏 购物 应用宝 -->
+    <LinearLayout 
+        android:id="@+id/san"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lt_tow"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical"        
+        >
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"      
+            android:gravity="center_horizontal"     
+            android:orientation="horizontal"            
+            android:padding="3dp"             
+            >
+           <!--     android:layout_marginTop="5dp" 
+            android:layout_marginLeft="5dp"  
+             
+            -->
+            <ImageView 
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/jyx"
+                />
+            <TextView 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="游戏"
+                android:layout_marginLeft="10dp" 
+                         
+                />            
+        </LinearLayout>
+           <!-- 购物 -->
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"      
+            android:gravity="center_horizontal"     
+            android:orientation="horizontal"            
+            android:padding="3dp"             
+            >
+            <ImageView 
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/jze"
+                />
+            <TextView 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical" 
+                android:text="@string/gouwu"
+                android:layout_marginLeft="10dp"  
+                          
+                />            
+        </LinearLayout>
+          <!-- 应用宝 -->
+        
+       <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"      
+            android:gravity="center_horizontal"     
+            android:orientation="horizontal"            
+            android:padding="3dp"             
+            >
+            <ImageView 
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/lcd"
+                />
+            <TextView 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/yingyongbao"
+               android:layout_marginLeft="10dp"               
+                />            
+        </LinearLayout>
+        
+        
+    </LinearLayout>
+    
+     <!-- 附近的群 吃喝玩乐 同城服务 -->
+
+    <LinearLayout 
+      
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        
+        android:layout_below="@id/san"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical"        
+        >
+         <!-- 附近的群 -->
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"      
+            android:gravity="center_horizontal"     
+            android:orientation="horizontal"            
+            android:padding="3dp"             
+            >
+           <!--     android:layout_marginTop="5dp" 
+            android:layout_marginLeft="5dp"  
+             
+            -->
+            <ImageView 
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/fnj"
+                />
+            <TextView 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/qun"
+                android:layout_marginLeft="10dp" 
+                         
+                />            
+        </LinearLayout>
+          <!-- 吃喝玩乐 -->
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"      
+            android:gravity="center_horizontal"     
+            android:orientation="horizontal"            
+            android:padding="3dp"             
+            >
+            <ImageView 
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ewk"
+                />
+            <TextView 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical" 
+                android:text="@string/wanle"
+                android:layout_marginLeft="10dp"  
+                          
+                />            
+        </LinearLayout>
+           <!-- 同城服务 -->
+       <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"      
+            android:gravity="center_horizontal"     
+            android:orientation="horizontal"            
+            android:padding="3dp"             
+            >
+            <ImageView 
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ewe"
+                />
+            <TextView 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/tongcheng"
+               android:layout_marginLeft="10dp"               
+                />            
+        </LinearLayout>
+        
+        
+    </LinearLayout>
+     <!-- 底部导航 -->
+     
+     <LinearLayout 
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_alignParentBottom="true"
+         android:layout_marginTop="90dp"
+         android:orientation="horizontal"
+        
+         
+         
+         
+         >
+          <!-- 消息 -->
+         <ImageView 
+             android:layout_width="wrap_content"
+             android:layout_height="50dp"
+             android:layout_weight="1"
+             android:src="@drawable/skin_tab_icon_conversation_selected" 
+              
+             />
+            <!-- 联系人 -->
+         <ImageView 
+             android:layout_width="wrap_content"
+             android:layout_height="50dp"
+             android:layout_weight="1"
+             android:src="@drawable/skin_tab_icon_contact_selected" 
+              
+             />
+            <!-- 动态 -->
+         
+         <ImageView 
+             android:layout_width="wrap_content"
+             android:layout_height="50dp"
+             android:layout_weight="1"
+             android:src="@drawable/skin_tab_icon_plugin_selected" 
+              
+             />
+         
+     </LinearLayout>
+    
+</RelativeLayout>

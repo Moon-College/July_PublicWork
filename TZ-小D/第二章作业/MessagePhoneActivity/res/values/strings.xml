@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MessagePhoneActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="author">作者：潭州-小D-台州</string>
+    <string name="btn_message_act">ToMSMAct</string>
+    <string name="btn_phone_act">ToPhoneAct</string>
+
+</resources>
