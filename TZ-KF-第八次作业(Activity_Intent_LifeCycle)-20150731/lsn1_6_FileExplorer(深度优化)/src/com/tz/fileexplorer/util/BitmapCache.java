@@ -8,7 +8,6 @@ import android.support.v4.util.LruCache;
 public class BitmapCache {
 	private LruCache<String, Bitmap> lruCache;
 	private static BitmapCache bitmapCache;
-
 	private BitmapCache() {
 
 	}
@@ -27,6 +26,13 @@ public class BitmapCache {
 
 	public void addBitmap(String key, Bitmap bmp) {
 		bitmapCache.lruCache.put(key, bmp);
+	}
+
+	public void removeBitmap(String key) {
+		Bitmap b = bitmapCache.lruCache.remove(key);
+		if (b != null && !b.isRecycled()) {
+			b.recycle();
+		}
 	}
 
 	public Bitmap getBitmap(String key) {

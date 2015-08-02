@@ -1,14 +1,18 @@
 package com.tz.fileexplorer;
 
+import com.tz.fileexplorer.util.BitmapUtil;
+
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.BitmapFactory.Options;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -39,7 +43,7 @@ public class ShowPhotoActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.show_photo_act);
 		iv = (ImageView) findViewById(R.id.iv);
-		String path = getIntent().getStringExtra(EXTRA_PATH);
+		final String path = getIntent().getStringExtra(EXTRA_PATH);
 		if (path != null) {
 			new AsyncTask<String, Void, Bitmap>() {
 
@@ -50,7 +54,7 @@ public class ShowPhotoActivity extends Activity {
 
 				@Override
 				protected Bitmap doInBackground(String... params) {
-					return BitmapFactory.decodeFile(params[0]);
+					return BitmapUtil.shrinkBitmap(path, 1080 * 1920 * 4);
 				}
 
 				@Override
