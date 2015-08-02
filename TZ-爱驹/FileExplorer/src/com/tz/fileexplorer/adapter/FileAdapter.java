@@ -2,9 +2,6 @@ package com.tz.fileexplorer.adapter;
 
 import java.util.List;
 
-import com.tz.fileexplorer.R;
-import com.tz.fileexplorer.bean.MyFile;
-
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -15,6 +12,10 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.tz.fileexplorer.ImageLoader;
+import com.tz.fileexplorer.R;
+import com.tz.fileexplorer.bean.MyFile;
 
 public class FileAdapter extends BaseAdapter {
 
@@ -49,9 +50,10 @@ public class FileAdapter extends BaseAdapter {
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		holder = new ViewHolder();
+		
 		MyFile mFile = list.get(position);
 		if (convertView == null) {
+			holder = new ViewHolder();
 			convertView = inflater.inflate(R.layout.listview_item, null);
 			convertView.setTag(holder);
 			holder.tv = (TextView) convertView.findViewById(R.id.tv_name);
@@ -60,6 +62,10 @@ public class FileAdapter extends BaseAdapter {
 			holder = (ViewHolder) convertView.getTag();
 		}
 		holder.tv.setText(mFile.getName());
+		if(mFile.getIcon()==null){
+			LoadFileTask task = new LoadFileTask();
+			task.execute(mFile.getPath(),String.valueOf(position));
+		}
 		holder.iv.setImageBitmap(mFile.getIcon());
 		return convertView;
 	}
@@ -76,7 +82,8 @@ public class FileAdapter extends BaseAdapter {
 			String path = params[0];
 			String iconPosition = params[1];
 			try {
-				Bitmap icon = BitmapFactory.decodeFile(path);
+//				Bitmap icon = BitmapFactory.decodeResource(context.getResources(), R.drawable.file);
+				Bitmap icon = ImageLoader.getInstance().loadImage(path, 20);
 				list.get(Integer.parseInt(iconPosition)).setIcon(icon);
 			} catch (Exception e) {
 				e.printStackTrace();
