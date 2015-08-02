@@ -78,15 +78,12 @@ public class MyFileAdapter extends BaseAdapter {
 
 		}
 
-		if (!myFile.isPicture()) {// 如果不是图片
-			holder.fileIcon.setImageBitmap(myFile.getFileIcon());
-
-		} else { // 如果是图片 且路径不是空
+		if (null == myFile.getFileIcon()) {
 			String path = myFile.getFilePath();
-			if (!TextUtils.isEmpty(path)) {
-				mTask = new ImageAsyncTask();
-				mTask.execute(path, position + "");
-			}
+			mTask = new ImageAsyncTask();
+			mTask.execute(path, position + "");
+		} else {
+			holder.fileIcon.setImageBitmap(myFile.getFileIcon());
 		}
 		holder.fileName.setText(myFile.getFileName());
 		return convertView;
