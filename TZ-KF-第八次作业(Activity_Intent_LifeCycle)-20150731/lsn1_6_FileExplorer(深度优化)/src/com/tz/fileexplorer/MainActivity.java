@@ -6,10 +6,13 @@ import java.util.List;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.BitmapFactory;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.os.Environment;
+import android.util.Log;
 import android.view.View;
+import android.widget.AbsListView;
+import android.widget.AbsListView.OnScrollListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
@@ -18,12 +21,12 @@ import android.widget.Toast;
 import com.tz.fileexplorer.adapter.FileAdapter;
 import com.tz.fileexplorer.bean.MyFile;
 import com.tz.fileexplorer.util.BitmapCache;
+import com.tz.fileexplorer.util.LoadFileAsyncTask;
 
 /**
  * 高性能文件浏览器 (侧重浏览图片)
  */
 public class MainActivity extends Activity {
-
 	private ListView lv;
 	private File rootFile;
 	private List<MyFile> list = new ArrayList<MyFile>();
@@ -33,6 +36,7 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		BitmapCache.getInstance().init(12);
 
 		lv = (ListView) findViewById(R.id.lv);
 		// 判断SD卡是否正常挂在
@@ -59,6 +63,44 @@ public class MainActivity extends Activity {
 				}
 			}
 		});
+
+		lv.setOnScrollListener(new OnScrollListener() {
+
+			@Override
+			public void onScrollStateChanged(AbsListView view, int scrollState) {
+				if (OnScrollListener.SCROLL_STATE_IDLE == scrollState) {
+					reloadImage();
+				}
+			}
+
+			@Override
+			public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+
+			}
+		});
+	}
+
+	void reloadImage() {
+		int first = lv.getFirstVisiblePosition();
+		int last = lv.getLastVisiblePosition();
+		Log.d("lkf", String.format("first=%d, last=%d", first, last));
+		BitmapCache cache = BitmapCache.getInstance();
+		for (int i = 0; i < list.size(); i++) {
+			MyFile myFile = list.get(i);
+			if (i >= first && i <= last) {
+				Bitmap b = cache.getBitmap(myFile.getPath());
+				if (b == null || b.isRecycled()) {
+					new LoadFileAsyncTask() {
+						protected void onPostExecute(Bitmap result) {
+							super.onPostExecute(result);
+							adapter.notifyDataSetChanged();
+						}
+					}.execute(myFile.getPath());
+				}
+			} else {
+				cache.removeBitmap(myFile.getPath());
+			}
+		}
 	}
 
 	private void initData(String path) {
@@ -72,18 +114,25 @@ public class MainActivity extends Activity {
 		File[] listFiles = file.listFiles();
 		MyFile file_back = new MyFile(file.getParentFile(), "返回");
 		list.add(file_back);
-		for (File f : listFiles) {
-			MyFile myFile = new MyFile(f, f.getName());
-			list.add(myFile);
+		if (listFiles != null && listFiles.length > 0) {
+			for (File f : listFiles) {
+				MyFile myFile = new MyFile(f, f.getName());
+				list.add(myFile);
+			}
 		}
 		adapter = (FileAdapter) lv.getAdapter();
 		if (adapter == null) {
 			adapter = new FileAdapter(list, this);
-			lv.setAdapter(adapter);
-		} else {
-			adapter.setList(list);
-			adapter.notifyDataSetChanged();
 		}
+		lv.setAdapter(adapter);
+		lv.post(new Runnable() {
+			@Override
+			public void run() {
+				// TODO Auto-generated method stub
+				reloadImage();
+			}
+		});
+
 	}
 
 	@Override

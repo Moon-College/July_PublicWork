@@ -14,24 +14,21 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.tz.fileexplorer.MainActivity;
 import com.tz.fileexplorer.R;
 import com.tz.fileexplorer.bean.MyFile;
 import com.tz.fileexplorer.util.BitmapCache;
 import com.tz.fileexplorer.util.BitmapUtil;
+import com.tz.fileexplorer.util.LoadFileAsyncTask;
 
 public class FileAdapter extends BaseAdapter {
-	public static int MAX_BITMAP_SIZE = 0;
-	BitmapCache bitmapCache;
+
 	private List<MyFile> list = new ArrayList<MyFile>();
 	private Context context;
 
 	public FileAdapter(List<MyFile> list, Context context) {
 		this.context = context;
 		this.list = list;
-		bitmapCache = BitmapCache.getInstance();
-		int maxCacheSize = (int) (Runtime.getRuntime().maxMemory() / 8);
-		bitmapCache.init(maxCacheSize);
-		MAX_BITMAP_SIZE = maxCacheSize / 10;
 	}
 
 	public void setList(List<MyFile> list) {
@@ -76,10 +73,15 @@ public class FileAdapter extends BaseAdapter {
 		} else {
 			if (myFile.isIcon()) {
 				String path = myFile.getPath();
-				Bitmap bmp = bitmapCache.getBitmap(path);
+				Bitmap bmp = BitmapCache.getInstance().getBitmap(path);
 				if (bmp == null || bmp.isRecycled()) {
 					holder.iv.setImageResource(R.drawable.loading);
-					new LoadFileAsyncTask().execute(path);
+//					new LoadFileAsyncTask() {
+//						protected void onPostExecute(Bitmap result) {
+//							super.onPostExecute(result);
+//							notifyDataSetChanged();
+//						}
+//					}.execute(path);
 				} else {
 					holder.iv.setImageBitmap(bmp);
 				}
@@ -89,35 +91,6 @@ public class FileAdapter extends BaseAdapter {
 		}
 
 		return convertView;
-	}
-
-	/*
-	 * AsyncTask< Params,参数 Progress,进度值 Result>加载的结果
-	 */
-	class LoadFileAsyncTask extends AsyncTask<String, Void, Bitmap> {
-		private String path;
-
-		@Override
-		protected Bitmap doInBackground(String... params) {
-			// 后台(线程)里面处理得事情
-			// 加载图片
-			Bitmap bmp = null;
-			try {
-				bmp = BitmapUtil.shrinkBitmap(path = params[0], MAX_BITMAP_SIZE);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			return bmp;
-		}
-
-		@Override
-		protected void onPostExecute(Bitmap result) {
-			if (result != null && !result.isRecycled()) {
-				bitmapCache.addBitmap(path, result);
-			}
-			notifyDataSetChanged();
-		}
-
 	}
 
 	class ViewHolder {
