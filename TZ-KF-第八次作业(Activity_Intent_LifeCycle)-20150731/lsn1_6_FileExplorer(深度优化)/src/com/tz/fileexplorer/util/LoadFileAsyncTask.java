@@ -8,7 +8,8 @@ public class LoadFileAsyncTask extends AsyncTask<String, Void, Bitmap> {
 	private String path;
 
 	public LoadFileAsyncTask() {
-		maxBitmapSize = 4369067;
+		//最大不超过3M一张
+		maxBitmapSize = 1048576 * 3;
 	}
 
 	@Override
