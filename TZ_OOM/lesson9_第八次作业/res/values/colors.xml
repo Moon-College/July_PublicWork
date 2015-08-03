@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 标题栏背景色 -->
+    <color name="title_bar_background_color">#3A5FCD</color>
+    
+    <color name="button_normal_background_color">#3A5FCD</color>
+    <color name="button_pressed_background_color">#436EEE</color>
+</resources>
