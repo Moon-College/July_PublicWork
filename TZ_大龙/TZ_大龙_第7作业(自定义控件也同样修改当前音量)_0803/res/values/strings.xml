@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">lsn7_volume</string>
+    <string name="hello_world">volumeControlerView 自定义音量调节</string>
+    <string name="action_settings">Settings</string>
+
+</resources>
