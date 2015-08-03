@@ -1,0 +1,18 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.house.fileexplorer.bean.ui.MainActivity" >
+	
+    <ListView
+        android:id="@+id/fileListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:cacheColorHint="@color/transparent"
+        android:listSelector="@null"
+        android:dividerHeight="@dimen/line_height"
+        android:divider="@color/black"
+        android:scrollbars="none"
+        />
+
+</RelativeLayout>
