@@ -1,7 +1,8 @@
 package tz.holyligt.fileexplorer;
 
+import android.content.DialogInterface;
 import android.os.Environment;
-import android.support.v4.app.NavUtils;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -12,6 +13,7 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,6 +27,12 @@ public class MainActivity extends AppCompatActivity {
     private String SDroot;
     private List<ExplorerItem> explorerItemList;
     private FileAdapter adapter;
+    private PopupWindow popupWindow;
+    private View root;
+    private View delete;
+    private View xiangqing;
+    private View copy;
+    private View move;
 
 
     @Override
@@ -43,18 +51,18 @@ public class MainActivity extends AppCompatActivity {
         if (SDroot!=null){
             getFilelist(SDroot,null);
         }
-
-       list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        root = findViewById(R.id.root);
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
            @Override
            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                ExplorerItem backitem = explorerItemList.get(position);
-               if (position == 0 &&backitem.isback) {
-                   getFilelist(backitem.parentpath,backitem);
+               if (position == 0 && backitem.isback) {
+                   getFilelist(backitem.parentpath, backitem);
                } else {
 
                    if (backitem.isDir) {
                        backitem.name = "返回";
-                       backitem.isback=true;
+                       backitem.isback = true;
                        getFilelist(backitem.uri, backitem);
                    } else {
 
@@ -63,6 +71,116 @@ public class MainActivity extends AppCompatActivity {
            }
 
        });
+
+        final View popview = View.inflate(MainActivity.this, R.layout.poplayout, null);
+        delete = popview.findViewById(R.id.delete_btn);
+        xiangqing = popview.findViewById(R.id.xiangqi_btn);
+        copy = popview.findViewById(R.id.copy_btn);
+        move = popview.findViewById(R.id.move_btn);
+
+        list.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+          @Override
+          public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+              ExplorerItem backitem = explorerItemList.get(position);
+              if (position == 0 && backitem.isback) {
+                  return false;
+              } else {
+                  int[] location = new int[2];
+                  view.getLocationOnScreen(location);
+                  int x = location[0];
+                  int y = location[1];
+                  if (popupWindow == null) {
+
+                      popupWindow = new PopupWindow(MainActivity.this);
+                      popupWindow.setWidth(300);
+                      popupWindow.setHeight(ViewGroup.LayoutParams.WRAP_CONTENT);
+                      popupWindow.setFocusable(true);
+                      popupWindow.setBackgroundDrawable(getResources().getDrawable(R.drawable.bg));
+                      popupWindow.setContentView(popview);
+                      move.setOnClickListener(new PopWinClickListener(position));
+                      copy.setOnClickListener(new PopWinClickListener(position));
+                      delete.setOnClickListener(new PopWinClickListener(position));
+                      xiangqing.setOnClickListener(new PopWinClickListener(position));
+                      popupWindow.showAsDropDown(view, 200, -100);
+                  } else {
+                      popupWindow.showAsDropDown(view, 200, -100);
+                  }
+                  return true;
+              }
+          }
+      });
+
+    }
+
+    class PopWinClickListener implements View.OnClickListener{
+        private final int postion;
+
+        public  PopWinClickListener(int postion){
+        this.postion=postion;
+
+        }
+        @Override
+        public void onClick(View v) {
+           switch (v.getId()){
+               case R.id.delete_btn:
+                 final ExplorerItem item=  explorerItemList.get(postion);
+                   AlertDialog.Builder builder=new AlertDialog.Builder(MainActivity.this);
+                   builder.setTitle("你确定要删除这个文件"+(item.isDir?"夹么":"么"));
+                   builder.setNegativeButton("确认", new DialogInterface.OnClickListener() {
+                       @Override
+                       public void onClick(DialogInterface dialog, int which) {
+                           if (item.isDir){
+                               delDir(item.uri,item);
+                           }else {
+                               delFile(item.uri,item);
+                           }
+                       }
+                   });
+                   builder.setNeutralButton("取消",null);
+                   builder.show();
+                   break;
+               case R.id.xiangqi_btn:
+                   break;
+               case R.id.copy_btn:
+                   break;
+               case R.id.move_btn:
+                   break;
+           }
+        }
+    }
+
+
+
+    public void delFile(String path, ExplorerItem item){
+        File file=new File(path);
+        if(file.exists()&&file.isFile()){
+            file.delete();
+            explorerItemList.remove(item);
+            popupWindow.dismiss();
+            adapter.notifyDataSetChanged();
+
+        }
+
+    }
+
+    public void delDir(String path, ExplorerItem item){
+        File dir=new File(path);
+        if(dir.exists()){
+            File[] tmp=dir.listFiles();
+            for(int i=0;i<tmp.length;i++){
+                if(tmp[i].isDirectory()){
+                    delDir(path+"/"+tmp[i].getName(), item);
+                }
+                else{
+                    tmp[i].delete();
+                }
+            }
+            dir.delete();
+            explorerItemList.remove(item);
+            popupWindow.dismiss();
+            adapter.notifyDataSetChanged();
+
+        }
     }
 
     private void getFilelist(String path,ExplorerItem backitem) {
