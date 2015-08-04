@@ -1,4 +1,4 @@
-package com.tz.lsn5_adapter;
+package com.tz.lsn5_adapter.object;
 
 
 public class FoodInfo {

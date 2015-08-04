@@ -1,4 +1,4 @@
-package com.tz.lsn5_adapter;
+package com.tz.lsn5_adapter.activity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,9 +15,13 @@ import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.tz.lsn5_adapter.R;
+import com.tz.lsn5_adapter.adapter.MyListAdapter;
+import com.tz.lsn5_adapter.object.UserInfo;
+
 public class ListViewActivity extends Activity {
 	private ListView lv;
-	private MyBaseAdapter adapter;
+	private MyListAdapter adapter;
 	private List<UserInfo> list;
 
 	@Override
@@ -42,7 +46,7 @@ public class ListViewActivity extends Activity {
 //				new String[]{"icon","nickName","sex","faceValue","hobby"}, 
 //				new int[]{R.id.icon,R.id.nickName,R.id.sex,R.id.faceValue,R.id.hobby});
 		
-		adapter = new MyBaseAdapter(this, list);
+		adapter = new MyListAdapter(this, list);
 		
 		lv.setAdapter(adapter);
 		

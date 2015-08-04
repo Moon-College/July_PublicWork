@@ -1,8 +1,7 @@
-package com.tz.lsn5_adapter;
+package com.tz.lsn5_adapter.adapter;
 
 import java.util.List;
 
-import android.R.anim;
 import android.content.Context;
 import android.graphics.Color;
 import android.view.LayoutInflater;
@@ -12,11 +11,14 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class MyBaseAdapter extends BaseAdapter {
+import com.tz.lsn5_adapter.R;
+import com.tz.lsn5_adapter.object.UserInfo;
+
+public class MyListAdapter extends BaseAdapter {
 	private List<UserInfo> list;
 	private LayoutInflater mLayoutInfalter;
 
-	public MyBaseAdapter(Context context,List<UserInfo> list) {
+	public MyListAdapter(Context context,List<UserInfo> list) {
 		super();
 		this.list = list;
 		mLayoutInfalter = LayoutInflater.from(context);

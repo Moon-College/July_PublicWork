@@ -1,5 +1,8 @@
 package com.tz.lsn5_adapter;
 
+import com.tz.lsn5_adapter.activity.GridViewActivity;
+import com.tz.lsn5_adapter.activity.ListViewActivity;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,6 +20,7 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+		
 		initSpinner();
 		initAutoComplete();
 	}

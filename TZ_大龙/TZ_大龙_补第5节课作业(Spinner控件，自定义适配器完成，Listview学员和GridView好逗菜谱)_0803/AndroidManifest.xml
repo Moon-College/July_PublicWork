@@ -22,8 +22,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.tz.lsn5_adapter.ListViewActivity"></activity>
-        <activity android:name="com.tz.lsn5_adapter.GridViewActivity"></activity>
+        <activity android:name="com.tz.lsn5_adapter.activity.ListViewActivity"></activity>
+        <activity android:name="com.tz.lsn5_adapter.activity.GridViewActivity"></activity>
     </application>
 
 </manifest>
