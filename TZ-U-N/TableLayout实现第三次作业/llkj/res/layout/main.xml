@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   
+
+    >
+  
+ <!--    <TableRow 
+      
+        >
+        <TextView
+          android:background="#f00"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="第一行1"           
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#0f0"
+            android:text="第二行2"           
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="第三行3"        
+        	   android:background="#ff0"       
+            />
+        
+    </TableRow>
+    
+    <TableRow 
+      
+        >
+        <TextView
+          android:background="#f00"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="第一行1"           
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#0f0"
+            android:text="第二行2"           
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="第三行3"        
+        	   android:background="#ff0"       
+            />
+        
+    </TableRow>
+    
+    <TableRow 
+      
+        >
+        <TextView
+          android:background="#f00"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="第一行1"           
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#0f0"
+            android:text="第二行2"           
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="第三行3"        
+        	   android:background="#ff0"       
+            />
+        
+    </TableRow>
+     -->
+
+</TableLayout>

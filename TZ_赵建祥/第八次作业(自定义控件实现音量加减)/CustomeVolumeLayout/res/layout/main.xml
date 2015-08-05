@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:volume="http://schemas.android.com/apk/res/com.tz.customevolume"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <!-- 静音，先绿色，点击变红，再点变绿 ，并设置可以获取焦点 -->
+    <com.tz.customevolume.CustomeVolume
+        android:id="@+id/cv_volume"
+        volume:volumeTextColor="#00FF00"
+        volume:volumeText="静音"
+        volume:volumeTextSize="9sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:background="#FFFFFF"
+        android:layout_gravity="center"
+        />
+
+
+</LinearLayout>

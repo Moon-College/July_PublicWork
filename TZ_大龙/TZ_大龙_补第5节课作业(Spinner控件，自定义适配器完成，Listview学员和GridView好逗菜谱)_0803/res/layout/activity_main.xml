@@ -1,0 +1,93 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+	android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="第5节课作业:Adapter及相关基本与高级控件"
+        android:textColor="#F00"
+        android:textSize="12sp" />
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:gravity="center_vertical"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1、Spinner控件：" />
+        
+	    <Spinner 
+	        android:id="@+id/sp"
+	        android:layout_width="200dp"
+	        android:layout_height="wrap_content"
+	     />
+    </LinearLayout>
+
+    <LinearLayout 
+        android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:gravity="center_vertical"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2、AutoCompleteTextView自动完成控件：" />
+        
+	    <AutoCompleteTextView
+	        android:id="@+id/acTextView"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:hint="试试看" />
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:gravity="center_vertical"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3、自定义适配器完成listview：" />
+        
+	    <Button
+	        android:id="@+id/btn_listView"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:hint="ListView看效果"
+	        android:onClick="btnClick" />
+    </LinearLayout>
+    <LinearLayout 
+        android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+		android:orientation="horizontal"
+		android:gravity="center_vertical"
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4、自定义适配器完成gridview：" />
+        
+	    <Button
+	        android:id="@+id/btn_gridView"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:hint="好逗菜谱"
+	        android:onClick="btnClick" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -3,6 +3,9 @@ package com.tz.fileexplorer;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -27,6 +30,8 @@ import com.tz.fileexplorer.util.LoadFileAsyncTask;
  * 高性能文件浏览器 (侧重浏览图片)
  */
 public class MainActivity extends Activity {
+	ThreadPoolExecutor threadPool = new ThreadPoolExecutor(10, 128, 10,
+			TimeUnit.SECONDS, new LinkedBlockingQueue<Runnable>());
 	private ListView lv;
 	private File rootFile;
 	private List<MyFile> list = new ArrayList<MyFile>();
@@ -40,7 +45,8 @@ public class MainActivity extends Activity {
 
 		lv = (ListView) findViewById(R.id.lv);
 		// 判断SD卡是否正常挂在
-		if (Environment.getExternalStorageState().equals(Environment.MEDIA_MOUNTED)) {
+		if (Environment.getExternalStorageState().equals(
+				Environment.MEDIA_MOUNTED)) {
 			// 得到sd卡根目录
 			rootFile = Environment.getExternalStorageDirectory();
 		} else {
@@ -50,7 +56,8 @@ public class MainActivity extends Activity {
 
 		lv.setOnItemClickListener(new OnItemClickListener() {
 			@Override
-			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+			public void onItemClick(AdapterView<?> parent, View view,
+					int position, long id) {
 				MyFile myFile = (MyFile) adapter.getItem(position);
 				File file = myFile.getFile();
 				if (file.isDirectory()) {
@@ -58,7 +65,8 @@ public class MainActivity extends Activity {
 				} else if (myFile.isIcon()) {
 					// 打开图片
 					Intent intent = new Intent(ShowPhotoActivity.ACTION);
-					intent.putExtra(ShowPhotoActivity.EXTRA_PATH, file.getAbsolutePath());
+					intent.putExtra(ShowPhotoActivity.EXTRA_PATH,
+							file.getAbsolutePath());
 					startActivity(intent);
 				}
 			}
@@ -74,7 +82,8 @@ public class MainActivity extends Activity {
 			}
 
 			@Override
-			public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount, int totalItemCount) {
+			public void onScroll(AbsListView view, int firstVisibleItem,
+					int visibleItemCount, int totalItemCount) {
 
 			}
 		});
@@ -95,7 +104,7 @@ public class MainActivity extends Activity {
 							super.onPostExecute(result);
 							adapter.notifyDataSetChanged();
 						}
-					}.execute(myFile.getPath());
+					}.executeOnExecutor(threadPool, myFile.getPath());
 				}
 			} else {
 				cache.removeBitmap(myFile.getPath());
@@ -138,6 +147,7 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onDestroy() {
 		BitmapCache.getInstance().release();
+		threadPool.shutdown();
 		super.onDestroy();
 	}
 }
