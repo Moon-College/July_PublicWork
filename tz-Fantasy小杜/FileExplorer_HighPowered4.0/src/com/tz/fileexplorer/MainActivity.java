@@ -119,6 +119,17 @@ public class MainActivity extends Activity {
 					intent.putExtra("path", file.getPath());
 					startActivity(intent);
 					 
+				} else if (file.getName().toLowerCase().endsWith("txt")||file.getName().toLowerCase().endsWith("xml")
+						||file.getName().toLowerCase().endsWith("html")) {
+				//	Intent intent = new Intent("com.fantasyado.action_TextView");	
+				    Intent intent = new Intent();
+				    intent.setAction(Intent.ACTION_VIEW);
+					
+					intent.setData(Uri.fromFile(file));
+					Log.i("======", file.getPath());
+//					intent.putExtra("title", file.getName());
+//					intent.putExtra("path", file.getPath());
+					startActivity(intent);
 				}
 			}
 		});
