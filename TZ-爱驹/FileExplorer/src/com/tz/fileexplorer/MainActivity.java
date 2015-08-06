@@ -5,28 +5,24 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
-import java.util.jar.Attributes.Name;
 
-import android.R.anim;
-import android.R.bool;
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
-import android.graphics.Path;
+import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
-import android.opengl.Visibility;
+import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
-import android.view.Gravity;
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.View.OnLongClickListener;
 import android.view.WindowManager;
+import android.widget.AbsListView;
+import android.widget.AbsListView.OnScrollListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
@@ -37,13 +33,14 @@ import android.widget.Toast;
 
 import com.tz.fileexplorer.adapter.FileAdapter;
 import com.tz.fileexplorer.bean.MyFile;
+
 /**
  * 
  * @author wztscau
- * @lastedit 2015.08.04
+ * @lastedit 2015.08.06
  */
-public class MainActivity extends Activity implements OnItemClickListener,
-		OnItemLongClickListener {
+public class MainActivity extends BaseActivity implements OnItemClickListener,
+		OnItemLongClickListener, OnScrollListener {
 
 	private List<MyFile> list = new ArrayList<MyFile>();
 	private FileAdapter adapter;
@@ -52,11 +49,36 @@ public class MainActivity extends Activity implements OnItemClickListener,
 	private Button btnDelete;
 	private File currFile;
 	private MyFile mFile;
+	private PopupWindow ppWindow;
+	/**
+	 * 监听事件
+	 */
+	private OnClickListener onClickListener = new OnClickListener() {
+
+		@Override
+		public void onClick(View v) {
+			switch (v.getId()) {
+			case R.id.btn_del:
+				showDialog(currFile);
+				ppWindow.dismiss();
+				break;
+
+			case R.id.btn_more:
+				Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+				startActivityForResult(intent, RESULT_OK);
+				break;
+			}
+		}
+	};
+	private int scrollY;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setMainContentView(R.layout.activity_main);
+		setTitle("文件浏览器", Color.BLUE);
+		setTitleBarColor(Color.rgb(200, 200, 200));
+		getMoreButton().setOnClickListener(onClickListener);
 		String root;
 		if (Environment.MEDIA_MOUNTED.equals(Environment
 				.getExternalStorageState())) {
@@ -64,7 +86,7 @@ public class MainActivity extends Activity implements OnItemClickListener,
 			initData(root);
 			listView.setOnItemClickListener(this);
 			listView.setOnItemLongClickListener(this);
-			
+			listView.setOnScrollListener(this);
 		} else {
 			Toast.makeText(this, "sdcard is not exist", 0).show();
 		}
@@ -102,14 +124,30 @@ public class MainActivity extends Activity implements OnItemClickListener,
 		String fileName = file.getName();
 		if (file.isDirectory()) {
 			initData(path);
-		} else if(fileName.endsWith("txt")||fileName.endsWith("log")||fileName.endsWith("xml")){
+		} else if (fileName.endsWith("txt") || fileName.endsWith("log")
+				|| fileName.endsWith("xml")) {
 			openTextFile(file);
+		} else if(fileName.endsWith("jpg")||fileName.endsWith("jpeg")||fileName.endsWith("png")){
+			openImage(file);
 		}
 
 	}
 
+	private void openImage(File file) {
+		Intent intent = new Intent();
+		intent.setAction(Intent.ACTION_VIEW);
+		intent.addCategory(Intent.CATEGORY_DEFAULT);
+		intent.setDataAndType(Uri.fromFile(file), "image/*");
+		startActivity(intent);
+	}
+
 	private void openTextFile(File file) {
-		//finishing
+		Intent intent = new Intent();
+		intent.setAction(Intent.ACTION_VIEW);
+		intent.addCategory(Intent.CATEGORY_DEFAULT);
+		Uri data = Uri.fromFile(file);
+		intent.setData(data);
+		startActivity(intent);
 	}
 
 	@Override
@@ -120,28 +158,29 @@ public class MainActivity extends Activity implements OnItemClickListener,
 		mFile = list.get(position);
 		currFile = new File(mFile.getPath());
 		btnDelete = (Button) contentView.findViewById(R.id.btn_del);
-		btnDelete.setOnClickListener(delete);
-		//创建泡泡窗口
-		PopupWindow ppWindow = new PopupWindow(contentView,
+		btnDelete.setOnClickListener(onClickListener);
+		ppWindow = new PopupWindow(contentView,
 				WindowManager.LayoutParams.WRAP_CONTENT,
 				WindowManager.LayoutParams.WRAP_CONTENT, true);
-		//设置泡泡窗口透明背景
+		// 设置泡泡窗口透明背景
 		ppWindow.setBackgroundDrawable(new ColorDrawable());
-		int x = view.getWidth()/4*3,y;
-		if(position!=list.size()-1){
+		int x = view.getWidth() / 4 * 3, y;
+		if (position != list.size() - 1) {
 			y = 0;
-		}else {
+		} else {
 			y = -view.getHeight();
 		}
-		//泡泡窗口的位置为所选item的下方,靠右侧的位置
-		ppWindow.showAsDropDown(view,x,y);
+		// 泡泡窗口的位置为所选item的下方,靠右侧的位置
+		ppWindow.showAsDropDown(view, x, y);
 		return true;
 	}
 
 	/**
 	 * 
-	 * @param f 真实文件/文件夹
-	 * @param mFile 自定义文件
+	 * @param f
+	 *            真实文件/文件夹
+	 * @param mFile
+	 *            自定义文件
 	 */
 	private void setFileIcon(File f, MyFile mFile) {
 		if (f.isDirectory()) {
@@ -173,49 +212,65 @@ public class MainActivity extends Activity implements OnItemClickListener,
 	}
 
 	/**
-	 * 删除按钮的监听事件
-	 */
-	private OnClickListener delete = new OnClickListener() {
-		
-		@Override
-		public void onClick(View v) {
-			showDialog(currFile);
-		}
-	};
-	
-	
-	/**
 	 * 弹出对话框
-	 * @param mFile 自定义文件
+	 * 
+	 * @param mFile
+	 *            自定义文件
 	 */
-	public void showDialog(final File mFile){
+	public void showDialog(final File mFile) {
 		AlertDialog.Builder builder = new Builder(this);
 		builder.setTitle("Warning")
-		.setMessage("Do you wish to delete file\n["+mFile.getName()+"]?")
-		.setPositiveButton("yes sure", new DialogInterface.OnClickListener() {
-			
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				deleteMyFile(mFile.getPath());
-			}
-			
-		}).setNegativeButton("no thanks", new DialogInterface.OnClickListener() {
-			
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				//do nothing
-			}
-		});
+				.setMessage(
+						"Do you wish to delete file\n[" + mFile.getName()
+								+ "]?")
+				.setPositiveButton("yes sure",
+						new DialogInterface.OnClickListener() {
+
+							@Override
+							public void onClick(DialogInterface dialog,
+									int which) {
+								deleteMyFile(mFile.getPath());
+							}
+
+						})
+				.setNegativeButton("no thanks",
+						new DialogInterface.OnClickListener() {
+
+							@Override
+							public void onClick(DialogInterface dialog,
+									int which) {
+								// do nothing
+							}
+						});
 		builder.create().show();
 		btnDelete.setVisibility(View.INVISIBLE);
 	}
-	
+
 	/**
 	 * 并非真的删除文件，而是删除列表中的项目
+	 * 
 	 * @param path
 	 */
 	private void deleteMyFile(String path) {
 		list.remove(mFile);
 		adapter.notifyDataSetChanged();
+	}
+	
+	@Override
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+		// TODO Auto-generated method stub
+		super.onActivityResult(requestCode, resultCode, data);
+	}
+
+	@Override
+	public void onScrollStateChanged(AbsListView view, int scrollState) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public void onScroll(AbsListView view, int firstVisibleItem,
+			int visibleItemCount, int totalItemCount) {
+		//must do something
 	}
 }
