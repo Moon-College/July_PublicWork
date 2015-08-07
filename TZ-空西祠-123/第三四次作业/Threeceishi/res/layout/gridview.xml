@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+<TextView 
+    android:id="@+id/textview"
+    android:gravity="center"
+    android:layout_alignParentTop="true"
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:background="#ffffff"
+    android:text="@string/caipu"
+    android:textSize="30sp"/>
+<GridView 
+    
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/gridview"
+    android:layout_above="@+id/relative1"
+    android:horizontalSpacing="20dp"
+    android:verticalSpacing="20dp"
+    android:layout_marginTop="20dp"
+    android:layout_below="@+id/textview"
+    android:numColumns="2"></GridView>
+<RelativeLayout 
+    android:layout_width="match_parent"
+    android:layout_height="70dp"
+    android:id="@+id/relative1"
+    android:layout_alignParentBottom="true"
+    android:background="#ffffff"
+    >
+    <ImageView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:paddingTop="30dp"
+        android:paddingLeft="20dp"
+        android:src="@drawable/black"/>
+        <ImageView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:paddingTop="30dp"
+        android:paddingRight="20dp"
+        android:src="@drawable/home"/>
+</RelativeLayout>
+
+</RelativeLayout>

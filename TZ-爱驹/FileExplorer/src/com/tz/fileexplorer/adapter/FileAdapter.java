@@ -4,7 +4,6 @@ import java.util.List;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -50,7 +49,7 @@ public class FileAdapter extends BaseAdapter {
 
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
-		
+
 		MyFile mFile = list.get(position);
 		if (convertView == null) {
 			holder = new ViewHolder();
@@ -62,29 +61,50 @@ public class FileAdapter extends BaseAdapter {
 			holder = (ViewHolder) convertView.getTag();
 		}
 		holder.tv.setText(mFile.getName());
-		if(mFile.getIcon()==null){
-			LoadFileTask task = new LoadFileTask();
-			task.execute(mFile.getPath(),String.valueOf(position));
+		if (mFile.getIcon() == null) {
+			LoadFileTask task = new LoadFileTask(holder.iv);
+			task.execute(mFile.getPath(), String.valueOf(position));
 		}
 		holder.iv.setImageBitmap(mFile.getIcon());
 		return convertView;
 	}
-
+	
+	/**
+	 * 为防止在每次getView时都要调用一次findViewByID（）
+	 * 所以把ImageView和TextView等控件捆绑在一个ViewHolder里面
+	 */
 	class ViewHolder {
 		ImageView iv;
 		TextView tv;
 	}
-	
-	class LoadFileTask extends AsyncTask<String, Void, Void>{
 
+	/**
+	 *	为防止做耗时操作卡顿UI线程，因此要开一个新的异步任务线程
+	 */
+	class LoadFileTask extends AsyncTask<String, Void, Void> {
+
+		private ImageLoader imageLoader;
+		private ImageView iv;
+		private Bitmap icon;
+
+		public LoadFileTask(ImageView iv) {
+			this.iv = iv;
+			imageLoader=ImageLoader.getInstance();
+		}
+		
 		@Override
 		protected Void doInBackground(String... params) {
 			String path = params[0];
 			String iconPosition = params[1];
 			try {
-//				Bitmap icon = BitmapFactory.decodeResource(context.getResources(), R.drawable.file);
-				Bitmap icon = ImageLoader.getInstance().loadImage(path, 20);
-				list.get(Integer.parseInt(iconPosition)).setIcon(icon);
+				
+				if(imageLoader.getBitmapFromCache(path)==null){
+					icon = ImageLoader.loadImage(path, 20);
+					imageLoader.addBitmapToCache(path, icon);
+				} else {
+					icon = imageLoader.getBitmapFromCache(path);
+				}
+				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -94,7 +114,7 @@ public class FileAdapter extends BaseAdapter {
 		@Override
 		protected void onPostExecute(Void result) {
 			super.onPostExecute(result);
-			notifyDataSetChanged();
+			iv.setImageBitmap(icon);
 		}
 	}
 }
