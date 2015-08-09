@@ -1,0 +1,54 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.tz.lsn11_animation.MainActivity$PlaceholderFragment"
+    android:orientation="vertical">
+
+   <TextView
+        android:id="@+id/des"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="第十一次课：补间动画"/>
+    <Button
+        android:id="@+id/bt_demo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="clickBtn"
+        android:text="Demo" />
+    <Button
+        android:id="@+id/bt_alpha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="clickBtn"
+        android:text="Alpha Animation" />
+    <Button
+        android:id="@+id/bt_scale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="clickBtn"
+        android:text="Scale Animation" />
+    <Button
+        android:id="@+id/bt_translate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="clickBtn"
+        android:text="Translate Animation" />
+    <Button
+        android:id="@+id/bt_rotate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="clickBtn"
+        android:text="Rotate Animation" />
+	<Button
+        android:id="@+id/bt_set"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="clickBtn"
+        android:text="Set Animation" />
+    
+</LinearLayout>

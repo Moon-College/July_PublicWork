@@ -62,7 +62,7 @@ public class FileAdapter extends BaseAdapter {
 		}
 		holder.tv.setText(mFile.getName());
 		if (mFile.getIcon() == null) {
-			LoadFileTask task = new LoadFileTask();
+			LoadFileTask task = new LoadFileTask(holder.iv);
 			task.execute(mFile.getPath(), String.valueOf(position));
 		}
 		holder.iv.setImageBitmap(mFile.getIcon());
@@ -83,16 +83,28 @@ public class FileAdapter extends BaseAdapter {
 	 */
 	class LoadFileTask extends AsyncTask<String, Void, Void> {
 
+		private ImageLoader imageLoader;
+		private ImageView iv;
+		private Bitmap icon;
+
+		public LoadFileTask(ImageView iv) {
+			this.iv = iv;
+			imageLoader=ImageLoader.getInstance();
+		}
+		
 		@Override
 		protected Void doInBackground(String... params) {
 			String path = params[0];
 			String iconPosition = params[1];
 			try {
-				// Bitmap icon =
-				// BitmapFactory.decodeResource(context.getResources(),
-				// R.drawable.file);
-				Bitmap icon = ImageLoader.getInstance().loadImage(path, 20);
-				list.get(Integer.parseInt(iconPosition)).setIcon(icon);
+				
+				if(imageLoader.getBitmapFromCache(path)==null){
+					icon = ImageLoader.loadImage(path, 20);
+					imageLoader.addBitmapToCache(path, icon);
+				} else {
+					icon = imageLoader.getBitmapFromCache(path);
+				}
+				
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -102,7 +114,7 @@ public class FileAdapter extends BaseAdapter {
 		@Override
 		protected void onPostExecute(Void result) {
 			super.onPostExecute(result);
-			notifyDataSetChanged();
+			iv.setImageBitmap(icon);
 		}
 	}
 }
