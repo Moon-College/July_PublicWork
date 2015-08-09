@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="3dp"
+    android:background="#F0F0F0"
+    >
+	<LinearLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:orientation="vertical"
+	    android:paddingRight="3dp"
+		android:paddingBottom="3dp"
+	    android:background="#F5F5F5"
+	    >
+    
+		<RelativeLayout
+		    android:layout_width="match_parent"
+		    android:layout_height="match_parent"
+		    android:layout_marginTop="15dp"
+		    android:paddingRight="3dp"
+		    android:paddingBottom="3dp"
+		    android:background="#FAFAFA"
+		    >
+		    
+		    <TextView 
+		        android:id="@+id/tv_foodName"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:textSize="20sp"
+		        android:layout_centerHorizontal="true"
+		        />
+		    
+		    <ImageView 
+		        android:id="@+id/iv_foodImg"
+		        android:layout_width="200dp"
+		        android:layout_height="200dp"
+		        android:layout_below="@id/tv_foodName"
+		        android:background="#aaa"
+		        android:layout_marginTop="5dp"
+		        android:layout_marginRight="5dp"
+		        android:layout_centerHorizontal="true"
+		        />
+		    
+		    <TextView 
+		        android:id="@+id/tv_des"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:layout_below="@id/iv_foodImg"
+		        android:gravity="left"
+		        android:layout_marginTop="8dp"
+		        android:singleLine="true"
+		        android:layout_centerVertical="true"
+		
+		        />
+		     <TextView 
+		        android:id="@+id/tv_count"
+		        android:layout_width="80dp"
+		        android:layout_height="40dp"
+		        android:textColor="@android:color/white"
+		        android:textSize="18sp"
+		        android:textStyle="bold"
+		        android:layout_alignLeft="@id/iv_foodImg"
+		        android:layout_alignBottom="@id/iv_foodImg"
+		        android:layout_marginLeft="15dp"
+		        android:layout_marginBottom="15dp"
+		        android:background="#790"
+		        android:padding="8dp"
+		        />
+		     
+		     <ImageView 
+		        android:id="@+id/iv_icon"
+		        android:layout_width="30dp"
+		        android:layout_height="30dp"
+		        android:background="#aaa"
+		        android:layout_below="@id/tv_des"
+		        android:layout_alignLeft="@id/tv_des"
+		        />
+		     
+		      <TextView 
+		        android:id="@+id/tv_userName"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:singleLine="true"
+		        android:layout_toRightOf="@id/iv_icon"
+		        android:layout_alignBottom="@id/iv_icon"
+		        android:layout_marginLeft="10dp"
+		        android:layout_centerVertical="true"
+		        android:padding="5dp"
+		        />
+		    
+		</RelativeLayout>
+	</LinearLayout>
+</LinearLayout>
