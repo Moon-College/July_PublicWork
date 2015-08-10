@@ -146,27 +146,27 @@ public class MainActivity extends Activity {
 	public boolean onOptionsItemSelected(MenuItem item) {
 		// TODO Auto-generated method stub
 		switch (item.getItemId()) {
-		case R.id.timePicker:
-			OnTimeSetListener listener = new OnTimeSetListener() {
-
-				@Override
-				public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-					// TODO Auto-generated method stub
-				 
-				      calendar.set(2015, hourOfDay, minute);
-				}
-			};
-
-			long time = System.currentTimeMillis();
-			  calendar = Calendar.getInstance();
-			calendar.setTimeInMillis(time);
-			int hour = calendar.get(Calendar.HOUR_OF_DAY);
-			int minute = calendar.get(Calendar.MINUTE);
-		 
-		    final 	TimePickerDialog tpd = new TimePickerDialog(MainActivity.this,
-					listener, hour, minute, true);
-			tpd.show();
-			break;
+//		case R.id.timePicker:
+//			OnTimeSetListener listener = new OnTimeSetListener() {
+//
+//				@Override
+//				public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+//					// TODO Auto-generated method stub
+//				 
+//				      calendar.set(2015, hourOfDay, minute);
+//				}
+//			};
+//
+//			long time = System.currentTimeMillis();
+//			  calendar = Calendar.getInstance();
+//			calendar.setTimeInMillis(time);
+//			int hour = calendar.get(Calendar.HOUR_OF_DAY);
+//			int minute = calendar.get(Calendar.MINUTE);
+//		 
+//		    final 	TimePickerDialog tpd = new TimePickerDialog(MainActivity.this,
+//					listener, hour, minute, true);
+//			tpd.show();
+//			break;
 
 		default:
 			break;
