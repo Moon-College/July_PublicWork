@@ -5,12 +5,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
 	private final String TAG = "log";
+	public static final int REQUEST_CODE = 110;
 	private TextView tv;
+	private EditText et_transfer;
 	
 	/**
 	 * 创建的时候回调的方法
@@ -20,6 +23,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         tv = (TextView)findViewById(R.id.tv);
+        et_transfer = (EditText)findViewById(R.id.et_transfer);
         /**
 		 * 判断是否是系统干掉了后再创建的Activity
 		 * 获得干掉之前保存的数据，恢复
@@ -37,7 +41,10 @@ public class MainActivity extends Activity {
     	
     	switch (view.getId()) {
 			case R.id.bt_jump:
-		    	startActivity(new Intent(this, SecondActivity.class));
+				Intent i = new Intent();
+				i.setClass(this, SecondActivity.class);
+				i.putExtra("tag", et_transfer.getText().toString());
+		    	startActivityForResult(i, REQUEST_CODE);
 				break;
 			case R.id.bt_photo:
 		    	startActivity(new Intent(this, PhotoActivity.class));
@@ -53,6 +60,17 @@ public class MainActivity extends Activity {
 				break;
 		}
     	
+    }
+    
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    	// TODO Auto-generated method stub
+    	super.onActivityResult(requestCode, resultCode, data);
+    	
+    	if(requestCode == REQUEST_CODE && resultCode == SecondActivity.RESULT_CODE) {
+    		String tag = data.getExtras().getString("tag");
+    		tv.setText(tag);
+    	}
     }
     
     @Override

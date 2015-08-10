@@ -9,6 +9,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hello_world" />
+    
+    <EditText 
+        android:id="@+id/et_transfer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="需要传递的内容"
+        />
 
     <Button
         android:id="@+id/bt_jump"
@@ -16,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="18dp"
         android:onClick="btnClick"
-        android:text="跳转" />
+        android:text="跳转返回值" />
     
     <Button
         android:id="@+id/bt_photo"
