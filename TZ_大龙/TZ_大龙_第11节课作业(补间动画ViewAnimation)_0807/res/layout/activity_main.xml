@@ -50,5 +50,17 @@
         android:layout_height="wrap_content"
         android:onClick="clickBtn"
         android:text="Set Animation" />
+	<Button
+        android:id="@+id/bt_shake"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="clickBtn"
+        android:text="QQ Shake Animation" />
+	<Button
+        android:id="@+id/bt_msj"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="clickBtn"
+        android:text="美食杰欢迎界面" />
     
 </LinearLayout>

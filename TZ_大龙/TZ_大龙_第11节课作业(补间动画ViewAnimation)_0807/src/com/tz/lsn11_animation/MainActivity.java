@@ -16,30 +16,39 @@ public class MainActivity extends Activity {
     }
 	
 	public void clickBtn(View view) {
+		Intent intent = null;
 		switch (view.getId()) {
 			case R.id.bt_demo:
-				Intent intent = new Intent(this, AnimationActivity.class);
+				intent = new Intent(this, AnimationActivity.class);
 				startActivity(intent);
 				break;
 			case R.id.bt_alpha:
-				Intent intent2 = new Intent(this, AlphaAnimationActivity.class);
-				startActivity(intent2);
+				intent = new Intent(this, AlphaAnimationActivity.class);
+				startActivity(intent);
 				break;
 			case R.id.bt_scale:
-				Intent intent3 = new Intent(this, ScaleAnimationActivity.class);
-				startActivity(intent3);
+				intent = new Intent(this, ScaleAnimationActivity.class);
+				startActivity(intent);
 				break;
 			case R.id.bt_translate:
-				Intent intent4 = new Intent(this, TranslateAnimationActivity.class);
-				startActivity(intent4);
+				intent = new Intent(this, TranslateAnimationActivity.class);
+				startActivity(intent);
 				break;
 			case R.id.bt_rotate:
-				Intent intent5 = new Intent(this, RotateAnimationActivity.class);
-				startActivity(intent5);
+				intent = new Intent(this, RotateAnimationActivity.class);
+				startActivity(intent);
 				break;
 			case R.id.bt_set:
-				Intent intent6 = new Intent(this, SetAnimationActivity.class);
-				startActivity(intent6);
+				intent = new Intent(this, SetAnimationActivity.class);
+				startActivity(intent);
+				break;
+			case R.id.bt_shake:
+				intent = new Intent(this, ShakeAnimationActivity.class);
+				startActivity(intent);
+				break;
+			case R.id.bt_msj:
+				intent = new Intent(this, MSJWelcomeAnimationActivity.class);
+				startActivity(intent);
 				break;
 			default:
 				Toast.makeText(this, "还未注册调用入口", Toast.LENGTH_SHORT).show();

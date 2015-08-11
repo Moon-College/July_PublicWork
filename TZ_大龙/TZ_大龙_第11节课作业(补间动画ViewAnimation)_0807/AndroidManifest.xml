@@ -28,6 +28,9 @@
         <activity android:name="com.tz.lsn11_animation.TranslateAnimationActivity"></activity>
         <activity android:name="com.tz.lsn11_animation.RotateAnimationActivity"></activity>
         <activity android:name="com.tz.lsn11_animation.SetAnimationActivity"></activity>
+        <activity android:name="com.tz.lsn11_animation.ShakeAnimationActivity"></activity>
+        <activity android:name="com.tz.lsn11_animation.MSJWelcomeAnimationActivity"
+            android:theme="@android:style/Theme.Black.NoTitleBar"></activity>
     </application>
 
 </manifest>
