@@ -1,0 +1,43 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/ll_parent"
+    android:orientation="vertical"
+    >
+
+    <LinearLayout 
+    	android:id="@+id/ly_titleView"
+        android:layout_width="match_parent"
+    	android:layout_height="45dp"
+    	android:gravity="center_vertical"
+    	android:orientation="horizontal"
+    	android:background="@drawable/bg"
+    	>
+        <Button 
+    		android:id="@+id/btn_left"
+            android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:textColor="@android:color/white"
+    		android:background="@drawable/left"
+    	 />
+    	<TextView 
+    		android:id="@+id/tv_title"
+    	    android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:gravity="center"
+    		android:singleLine="true"
+    		android:text="标题"
+    		android:layout_weight="1"
+    		android:textColor="@android:color/white"
+    	    />
+        
+        <Button 
+    		android:id="@+id/btn_right"
+            android:layout_width="wrap_content"
+    		android:layout_height="wrap_content"
+    		android:background="@drawable/right"
+    		android:textColor="@android:color/white"/>
+    </LinearLayout>
+
+</LinearLayout>

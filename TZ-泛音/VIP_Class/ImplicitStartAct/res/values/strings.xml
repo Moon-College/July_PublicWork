@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">ImplicitStartAct</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_target">TargetActivity</string>
+    <string name="title_activity_targer2">Targer2Activity</string>
+
+</resources>

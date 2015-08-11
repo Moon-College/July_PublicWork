@@ -1,0 +1,175 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="12sp"
+        android:layout_margin="20dp"
+        android:textColor="#F00"
+        android:text="第5节课作业:用户注册界面信息提交校验Regular" />
+    
+    <ImageView 
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/dallon"
+        />
+     <!-- 用户名 -->
+    <LinearLayout 
+        android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal"
+	    android:layout_gravity="center_vertical"
+        >
+        <TextView 
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="用户名:"
+            android:maxLength="30"
+            android:paddingRight="3dp"
+            android:gravity="right|center_vertical"
+            android:layout_marginRight="5dp"/>
+        <EditText 
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+	    	android:layout_height="wrap_content"
+	    	android:singleLine="true"
+	    	/>
+    </LinearLayout>
+    <!-- 密码 -->
+    <LinearLayout 
+        android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal"
+	    android:layout_gravity="center_vertical"
+        >
+        <TextView 
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="密码:"
+            android:maxLength="30"
+            android:paddingRight="3dp"
+            android:gravity="right|center_vertical"
+            android:layout_marginRight="5dp"/>
+        <EditText 
+            android:id="@+id/et_psd"
+            android:layout_width="match_parent"
+	    	android:layout_height="wrap_content"
+	    	android:password="true"
+	    	android:singleLine="true"
+	    	/>
+    </LinearLayout>
+    <!-- 确认密码 -->
+    <LinearLayout 
+        android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal"
+	    android:layout_gravity="center_vertical"
+        >
+        <TextView 
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="确认密码:"
+            android:maxLength="30"
+            android:paddingRight="3dp"
+            android:gravity="right|center_vertical"
+            android:layout_marginRight="5dp"/>
+        <EditText 
+            android:id="@+id/et_confirmPsd"
+            android:layout_width="match_parent"
+	    	android:layout_height="wrap_content"
+	    	android:password="true"
+	    	android:singleLine="true"
+	    	/>
+    </LinearLayout>
+    <!-- 邮箱地址-->
+    <LinearLayout 
+        android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal"
+	    android:layout_gravity="center_vertical"
+        >
+        <TextView 
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="邮箱地址:"
+            android:maxLength="30"
+            android:paddingRight="3dp"
+            android:gravity="right|center_vertical"
+            android:layout_marginRight="5dp"/>
+        <EditText 
+            android:id="@+id/et_email"
+            android:layout_width="match_parent"
+	    	android:layout_height="wrap_content"
+	    	android:inputType="textEmailAddress"
+	    	android:singleLine="true"
+	    	/>
+    </LinearLayout>
+    <!-- 性别-->
+    <RadioGroup 
+        android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal"
+        >
+        
+        <TextView 
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="性别:"
+            android:maxLength="30"
+            android:paddingRight="3dp"
+            android:gravity="right|center_vertical"
+            android:layout_marginRight="5dp"/>
+        
+        <RadioButton 
+            android:id="@+id/rb_man"
+            android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"
+	    	android:checked="true"
+	    	android:text="男"
+	    	/>
+        <RadioButton 
+            android:id="@+id/rb_wman"
+            android:layout_width="wrap_content"
+	    	android:layout_height="wrap_content"
+	    	android:text="女"
+	    	/>
+        
+    </RadioGroup>
+    <!-- 服务条款-->
+    <LinearLayout 
+        android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal"
+	    android:layout_gravity="center_vertical"
+        >
+        <TextView 
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="服务条款:"
+            android:maxLength="30"
+            android:paddingRight="3dp"
+            android:gravity="right|center_vertical"
+            android:layout_marginRight="5dp"/>
+        <CheckBox
+	        android:id="@+id/cb_term"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="本我自愿加入潭州学院AndroidVIP课程" />
+    </LinearLayout>
+
+    
+    <Button 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="提交"
+        android:layout_marginTop="30dp"
+        android:onClick="submit"
+        />
+
+</LinearLayout>
