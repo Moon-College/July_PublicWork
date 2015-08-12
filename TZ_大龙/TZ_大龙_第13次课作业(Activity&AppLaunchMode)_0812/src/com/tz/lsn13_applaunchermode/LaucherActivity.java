@@ -4,7 +4,6 @@ import java.util.List;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.net.Uri;
@@ -23,7 +22,6 @@ public class LaucherActivity extends Activity {
 	private final int MAX_NUM_COLUMNS = 5;
 	public final static String ACTION_UNINSTALL = "android.intent.action.PACKAGE_REMOVED";
 	private static LaucherActivity mLaucherActivity;
-	private InstallBroadcastReceiver installBroadcastReceiver;
 	
 	public static LaucherActivity getInstance() {
 		if(mLaucherActivity == null) {
@@ -79,39 +77,29 @@ public class LaucherActivity extends Activity {
 				intent.setData(packageURI);
 				startActivity(intent);
 				
-				
 				return false;
 			}
 		});
 		
 	}
+
 	
-	@Override
-	protected void onPause() {
-		// TODO Auto-generated method stub
-		super.onPause();
-//		if(installBroadcastReceiver == null) {
-//			System.out.println(">>>>>>>>>>>>>>>>>>开始注册广播");
-//			installBroadcastReceiver = new InstallBroadcastReceiver();
-//			IntentFilter filter = new IntentFilter(ACTION_UNINSTALL);
-//			registerReceiver(installBroadcastReceiver, filter);
-//		}
-	}
-	
-	@Override
-	protected void onResume() {
-		// TODO Auto-generated method stub
-		super.onResume();
-//		if(installBroadcastReceiver != null) {
-//			System.out.println(">>>>>>>>>>>>>>>>>>取消广播注册");
-//			unregisterReceiver(installBroadcastReceiver);
-//		}
-	}
-	
+
 	public void notifyDataChanged() {
-		adapter.notifyDataSetChanged();
-		gv_launcher.setAdapter(adapter);
+		
+		if(adapter != null) {
+			runOnUiThread(new Runnable() {
+				
+				@Override
+				public void run() {
+					// TODO Auto-generated method stub
+					adapter.notifyDataSetChanged();
+				}
+			});
+		}
 	}
+	
+	
 	
 	@Override
 	public void onWindowFocusChanged(boolean hasFocus) {
