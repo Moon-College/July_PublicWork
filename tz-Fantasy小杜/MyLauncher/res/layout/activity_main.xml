@@ -1,0 +1,40 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    
+<!--     <ImageView 
+        android:layout_alignParentTop="true"
+        android:id="@+id/iv_lajitong"
+       android:layout_width="match_parent"
+       android:layout_height="50px" 
+        android:background="#aa0000"
+        android:src="@drawable/lajitong"
+        android:visibility="gone"
+        
+        /> -->
+
+    
+         <GridView 
+        
+        android:id="@+id/gv_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:numColumns="4"
+        android:horizontalSpacing="8dp"
+        android:verticalSpacing="8dp"
+        
+        ></GridView>
+   
+
+<!--     <com.fantasyado.mylauncher.view.MyGridView
+        android:id="@+id/gv_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:horizontalSpacing="8dp"
+        android:numColumns="4"
+        android:verticalSpacing="8dp" >
+    </com.fantasyado.mylauncher.view.MyGridView> -->
+
+</RelativeLayout>
