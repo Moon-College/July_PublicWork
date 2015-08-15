@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    
+     <item 
+       android:id="@+id/save"
+       android:orderInCategory="2"
+       android:showAsAction="always"
+       android:title="save"   
+       
+       />
+      <item 
+       android:id="@+id/clear"
+       android:orderInCategory="3"
+       android:showAsAction="always"
+       android:title="clear"          
+       />
+        <item 
+       android:id="@+id/cancel"
+       android:orderInCategory="4"
+       android:showAsAction="always"
+       android:title="cancel"          
+       />
+    
+    
+
+</menu>
