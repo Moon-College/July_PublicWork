@@ -1,0 +1,36 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/ball"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/ball" />
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" 
+            android:layout_weight="1"
+            android:onClick="verticalDrop"
+            android:text="垂直下降"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" 
+            android:layout_weight="1"
+            android:onClick="parabolaTranlate"
+            android:text="抛物线移动"/>
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content" 
+            android:layout_weight="1"
+            android:onClick="discolorTranlate"
+            android:text="变色移动"/>
+    </LinearLayout>
+
+</RelativeLayout>
