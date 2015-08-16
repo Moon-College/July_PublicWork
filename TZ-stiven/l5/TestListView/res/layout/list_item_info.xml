@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#fff"
+    android:gravity="center_vertical" >
+
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="50dip"
+        android:layout_height="50dip"
+        android:layout_margin="10dip"
+        android:background="@drawable/weibaobei_29" />
+
+    <LinearLayout
+        android:id="@+id/ll_info"
+        android:layout_margin="5dip"
+        android:layout_toRightOf="@id/iv_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:textSize="22sp"
+            android:textColor="#FFF"
+            android:text="颜值"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        
+        <View 
+            android:layout_width="fill_parent"
+            android:layout_height="10dip"
+            />
+        
+        <TextView
+            android:id="@+id/tv_hobby"
+            android:textSize="18sp"
+            android:text="颜值"
+            android:textColor="#FFF"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        
+    </LinearLayout>
+    
+    <TextView 
+        android:id="@+id/tv_sex"
+        android:layout_marginLeft="30dip"
+        android:layout_centerVertical="true"
+        
+        android:textSize="20sp"
+        android:textColor="#FFF"
+        android:text="颜值"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/ll_info"
+        />
+    
+    <TextView 
+        android:layout_margin="10dip"
+        android:layout_centerVertical="true"
+        android:id="@+id/tv_facenum"
+        android:textSize="24sp"
+        android:textColor="#FFF"
+        android:text="颜值"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        />
+    
+    
+</RelativeLayout>

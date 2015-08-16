@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TZ_kevin_homework7_20150731</string>
+    <string name="action_settings">Settings</string>
+    <string name="volume">音量调节器</string>
+
+</resources>

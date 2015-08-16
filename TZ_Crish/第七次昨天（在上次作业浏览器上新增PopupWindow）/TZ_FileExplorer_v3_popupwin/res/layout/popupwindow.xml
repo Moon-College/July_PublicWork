@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/eks"
+    android:gravity="center_horizontal"
+    android:paddingTop="5dp" >
+    <TextView
+        android:id="@+id/tv_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="查看"
+        android:textColor="#ffffffff" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:layout_marginTop="2dip"
+        android:layout_marginBottom="2dip"
+        android:background="#ffffffff" />
+    <TextView
+        android:id="@+id/tv_rename"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="重命名"
+        android:textSize="16sp"
+        android:textColor="#ffffffff" />
+
+     <View
+        android:layout_width="match_parent"
+        android:layout_height="1dip"
+        android:layout_marginTop="2dip"
+        android:layout_marginBottom="2dip"
+        android:background="#ffffffff" />
+    <TextView
+        android:id="@+id/tv_delitem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="删除"
+        android:textSize="16sp"
+        android:textColor="#ffffffff" />
+
+</LinearLayout>

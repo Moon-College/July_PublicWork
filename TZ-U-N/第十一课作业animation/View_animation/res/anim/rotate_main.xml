@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rotate xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fromDegrees="0"
+    android:toDegrees="360"
+    android:pivotX="50%"
+    android:pivotY="50%"
+    android:duration="3000"
+    android:repeatCount="infinite"
+    android:repeatMode="reverse"
+    android:fillAfter="true"
+    
+    >
+    
+</rotate>
+<!-- 旋转动画 
+ android:repeatMode="" 重复模式 里面有两个选择  ，一是restart完毕后重新开始启动
+二是reverse 正反启动，一次正一次反，
+  android:repeatCount="infinite"次数模式，可以输入数字代表几次，也可以无限旋转“infinite”
+ android:fillAfter="true"停止时保持画面
+
+-->

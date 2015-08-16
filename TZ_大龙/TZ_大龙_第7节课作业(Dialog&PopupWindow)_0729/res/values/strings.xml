@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">lsn7_dialog</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="btn_normal">普通对话框</string>
+    <string name="btn_progress">进度条对话框</string>
+    <string name="btn_time">时间选择对话框</string>
+    <string name="btn_date">日期选择对话框</string>
+    <string name="btn_default">自定义对话框</string>
+    <string name="btn_popup">泡泡框</string>
+    
+    <string name="et_name">用户名</string>
+    <string name="et_pdw">密码</string>
+    <string name="btn_login">登陆</string>
+
+</resources>
