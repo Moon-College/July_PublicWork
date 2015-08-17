@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <!-- 下载图片水平布局 -->
+
+    <LinearLayout
+        android:id="@+id/ll_imagedownload"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical" >
+
+        <!-- 左边一个进度条 -->
+
+        <ProgressBar
+            android:id="@+id/pb_imagedownload"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:max="100" />
+        <!-- 右边一个下载按钮 -->
+
+        <Button
+            android:id="@+id/bt_imagedownload"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="下载图片" />
+    </LinearLayout>
+    <!-- 下载apk水平布局 -->
+
+    <LinearLayout
+        android:id="@+id/ll_apkdownload"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical" >
+
+        <!-- 左边一个进度条 -->
+
+        <ProgressBar
+            android:id="@+id/pb_apkdownload"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:max="100" />
+        <!-- 右边一个下载按钮 -->
+
+        <Button
+            android:id="@+id/bt_apkdownload"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="下载apk" />
+    </LinearLayout>
+
+</LinearLayout>
