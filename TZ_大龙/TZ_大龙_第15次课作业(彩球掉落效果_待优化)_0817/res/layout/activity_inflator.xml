@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    
+    <ImageView 
+        android:id="@+id/iv_inflator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/queens"/>
+    
+    <TextView 
+        android:id="@+id/tv_single"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="20sp"
+        android:textColor="#ff000000"
+        android:text="执行单一动画"/>
+    
+    <TextView 
+        android:id="@+id/tv_together"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="20sp"
+        android:layout_below="@id/tv_single"
+        android:textColor="#ff000000"
+        android:text="同时执行动画"/>
+    
+    <TextView 
+        android:id="@+id/tv_sync"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="20sp"
+        android:layout_below="@id/tv_together"
+        android:textColor="#ff000000"
+        android:text="分步骤执行动画"/>
+    
+</RelativeLayout>

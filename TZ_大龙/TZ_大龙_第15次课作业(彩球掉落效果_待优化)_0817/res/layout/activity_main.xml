@@ -1,0 +1,34 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+	android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="#f00"
+        android:layout_margin="10dp"
+        android:text="第15次 课： 属性动画" />
+    
+    <Button
+        android:id="@+id/bt_ocean"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="btnClick"
+        android:text="Ocean Demo" />
+    
+    <Button
+        android:id="@+id/bt_objAnim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="btnClick"
+        android:text="ObjectAnimator" />
+    <Button
+        android:id="@+id/bt_ArgbEvaluator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="btnClick"
+        android:text="彩球掉落效果(Bouncing Balls)" />
+</LinearLayout>
