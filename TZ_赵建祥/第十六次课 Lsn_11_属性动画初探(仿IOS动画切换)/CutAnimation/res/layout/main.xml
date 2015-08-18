@@ -1,0 +1,41 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    tools:context=".MainActivity" >
+
+    <LinearLayout 
+        android:id="@+id/ll_top"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#00FF00"
+        >
+        <Button 
+            android:id="@+id/bt_top"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="显示"
+            android:onClick="showAnimation"
+            />
+    </LinearLayout>
+
+    <LinearLayout 
+        android:id="@+id/ll_bottom"
+        android:layout_width="fill_parent"
+        android:layout_height="300dp"
+        android:background="#FF0000"
+        android:layout_alignParentBottom="true"
+        android:visibility="invisible"
+        >
+        <Button 
+            android:id="@+id/bt_bottom"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="隐藏"
+            android:onClick="hideAnimation"
+            />
+    </LinearLayout>
+</RelativeLayout>
