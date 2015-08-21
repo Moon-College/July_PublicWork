@@ -1,0 +1,76 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000"
+    tools:context="com.tz.papertranslation.MainActivity" >
+
+    <LinearLayout
+        android:id="@+id/mainView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#fff"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/btn1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onShow"
+            android:text="show" />
+		<RelativeLayout 
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:gravity="center_vertical">
+		    <ImageButton android:layout_width="20dp"
+		        android:layout_height="20dp"
+		        android:id="@+id/plus"
+		        android:background="@drawable/ic_input_add"
+		        android:layout_alignParentRight="true"
+		        android:layout_marginRight="20dp"
+		        android:onClick="onPlus"/>
+		    <TextView android:layout_width="40dp"
+		        android:layout_height="wrap_content"
+		        android:id="@+id/tv_duration"
+		        android:layout_toLeftOf="@id/plus"
+		        android:gravity="center"
+		        />
+		    <ImageButton 
+		        android:layout_width="20dp"
+		        android:layout_height="20dp"
+		        android:background="@drawable/minus"
+		        android:layout_toLeftOf="@id/tv_duration"
+		        android:id="@+id/minus"
+		        android:onClick="onMinus"
+		        />
+		    
+		</RelativeLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/e1fe9925bc315c606b9a662f89b1cb13485477e6" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/writeView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_alignParentBottom="true"
+        android:background="@android:color/holo_blue_bright"
+        android:visibility="invisible"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="onResume"
+            android:text="resume" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/d043ad4bd11373f0aee0e69da20f4bfbfaed04d0" />
+    </LinearLayout>
+
+</RelativeLayout>
