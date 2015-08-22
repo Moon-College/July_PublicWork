@@ -1,0 +1,112 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="10dp"
+    tools:context=".MainActivity" >
+
+    <TextView
+        android:id="@+id/tv_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="科学计算器"
+        android:textColor="@android:color/holo_purple"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:id="@+id/top_linearlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_result"
+        android:orientation="horizontal" >
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:text="DEG"
+            android:textSize="12sp" />
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:text="HYP"
+            android:textSize="12sp" />
+
+        <Button
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:text="F-E"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearlayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/top_linearlayout"
+        android:orientation="horizontal"
+        android:weightSum="6" >
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:text="MC"
+            android:textSize="12sp" />
+
+        <Button
+            android:layout_width=" 0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:text="MR"
+            android:textSize="12sp" />
+
+        <Button
+            android:layout_width=" 0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:text="M+"
+            android:textSize="12sp" />
+
+        <Button
+            android:layout_width=" 0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:text="M-"
+            android:textSize="12sp" />
+
+        <Button
+            android:layout_width=" 0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:text="MS"
+            android:textSize="12sp" />
+
+        <Button
+            android:layout_width=" 0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@null"
+            android:text="M."
+            android:textSize="12sp" />
+    </LinearLayout>
+    
+    <GridView 
+        android:layout_below="@id/linearlayout2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/gridview"
+        android:numColumns="5"        
+        
+        ></GridView>
+
+</RelativeLayout>
