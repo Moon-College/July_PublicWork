@@ -1,0 +1,115 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/tv_object"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ObjectAnimator"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+        android:background="#000000" />
+    
+    <TextView
+        android:id="@+id/tv_value"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_object"
+        android:text="ValueAnimator"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+        android:background="#000000" />
+    
+    <TextView
+        android:id="@+id/tv_set"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_value"
+        android:text="AnimatorSet"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+        android:background="#000000" />
+    
+    <TextView
+        android:id="@+id/tv_inflater"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_set"
+        android:text="AnimatorInflater"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+        android:background="#000000" />
+    
+    <TextView
+        android:id="@+id/tv_evaluator"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_inflater"
+        android:text="TypeEvaluator"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+        android:background="#000000" />
+    
+    <TextView
+        android:id="@+id/tv_interpolator"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_evaluator"
+        android:text="TimeInterpolator"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+        android:background="#000000" />
+    
+    <TextView
+        android:id="@+id/tv_layout"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_interpolator"
+        android:text="LayoutTransition"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+        android:background="#000000" />
+    
+    <TextView
+        android:id="@+id/tv_listener"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_layout"
+        android:text="设置监听执行动画后消失、解决没有set方法、强制重绘界面"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+        android:background="#000000" />
+    
+    <TextView
+        android:id="@+id/tv_animate"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_listener"
+        android:text="view的animate方法"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
+        android:background="#000000" />
+
+</RelativeLayout>

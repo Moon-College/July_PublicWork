@@ -1,0 +1,148 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:gravity="center_horizontal"
+    tools:context="com.tz.lsn15_propertyanimation.CalculateGridLayout.CalculateGridLayoutActivity">
+
+    <TextView
+        android:id="@+id/tv_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textColor="@android:color/holo_red_dark"
+        android:text="8-19作业：仿计算器布局" />
+
+    <GridLayout
+        android:id="@+id/gl_calc"
+        android:layout_below="@id/tv_detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#2aa"
+        android:columnCount="4"
+        android:rowCount="6"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp"
+        >
+
+        <!-- 第1行 -->
+        <EditText
+            android:id="@+id/et_calc"
+            android:layout_height="60dp"
+            android:layout_width="match_parent"
+            android:layout_columnSpan="4"
+            android:layout_gravity="fill_horizontal"
+            android:text=""
+            android:textSize="20sp"
+            android:textColor="#123"
+            android:focusable="false"
+            />
+        <!-- 第2行 -->
+        <Button
+            android:id="@+id/bt_clear"
+            android:text="C"
+            android:onClick="btnClick"
+            />
+        <Button
+            android:id="@+id/bt_del"
+            android:text="Back"
+            android:onClick="btnClick"
+            />
+        <Button
+            android:id="@+id/bt_chu"
+            android:text="/"
+            android:layout_grvity="fill_vertical"
+            android:onClick="btnClick"
+            />
+        <Button
+            android:id="@+id/bt_cheng"
+            android:text="x"
+            android:onClick="btnClick"
+            />
+        <!-- 第3行 -->
+        <Button
+            android:id="@+id/bt_7"
+            android:text="7"
+            android:onClick="btnClick"
+            />
+        <Button
+            android:id="@+id/bt_8"
+            android:text="8"
+            android:onClick="btnClick"
+            />
+        <Button
+            android:id="@+id/bt_9"
+            android:text="9"
+            android:onClick="btnClick"
+            />
+        <Button
+            android:id="@+id/bt_jian"
+            android:text="-"
+            android:onClick="btnClick"
+            />
+
+        <!-- 第4行 -->
+        <Button
+            android:id="@+id/bt_4"
+            android:text="4"
+            android:onClick="btnClick"
+            />
+        <Button
+            android:id="@+id/bt_5"
+            android:text="5"
+            android:onClick="btnClick"
+            />
+        <Button
+            android:id="@+id/bt_6"
+            android:text="6"
+            android:onClick="btnClick"
+            />
+        <Button
+            android:id="@+id/bt_jia"
+            android:text="+"
+            android:onClick="btnClick"
+            />
+        <!-- 第5行 -->
+        <Button
+            android:id="@+id/bt_1"
+            android:text="1"
+            android:onClick="btnClick"
+            />
+        <Button
+            android:id="@+id/bt_2"
+            android:text="2"
+            android:onClick="btnClick"
+            />
+        <Button
+            android:id="@+id/bt_3"
+            android:text="3"
+            android:onClick="btnClick"
+            />
+        <!-- layout_rowSpan 点多少行 -->
+        <Button
+            android:id="@+id/bt_equal"
+            android:text="="
+            android:layout_rowSpan="2"
+            android:layout_gravity="fill_vertical"
+            android:onClick="btnClick"
+            />
+
+        <!-- 第5行 -->
+        <!-- layout_columnSpan 点多少列 -->
+        <Button
+            android:id="@+id/bt_0"
+            android:text="0"
+            android:layout_columnSpan="2"
+            android:layout_gravity="fill_horizontal"
+            />
+        <Button
+            android:id="@+id/bt_do"
+            android:text="."
+            />
+    </GridLayout>
+
+</RelativeLayout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <Button 
+        android:id="@+id/btn_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:text="add"/>
+    
+    <CheckBox 
+        android:id="@+id/cb_appear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="按钮出现"/>
+    
+    <CheckBox 
+        android:id="@+id/cb_change_appear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="按钮出现对其他view的影响"/>
+    
+    <CheckBox 
+        android:id="@+id/cb_disappear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="按钮消失"/>
+    
+    <CheckBox 
+        android:id="@+id/cb_change_disappear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="按钮消失对其他view的影响"/>
+
+    <CheckBox 
+        android:id="@+id/cb_change"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:text="非view出现消失而对其他view产生的影响"/>
+    
+    <GridLayout 
+        android:id="@+id/gl_wrapper"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="5"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" />
+</LinearLayout>
