@@ -1,0 +1,103 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="解决 ScrollView、ListView冲突demo"
+        android:textSize="20dp" />
+
+    <ScrollView
+        android:id="@+id/sv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <ListView
+                android:id="@+id/lv"
+                android:background="#55000083"
+                android:layout_width="match_parent"
+                android:layout_height="300dp" >
+            </ListView>
+            
+            <Button 
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="buttonClick"
+                android:text="按钮测试"/>
+
+            <TextView
+                android:layout_weight="1"
+                android:textSize="20dp"
+                android:padding="10dp"
+                android:background="#55830000"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="这个是底部TextView_1" />
+            <TextView
+                android:layout_weight="1"
+                android:textSize="20dp"
+                android:padding="10dp"
+                android:background="#55008300"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="这个是底部TextView_2" />
+            <TextView
+                android:layout_weight="1"
+                android:textSize="20dp"
+                android:padding="10dp"
+                android:background="#55830000"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="这个是底部TextView_3" />
+            <TextView
+                android:layout_weight="1"
+                android:textSize="20dp"
+                android:padding="10dp"
+                android:background="#55008300"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="这个是底部TextView_4" />
+            <TextView
+                android:layout_weight="1"
+                android:textSize="20dp"
+                android:padding="10dp"
+                android:background="#55830000"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="这个是底部TextView_5" />
+            <TextView
+                android:layout_weight="1"
+                android:textSize="20dp"
+                android:padding="10dp"
+                android:background="#55008300"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="这个是底部TextView_6" />
+            <TextView
+                android:layout_weight="1"
+                android:textSize="20dp"
+                android:padding="10dp"
+                android:background="#55830000"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="这个是底部TextView_7" />
+            <TextView
+                android:layout_weight="1"
+                android:textSize="20dp"
+                android:padding="10dp"
+                android:background="#55008300"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="这个是底部TextView_8" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
