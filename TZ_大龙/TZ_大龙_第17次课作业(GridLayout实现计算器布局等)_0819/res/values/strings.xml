@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">lsn14_PropertyAnimation</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_gif_engine">GifEngineActivity</string>
+    <string name="title_activity_calculate_grid_layout">CalculateGridLayoutActivity</string>
+
+</resources>

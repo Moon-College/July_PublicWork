@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <TextView 
+        android:id="@+id/tx_tag"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#FF000000"
+        android:text="标签"/>
+    
+	<LinearLayout 
+	    android:id="@+id/ll_one"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal"
+	    android:layout_alignParentBottom="true"
+	    android:padding="10dp">
+	    
+	    <TextView 
+	        android:id="@+id/tv_one"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:background="@drawable/bg_text"
+	        android:gravity="center"
+	        android:text="娱乐"
+	        android:textSize="16sp"
+	        android:textColor="#FF000000"/>
+	    
+	    <TextView 
+	        android:id="@+id/tv_two"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="5dp"
+	        android:background="@drawable/bg_text"
+	        android:gravity="center"
+	        android:text="文化"
+	        android:textSize="16sp"
+	        android:textColor="#FF000000"/>
+	    
+	    <TextView 
+	        android:id="@+id/tv_three"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="5dp"
+	        android:background="@drawable/bg_text"
+	        android:gravity="center"
+	        android:text="新闻"
+	        android:textSize="16sp"
+	        android:textColor="#FF000000"/>
+	    
+	    <TextView 
+	        android:id="@+id/tv_four"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="5dp"
+	        android:background="@drawable/bg_text"
+	        android:gravity="center"
+	        android:text="产品"
+	        android:textSize="16sp"
+	        android:textColor="#FF000000"/>
+	    
+	    <TextView 
+	        android:id="@+id/tv_five"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="5dp"
+	        android:background="@drawable/bg_text"
+	        android:gravity="center"
+	        android:text="电影"
+	        android:textSize="16sp"
+	        android:textColor="#FF000000"/>
+	</LinearLayout>
+	
+	<LinearLayout 
+	    android:id="@+id/ll_two"
+	    android:layout_above="@id/ll_one"
+	    android:layout_width="fill_parent"
+	    android:layout_height="wrap_content"
+	    android:orientation="horizontal"
+	    android:padding="10dp">
+	    
+	    <TextView 
+	        android:id="@+id/tv_six"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:background="@drawable/bg_text"
+	        android:gravity="center"
+	        android:text="开心"
+	        android:textSize="16sp"
+	        android:textColor="#FF000000"/>
+	    
+	    <TextView 
+	        android:id="@+id/tv_seven"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="5dp"
+	        android:background="@drawable/bg_text"
+	        android:gravity="center"
+	        android:text="头条"
+	        android:textSize="16sp"
+	        android:textColor="#FF000000"/>
+	    
+	    <TextView 
+	        android:id="@+id/tv_eight"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="5dp"
+	        android:background="@drawable/bg_text"
+	        android:gravity="center"
+	        android:text="热点"
+	        android:textSize="16sp"
+	        android:textColor="#FF000000"/>
+	    
+	    <TextView 
+	        android:id="@+id/tv_nine"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="5dp"
+	        android:background="@drawable/bg_text"
+	        android:gravity="center"
+	        android:text="八卦"
+	        android:textSize="16sp"
+	        android:textColor="#FF000000"/>
+	    
+	    <TextView 
+	        android:id="@+id/tv_ten"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="5dp"
+	        android:background="@drawable/bg_text"
+	        android:gravity="center"
+	        android:text="原创"
+	        android:textSize="16sp"
+	        android:textColor="#FF000000"/>
+	</LinearLayout>
+	
+	<GridLayout 
+        android:id="@+id/gl_tag"
+        android:layout_below="@id/tx_tag"
+        android:layout_above="@id/ll_two"
+        android:orientation="horizontal"
+        android:columnCount="5"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+</RelativeLayout>

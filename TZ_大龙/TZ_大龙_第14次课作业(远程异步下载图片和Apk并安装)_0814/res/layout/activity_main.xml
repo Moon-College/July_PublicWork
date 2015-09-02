@@ -1,0 +1,29 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+       	android:textColor="#f00"
+       	android:layout_marginBottom="15dp"
+        android:text="第14次课作业 : 异步加载 与  Handler的使用" />
+
+    <Button
+        android:id="@+id/bt_loadImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="btnClick"
+        android:text="远程图片加载图片" />
+
+    <Button
+        android:id="@+id/bt_loadApk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="btnClick"
+        android:text="远程apk下载" />
+
+</LinearLayout>

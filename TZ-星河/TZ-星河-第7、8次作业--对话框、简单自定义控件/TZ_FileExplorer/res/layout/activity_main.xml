@@ -1,0 +1,23 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff" >
+
+    <TextView
+        android:id="@+id/tv_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="返回上一级"
+        android:padding="4dip"
+        android:clickable="true"
+        android:textColor="@drawable/common_button_title_text_click_selector"
+        android:textSize="16sp" />
+
+    <ListView
+        android:id="@+id/lv_filelist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tv_back" />
+
+</RelativeLayout>
