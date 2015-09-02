@@ -38,6 +38,7 @@ import com.tz.fileexplorer.R;
 import com.tz.fileexplorer.adapter.FileAdapter;
 import com.tz.fileexplorer.adapter.FileRecorder;
 import com.tz.fileexplorer.bean.MyFile;
+import com.tz.fileexplorer.utils.FileOpener;
 
 public class MainFrag extends Fragment implements OnItemClickListener,
 		OnItemLongClickListener, OnClickListener, OnScrollListener {
@@ -152,40 +153,12 @@ public class MainFrag extends Fragment implements OnItemClickListener,
 					prePressedTime = currTime;
 				}
 			}
-		} else if (fileName.endsWith("txt") || fileName.endsWith("log")
-				|| fileName.endsWith("xml")) {
-			openTextFile(file);
-		} else if (fileName.endsWith("jpg") || fileName.endsWith("jpeg")
-				|| fileName.endsWith("png")) {
-			openImage(file);
 		} else {
-			// openOtherFiles(file);
+			FileOpener.openImage(this, file, null);
+			FileOpener.openMusic(this, file, null);
+			FileOpener.openTextFile(this, file, new String[]{"cfg"});
+			// FileOpener.openOtherFiles(file);
 		}
-
-	}
-
-	private void openOtherFiles(File file) {
-		Intent intent = new Intent();
-		intent.setAction(Intent.ACTION_CHOOSER);
-		startActivity(intent);
-
-	}
-
-	private void openImage(File file) {
-		Intent intent = new Intent();
-		intent.setAction(Intent.ACTION_VIEW);
-		intent.addCategory(Intent.CATEGORY_DEFAULT);
-		intent.setDataAndType(Uri.fromFile(file), "image/*");
-		startActivity(intent);
-	}
-
-	private void openTextFile(File file) {
-		Intent intent = new Intent();
-		intent.setAction(Intent.ACTION_VIEW);
-		intent.addCategory(Intent.CATEGORY_DEFAULT);
-		Uri data = Uri.fromFile(file);
-		intent.setData(data);
-		startActivity(intent);
 	}
 
 	@SuppressLint("InflateParams")
@@ -203,8 +176,8 @@ public class MainFrag extends Fragment implements OnItemClickListener,
 				WindowManager.LayoutParams.WRAP_CONTENT, true);
 		// 设置泡泡窗口透明背景
 		ppWindow.setBackgroundDrawable(new ColorDrawable());
-		
-		int x = view.getWidth() / 2 ;
+
+		int x = view.getWidth() / 3;
 		int y = -view.getHeight() * 2;
 
 		// 泡泡窗口的位置为所选item的下方,靠右侧的位置

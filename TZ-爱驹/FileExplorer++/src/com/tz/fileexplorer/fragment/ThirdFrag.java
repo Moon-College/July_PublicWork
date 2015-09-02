@@ -72,9 +72,6 @@ public class ThirdFrag extends Fragment {
 				break;
 			}
 			break;
-		default:
-			break;
 		}
-		System.out.println(resultCode);
 	}
 }

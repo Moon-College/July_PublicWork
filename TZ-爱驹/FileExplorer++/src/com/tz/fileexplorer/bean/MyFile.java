@@ -2,17 +2,17 @@ package com.tz.fileexplorer.bean;
 
 import android.graphics.Bitmap;
 
-public class MyFile {
+public class MyFile{
 
 	private boolean isIcon;
 	private Bitmap icon;
 	private String path;
 	private String name;
 
-	public MyFile() {
-	}
+	public MyFile(){}
 
 	public MyFile(String name, String path, Bitmap icon, boolean isIcon) {
+		
 		this.name = name;
 		this.path = path;
 		this.icon = icon;

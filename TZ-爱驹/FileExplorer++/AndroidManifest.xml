@@ -14,7 +14,7 @@
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@android:style/Theme.Light.NoTitleBar" >
+        android:theme="@style/AppTheme" >
         <activity
             android:name="com.tz.fileexplorer.MainActivity"
             android:label="@string/app_name"
@@ -33,6 +33,14 @@
                 <category android:name="android.intent.category.DEFAULT" />
 
                 <data android:mimeType="image/*" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.tz.fileexplorer.TextViewActivtity"
+            android:theme="@android:style/Theme.Holo.Dialog.NoActionBar">
+            <intent-filter >
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:scheme="file"/>
             </intent-filter>
         </activity>
     </application>
