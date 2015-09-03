@@ -25,6 +25,7 @@ public abstract class BaseActivity extends Activity {
 	private RadioButton rb4;
 	private RadioGroup radioGroup;
 
+	@SuppressWarnings("deprecation")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -65,20 +66,34 @@ public abstract class BaseActivity extends Activity {
 		titleBar.setBackgroundColor(color);
 	}
 
-	protected void hideBackButton(boolean b) {
-		if (b) {
+	/**
+	 * 若图片不可见，resId可以填0
+	 * @param resId 图片资源ID
+	 * @param b 图片是否可见
+	 */
+	protected Button setBackButton(int resId,boolean b) {
+		if (!b) {
 			backBtn.setVisibility(View.INVISIBLE);
 		} else {
 			backBtn.setVisibility(View.VISIBLE);
+			backBtn.setBackgroundResource(resId);
 		}
+		return backBtn;
 	}
 
-	protected void hideMoreButton(boolean b) {
-		if (b) {
+	/**
+	 * 若图片不可见，resId可以填0
+	 * @param resId 图片资源ID
+	 * @param b 是否可见
+	 */
+	protected Button setMoreButton(int resId, boolean b) {
+		if (!b) {
 			moreBtn.setVisibility(View.INVISIBLE);
 		} else {
 			moreBtn.setVisibility(View.VISIBLE);
+			moreBtn.setBackgroundResource(resId);
 		}
+		return moreBtn;
 	}
 
 	public Button getBackButton() {

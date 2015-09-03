@@ -55,7 +55,6 @@ public class MainActivity extends BaseActivity implements
 		setTitleBarColor(Color.rgb(200, 200, 200));
 		setTabText("文件", "好友", "外星人", "信息");
 		setTabTextColor(Color.BLACK);
-		hideMoreButton(true);
 	}
 
 	@Override
@@ -111,25 +110,27 @@ public class MainActivity extends BaseActivity implements
 		case R.id.rb1:
 			hideFragments(ft, secondFrag, thirdFrag, fourthFrag);
 			ft.show(mainFrag);
-			hideMoreButton(true);
+			setMoreButton(R.drawable.ic_menu_attachment, true);
+			getMoreButton().setOnClickListener((MainFrag)mainFrag);
 			setBGColor(color, 1);
 			break;
 		case R.id.rb2:
 			hideFragments(ft, mainFrag, thirdFrag, fourthFrag);
 			ft.show(secondFrag);
-			hideMoreButton(true);
+			setMoreButton(0, false);
 			setBGColor(color, 2);
 			break;
 		case R.id.rb3:
 			hideFragments(ft, mainFrag, secondFrag, fourthFrag);
 			ft.show(thirdFrag);
-			hideMoreButton(false);
+			setMoreButton(R.drawable.ic_menu_camera, true);
+			getMoreButton().setOnClickListener((ThirdFrag)thirdFrag);
 			setBGColor(color, 3);
 			break;
 		case R.id.rb4:
 			hideFragments(ft, mainFrag, secondFrag, thirdFrag);
 			ft.show(fourthFrag);
-			hideMoreButton(true);
+			setMoreButton(0, false);
 			setBGColor(color, 4);
 			break;
 		}

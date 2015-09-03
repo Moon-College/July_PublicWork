@@ -14,20 +14,20 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.ColorDrawable;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
-import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.view.WindowManager;
 import android.widget.AbsListView;
 import android.widget.AbsListView.OnScrollListener;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.PopupWindow;
@@ -74,7 +74,7 @@ public class MainFrag extends Fragment implements OnItemClickListener,
 				listView.setOnScrollListener(this);
 			}
 		} else {
-			Toast.makeText(getActivity(), "sdcard is not exist", 0).show();
+			Toast.makeText(getActivity(), "sdcard is not exist", Toast.LENGTH_SHORT).show();
 		}
 	}
 
@@ -97,7 +97,29 @@ public class MainFrag extends Fragment implements OnItemClickListener,
 			showDialog(currFile);
 			ppWindow.dismiss();
 			break;
+		case R.id.btn_more:
+			System.out.println("ontouch");
+			 showDropDownItem(v);
+			break;
+
 		}
+	}
+
+	private void showDropDownItem(View v) {
+		final String[] items = { "音乐", "视频", "图片", "文档", "压缩包", "安装包", "收藏夹",
+				"蓝牙", "日志", };
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
+				android.R.layout.simple_dropdown_item_1line, items);
+
+		ListView lView = (ListView) View.inflate(getActivity(),
+				R.layout.dropdown_listview, null);
+		System.out.println(lView);
+		lView.setAdapter(adapter);
+		PopupWindow ppWindow = new PopupWindow(lView,
+				WindowManager.LayoutParams.WRAP_CONTENT,
+				WindowManager.LayoutParams.WRAP_CONTENT, true);
+		ppWindow.setBackgroundDrawable(new ColorDrawable());
+		ppWindow.showAsDropDown(v, 0, 0);
 	}
 
 	private boolean initData(String path) {
@@ -142,13 +164,12 @@ public class MainFrag extends Fragment implements OnItemClickListener,
 			long id) {
 		String path = list.get(position).getPath();
 		File file = new File(path);
-		String fileName = file.getName();
 		if (file.isDirectory()) {
 			if (initData(path) == false) {
 				long currTime = System.currentTimeMillis();
 				// 如若5s内连续点击不可文件夹，则需要等待提示
 				if (currTime - prePressedTime > 5000) {
-					Toast.makeText(getActivity(), "此文件夹不可打开，如需打开，请一键root", 1)
+					Toast.makeText(getActivity(), "此文件夹不可打开，如需打开，请一键root", Toast.LENGTH_LONG)
 							.show();
 					prePressedTime = currTime;
 				}
@@ -156,19 +177,23 @@ public class MainFrag extends Fragment implements OnItemClickListener,
 		} else {
 			FileOpener.openImage(this, file, null);
 			FileOpener.openMusic(this, file, null);
-			FileOpener.openTextFile(this, file, new String[]{"cfg"});
+			FileOpener.openTextFile(this, file, new String[] { "cfg" });
 			// FileOpener.openOtherFiles(file);
 		}
 	}
 
-	@SuppressLint("InflateParams")
 	@Override
 	public boolean onItemLongClick(AdapterView<?> parent, View view,
 			int position, long id) {
+		showPPWindow(view);
+		return true;
+	}
+
+	@SuppressLint("InflateParams")
+	private void showPPWindow(View view) {
+		// TODO Auto-generated method stub
 		View contentView = LayoutInflater.from(getActivity()).inflate(
 				R.layout.popup_window, null);
-		mFile = list.get(position);
-		currFile = new File(mFile.getPath());
 		btnDelete = (Button) contentView.findViewById(R.id.btn_del);
 		btnDelete.setOnClickListener(this);
 		ppWindow = new PopupWindow(contentView,
@@ -177,14 +202,15 @@ public class MainFrag extends Fragment implements OnItemClickListener,
 		// 设置泡泡窗口透明背景
 		ppWindow.setBackgroundDrawable(new ColorDrawable());
 
-		int x = view.getWidth() / 3;
-		int y = -view.getHeight() * 2;
-
-		// 泡泡窗口的位置为所选item的下方,靠右侧的位置
-		ppWindow.showAsDropDown(view, x, y);
-		return true;
+		// ppWindow.showAsDropDown(view, x, y);
+		int loca[] = new int[2];
+		// btnDelete.getLocationInWindow(loca);//这个不行
+		view.getLocationOnScreen(loca);
+		// 泡泡窗口的位置为所选item的正上方
+		ppWindow.showAtLocation(view, Gravity.CENTER_HORIZONTAL | Gravity.TOP,
+				loca[0], loca[1] - view.getHeight());
 	}
-
+	
 	/**
 	 * 
 	 * @param f
