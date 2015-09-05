@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.tz.dallon.lsn20_fragment" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".FragmentLogin.LoginActivity"
+            android:label="@string/title_activity_login" >
+        </activity>
+        <activity android:name=".FragmentDynamic.DynamicActivity" />
+        <activity
+            android:name=".FragmentWeixin.WeixinActivity"
+            android:label="@string/title_activity_weixin" >
+        </activity>
+        <activity
+            android:name=".Adaption_tablet_phone.AdaptionTabletPhoneActivity"
+            android:label="@string/title_activity_adaption_tablet_phone" >
+        </activity>
+        <activity
+            android:name=".Adaption_tablet_phone.QQActivity"
+            android:label="@string/title_activity_qq" >
+        </activity>
+        <activity
+            android:name=".Adaption_tablet_phone.WeiXinActivity"
+            android:label="@string/title_activity_wei_xin" >
+        </activity>
+        <activity
+            android:name=".FragmentLifecycle.LifecycleActivity"
+            android:label="@string/title_activity_lifecycle" >
+        </activity>
+    </application>
+
+</manifest>
