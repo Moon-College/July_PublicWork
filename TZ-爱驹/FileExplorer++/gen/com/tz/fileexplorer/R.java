@@ -25,36 +25,47 @@ public final class R {
         public static final int bg_btn_pp=0x7f020000;
         public static final int btn_del=0x7f020001;
         public static final int dirs=0x7f020002;
-        public static final int file=0x7f020003;
-        public static final int ic_launcher=0x7f020004;
-        public static final int ic_menu_allfriends=0x7f020005;
-        public static final int ic_menu_archive=0x7f020006;
-        public static final int ic_menu_attachment=0x7f020007;
-        public static final int ic_menu_camera=0x7f020008;
-        public static final int ic_menu_emoticons=0x7f020009;
-        public static final int local_popup_bg=0x7f02000a;
-        public static final int popup_btn_p=0x7f02000b;
-        public static final int tab=0x7f02000c;
+        public static final int document=0x7f020003;
+        public static final int emo_im_surprised=0x7f020004;
+        public static final int file=0x7f020005;
+        public static final int ic_launcher=0x7f020006;
+        public static final int ic_menu_allfriends=0x7f020007;
+        public static final int ic_menu_archive=0x7f020008;
+        public static final int ic_menu_attachment=0x7f020009;
+        public static final int ic_menu_camera=0x7f02000a;
+        public static final int ic_menu_emoticons=0x7f02000b;
+        public static final int icon_highlight_rectangle=0x7f02000c;
+        public static final int local_popup_bg=0x7f02000d;
+        public static final int media=0x7f02000e;
+        public static final int music=0x7f02000f;
+        public static final int popup_btn_p=0x7f020010;
+        public static final int tab=0x7f020011;
+        public static final int zip=0x7f020012;
     }
     public static final class id {
-        public static final int action_settings=0x7f080011;
+        public static final int action_settings=0x7f080016;
         public static final int btn_back=0x7f080001;
-        public static final int btn_del=0x7f08000f;
+        public static final int btn_del=0x7f080013;
         public static final int btn_more=0x7f080003;
         public static final int container=0x7f080004;
-        public static final int dropdown_listview=0x7f08000c;
+        public static final int dropdown_listview=0x7f08000d;
+        public static final int emptydircontainer=0x7f080010;
         public static final int group=0x7f080005;
         public static final int iv=0x7f08000a;
-        public static final int iv_icon=0x7f08000d;
+        public static final int iv_icon=0x7f08000e;
         public static final int listview=0x7f08000b;
         public static final int rb1=0x7f080006;
         public static final int rb2=0x7f080007;
         public static final int rb3=0x7f080008;
         public static final int rb4=0x7f080009;
+        public static final int simple_dropdown_item1=0x7f080014;
         public static final int title=0x7f080002;
         public static final int title_bar=0x7f080000;
-        public static final int tv=0x7f080010;
-        public static final int tv_name=0x7f08000e;
+        public static final int toTop=0x7f08000c;
+        public static final int tv=0x7f080015;
+        public static final int tv_isEmpty=0x7f080011;
+        public static final int tv_name=0x7f08000f;
+        public static final int tv_path=0x7f080012;
     }
     public static final class layout {
         public static final int activity_base=0x7f030000;
@@ -64,7 +75,8 @@ public final class R {
         public static final int dropdown_listview=0x7f030004;
         public static final int listview_item=0x7f030005;
         public static final int popup_window=0x7f030006;
-        public static final int third_fragment=0x7f030007;
+        public static final int simple_dropdown_item1=0x7f030007;
+        public static final int third_fragment=0x7f030008;
     }
     public static final class menu {
         public static final int main=0x7f070000;
@@ -73,6 +85,7 @@ public final class R {
         public static final int action_settings=0x7f050002;
         public static final int app_name=0x7f050000;
         public static final int delete=0x7f050003;
+        public static final int emptydir=0x7f050004;
         public static final int hello_world=0x7f050001;
     }
     public static final class style {

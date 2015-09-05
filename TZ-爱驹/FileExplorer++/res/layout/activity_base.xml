@@ -16,7 +16,7 @@
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:layout_weight="0"
-            android:background="@drawable/ic_launcher" />
+            android:background="@android:drawable/ic_menu_revert" />
 
         <TextView
             android:id="@+id/title"

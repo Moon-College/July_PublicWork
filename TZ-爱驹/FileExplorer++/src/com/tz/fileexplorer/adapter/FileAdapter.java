@@ -12,18 +12,23 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.download.ImageDownloader.Scheme;
 import com.tz.fileexplorer.ImageLoader;
 import com.tz.fileexplorer.R;
-import com.tz.fileexplorer.bean.MyFile;
+import com.tz.fileexplorer.bean.BaseFile;
+import com.tz.fileexplorer.utils.BitmapCache;
 
 public class FileAdapter extends BaseAdapter {
 
-	private List<MyFile> list;
+	private List<BaseFile> list;
 	private LayoutInflater inflater;
 	private ViewHolder holder;
+	private Context context;
 
-	public FileAdapter(Context context, List<MyFile> list) {
+	public FileAdapter(Context context, List<BaseFile> list) {
 		this.list = list;
+		this.context = context;
 		inflater = LayoutInflater.from(context);
 	}
 
@@ -48,7 +53,8 @@ public class FileAdapter extends BaseAdapter {
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 
-		MyFile mFile = list.get(position);
+		BaseFile mFile = list.get(position);
+		// core code!!!
 		if (convertView == null) {
 			convertView = inflater.inflate(R.layout.listview_item, null);
 			holder = new ViewHolder(convertView);
@@ -56,12 +62,21 @@ public class FileAdapter extends BaseAdapter {
 		} else {
 			holder = (ViewHolder) convertView.getTag();
 		}
-		holder.tv.setText(mFile.getName());
+		// core code!!!
+		holder.tvName.setText(mFile.getName());
+		holder.tvPath.setText(mFile.getPathExceptName());
+		if (!mFile.isEmpty()) {
+			holder.tvEmptyDir.setVisibility(View.GONE);
+			// holder.emptyDir.removeView(holder.tvEmptyDir);
+		} else {
+			holder.tvEmptyDir.setVisibility(View.VISIBLE);
+		}
 		if (mFile.getIcon() == null) {
-			holder.iv.setImageResource(R.drawable.ic_launcher);
+			holder.iv.setImageBitmap(BitmapCache.getBitmap(
+					context.getResources(), R.drawable.ic_launcher));
 			LoadFileTask task = new LoadFileTask(holder.iv);
 			task.execute(mFile.getPath(), String.valueOf(position));
-		}else{
+		} else {
 			holder.iv.setImageBitmap(mFile.getIcon());
 		}
 		return convertView;
@@ -73,10 +88,12 @@ public class FileAdapter extends BaseAdapter {
 	 */
 	class ViewHolder {
 		ImageView iv;
-		TextView tv;
+		TextView tvName, tvPath, tvEmptyDir;
 
 		public ViewHolder(View v) {
-			tv = (TextView) v.findViewById(R.id.tv_name);
+			tvName = (TextView) v.findViewById(R.id.tv_name);
+			tvEmptyDir = (TextView) v.findViewById(R.id.tv_isEmpty);
+			tvPath = (TextView) v.findViewById(R.id.tv_path);
 			iv = (ImageView) v.findViewById(R.id.iv_icon);
 		}
 	}
@@ -96,12 +113,14 @@ public class FileAdapter extends BaseAdapter {
 		}
 
 		@Override
-		protected Void doInBackground(String... params) {
+		protected Void doInBackground(final String... params) {
 			String path = params[0];
 			try {
 
 				if (imageLoader.getBitmapFromCache(path) == null) {
 					icon = ImageLoader.loadImage(path, 20);
+//					String uri = "file://"+params[0];
+//					icon = com.nostra13.universalimageloader.core.ImageLoader.getInstance().loadImageSync(uri, new ImageSize(20, 20));
 					imageLoader.addBitmapToCache(path, icon);
 				} else {
 					icon = imageLoader.getBitmapFromCache(path);
@@ -117,6 +136,22 @@ public class FileAdapter extends BaseAdapter {
 		protected void onPostExecute(Void result) {
 			super.onPostExecute(result);
 			iv.setImageBitmap(icon);
+		}
+		
+		private void loadImage(ImageView iv,String path){
+			DisplayImageOptions options = new DisplayImageOptions.Builder()  
+			                .cacheInMemory(true)  
+			                .cacheOnDisk(true)  
+			                .bitmapConfig(Bitmap.Config.RGB_565)  
+			                .build();  
+			          
+//			        String path = "/mnt/sdcard/image.png";  
+			        String imageUrl = Scheme.FILE.wrap(path);  
+			          
+			//      String imageUrl = "http://img.my.csdn.net/uploads/201309/01/1378037235_74jpg";  
+			          
+			        com.nostra13.universalimageloader.core.ImageLoader.getInstance().displayImage(imageUrl, iv, options);  
+
 		}
 	}
 }

@@ -23,6 +23,7 @@ public class ScalableImageView extends ImageView {
 		setImageMatrix(matrix);
 		setFocusableInTouchMode(true);
 		setFocusable(true);
+		requestFocus();
 	}
 	
 	@Override

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">FileExplorer</string>
+    <string name="app_name">文件浏览器</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 	<string name="delete">删除</string>
+	<string name="emptydir">空文件夹</string>
 </resources>

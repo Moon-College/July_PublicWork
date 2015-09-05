@@ -23,7 +23,7 @@ import com.tz.fileexplorer.fragment.ThirdFrag;
 /**
  * 
  * @author wztscau
- * @lastedit 2015年9月2日
+ * @since 2015年9月2日
  *
  */
 public class MainActivity extends BaseActivity implements
