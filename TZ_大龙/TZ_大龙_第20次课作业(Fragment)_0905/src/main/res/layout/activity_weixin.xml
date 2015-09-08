@@ -1,0 +1,64 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="0dp"
+    tools:context="com.tz.dallon.lsn20_fragment.FragmentWeixin.WeixinActivity">
+
+    <FrameLayout
+        android:id="@+id/fl_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        ></FrameLayout>
+    
+    <RadioGroup
+        android:id="@+id/rg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:minHeight="50dp"
+        android:gravity="center"
+        android:padding="0dp"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/rb_wx"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="微信"
+            android:gravity="center"
+            android:background="#f00"
+            android:layout_weight="1"
+            android:button="@null"/>
+        <RadioButton
+            android:id="@+id/rb_txl"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="通讯录"
+            android:gravity="center"
+            android:background="#0f0"
+            android:layout_weight="1"
+            android:button="@null"/>
+        <RadioButton
+            android:id="@+id/rb_fx"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="发现"
+            android:gravity="center"
+            android:background="#00f"
+            android:layout_weight="1"
+            android:button="@null"/>
+        <RadioButton
+            android:id="@+id/rb_w"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="我"
+            android:gravity="center"
+            android:background="#f0f"
+            android:layout_weight="1"
+            android:button="@null"/>
+    </RadioGroup>
+
+
+</LinearLayout>
