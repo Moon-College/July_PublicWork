@@ -1,0 +1,88 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <HorizontalScrollView
+        android:id="@+id/hsv_top"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none" >
+
+        <RadioGroup
+            android:id="@+id/rg_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
+
+            <RadioButton
+                android:id="@+id/rb_china"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:button="@null"
+                android:text="中国" />
+
+            <RadioButton
+                android:id="@+id/rb_korea"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:button="@null"
+                android:text="韩国" />
+
+            <RadioButton
+                android:id="@+id/rb_japan"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:button="@null"
+                android:text="日本" />
+
+            <RadioButton
+                android:id="@+id/rb_america"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:button="@null"
+                android:text="美国" />
+
+            <RadioButton
+                android:id="@+id/rb_india"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:button="@null"
+                android:text="印度" />
+
+            <RadioButton
+                android:id="@+id/rb_england"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:button="@null"
+                android:text="英国" />
+
+            <RadioButton
+                android:id="@+id/rb_france"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:button="@null"
+                android:text="法国" />
+        </RadioGroup>
+    </HorizontalScrollView>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/tv_scrollbar"
+            android:layout_width="100dp"
+            android:layout_height="5dp"
+            android:background="#FF0000" />
+    </FrameLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewpager"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+    </android.support.v4.view.ViewPager>
+
+</LinearLayout>
