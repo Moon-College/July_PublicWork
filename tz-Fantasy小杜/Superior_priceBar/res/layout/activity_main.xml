@@ -1,0 +1,14 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.superior_pricebar.MainActivity" >
+
+   <com.example.superior_pricebar.PriceBar 
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:background="#F0F8FF"
+       
+       />
+
+</RelativeLayout>
