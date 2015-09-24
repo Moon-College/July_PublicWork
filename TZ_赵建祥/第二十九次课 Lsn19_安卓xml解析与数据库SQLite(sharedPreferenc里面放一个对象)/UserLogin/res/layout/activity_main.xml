@@ -1,0 +1,33 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <EditText
+        android:id="@+id/et_username"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="用户名" />
+    
+	<EditText
+        android:id="@+id/et_password"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="密码" />
+	<CheckBox 
+	    android:id="@+id/cb_remeberpwd"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:text="记住密码"
+	    />
+	<Button 
+	    android:id="@+id/bt_login"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:onClick="login"
+	    android:layout_gravity="center_horizontal"
+	    android:text="登录"
+	    />
+</LinearLayout>
