@@ -1,0 +1,5 @@
+<bean beanCls="com.tz.orm.bean.Product" beanTab="products" beanDao="com.tz.orm.dao.ProductDao">
+    <key column="p_id" property="pId" type="java.lang.Integer" identity="true" />
+    <item column="p_name" property="pName" type="java.lang.String" />
+    <item column="p_price" property="pPrice" type="java.lang.Float" />
+</bean>

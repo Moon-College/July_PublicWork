@@ -1,0 +1,47 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity" 
+    android:orientation="vertical">
+
+    <!-- 数据库版本号 -->
+    <EditText
+        android:id="@+id/et_dbversion"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="1" />
+	<!-- 实体类名 -->
+    <EditText
+        android:id="@+id/et_bean"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入实体类，如Student"
+        android:text="" />
+    <Button 
+        android:id="@+id/bt_insert"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="插入"
+        android:onClick="insert"
+        />
+	<Button 
+	    android:id="@+id/bt_query"
+	    android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="查询"
+        android:onClick="query"
+	    />
+	<Button 
+	    android:id="@+id/bt_delete"
+	    android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="删除"
+        android:onClick="delete"
+	    />
+	<ListView 
+	    android:id="@+id/lv_beans"
+	     android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+	    ></ListView>
+</LinearLayout>

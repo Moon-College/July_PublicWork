@@ -1,0 +1,5 @@
+<bean beanCls="com.tz.orm.bean.Student" beanTab="students" beanDao="com.tz.orm.dao.StudentDao">
+    <key column="s_id" property="sId" type="java.lang.Integer" identity="true" />
+    <item column="s_name" property="sName" type="java.lang.String" />
+    <item column="s_number" property="sNumber" type="java.lang.String" />
+</bean>
