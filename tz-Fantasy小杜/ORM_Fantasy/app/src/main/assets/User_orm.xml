@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<orm tablename="User" beanName="com.fantasyado.orm_fantasy.Bean.User" daoName="com.fantasyado.orm_fantasy.dao.UserDao">
+
+    <key column="_id" property="userID" type="java.lang.Integer" identity="true"/>
+    <item column="user_name" property="userName" type="java.lang.String"  />
+    <item column="sex" property="sex" type="java.lang.String"/>
+    <item column="age" property="age" type="java.lang.Integer"/>
+</orm>
+
+
+
+
+

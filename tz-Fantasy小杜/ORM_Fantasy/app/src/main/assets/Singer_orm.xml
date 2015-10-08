@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<orm tablename="Singer" beanName="com.fantasyado.orm_fantasy.Bean.Singer" daoName="com.fantasyado.orm_fantasy.dao.SingerDao">
+
+    <key column="_id" property="userID" type="java.lang.Integer" identity="true"/>
+    <item column="singer" property="singer" type="java.lang.String"  />
+    <item column="best_songs" property="best_songs" type="java.lang.String"/>
+    <item column="age" property="age" type="java.lang.Integer"/>
+</orm>
+
+
+
+
+
