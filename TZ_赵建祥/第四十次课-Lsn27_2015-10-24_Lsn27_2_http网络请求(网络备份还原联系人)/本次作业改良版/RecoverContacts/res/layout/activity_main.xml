@@ -1,0 +1,71 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <!-- 联系人姓名 -->
+
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入联系人姓名"
+        android:text="" />
+
+    <!-- 邮箱 -->
+
+    <EditText
+        android:id="@+id/et_email"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入联系人邮箱"
+        android:text="" />
+
+    <!-- 手机 -->
+
+    <EditText
+        android:id="@+id/et_phone"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入联系人手机"
+        android:text="" />
+
+    <!-- 电话 -->
+
+    <EditText
+        android:id="@+id/et_tel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:hint="请输入联系人电话 "
+        android:text="" />
+
+    <Button
+        android:id="@+id/bt_insert"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="insertContact"
+        android:text="插入联系人" />
+
+    <Button
+        android:id="@+id/bt_backup"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="backup"
+        android:text="备份联系人" />
+
+    <Button
+        android:id="@+id/bt_recover"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="recover"
+        android:text="恢复联系人" />
+
+    <ListView
+        android:id="@+id/lv_contacts"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
+
+</LinearLayout>

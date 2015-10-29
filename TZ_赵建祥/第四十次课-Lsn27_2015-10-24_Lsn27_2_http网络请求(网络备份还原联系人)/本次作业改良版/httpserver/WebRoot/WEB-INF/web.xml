@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	<servlet>
+		<servlet-name>loginServlet</servlet-name>
+		<servlet-class>
+			LoginServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>loginServlet</servlet-name>
+		<url-pattern>/loginServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>recoverServlet</servlet-name>
+		<servlet-class>
+			RecoverServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>recoverServlet</servlet-name>
+		<url-pattern>/recoverServlet</url-pattern>
+	</servlet-mapping>
+</web-app>
